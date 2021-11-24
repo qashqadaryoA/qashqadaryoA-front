@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #ECECEC;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: auto;
+}
+.container{
+    width: 95%;
+    margin: auto;
+}
+
+.search-form1{
+    padding-top: 10px;
+    text-align: center;
+}
+
+#search-form #search-text  {
+    padding: 24px 100px;
+    border-right: none !important;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid #707070;
+    box-sizing: border-box;
+}
+
+#search-form #search-submit-btn{
+    padding: 16px 24px;
+    position: relative;
+    top: 7px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px solid #707070;
+    background: #fff;
+    cursor: pointer;
+}
+#search-form #search-submit-btn i {
+    font-size: 31px;
+    color: #4A5568;
+}
+
+#search-form #search-text::placeholder{
+    position: relative;
+    left: -55px;
+    font-size: 20px;
+}
+
+.box-text .box-time div{
+    display: inline;
+}
+
+
+.boxes{
+  display: flex;
+//   max-width: 1260px;
+//   margin: 0 auto;
+  flex-wrap: wrap;
+//   justify-content: center;
+}
+.box {
+    display: inline-block;
+    background: #fff;
+    width: 300px;
+    margin-top: 40px;
+    margin-right: 20px;
+    box-sizing: border-box;
+
+}
+.box img{
+    width: 300px;
+    height: 180px;
+}
+.box .box-text .box-bottom-text{
+    color: #000;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.box .box-text .box-bottom-text, .box-time{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.box-time .box-time-logo {
+    color: #707070;
+    margin-right: 5px;
+}
+.box-time .box-time-text{
+    letter-spacing: -0.5px;
+}
