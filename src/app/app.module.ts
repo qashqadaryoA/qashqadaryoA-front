@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from './share/material.model';
-// import { FlexLayoutModule } from '@angular/flex-layout'; @NgModule({ imports: [ FlexLayoutModule ], });
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +26,10 @@ import { MaterialModule } from './share/material.model';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule 
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
