@@ -41,6 +41,13 @@ body{
     color: #4A5568;
 }
 
+.container {
+    width: 1270px;
+    margin: auto;
+    min-width: 1305px;   
+}
+
+
 #search-form #search-text::placeholder{
     position: relative;
     left: -55px;
