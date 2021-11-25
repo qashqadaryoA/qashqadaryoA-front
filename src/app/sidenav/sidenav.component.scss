@@ -3,3 +3,41 @@
     height: 100%;
     background: #fff;
 }
+.button-toggle{    
+    border-radius: 25px;
+    margin-left: 30%;
+    margin-top: 15px;
+}
+.button{
+    width: 70px;
+    background: lightgrey;
+    font-size: 16px;
+    font-weight: 500;
+}
+.flex-container{
+    margin-top: 25px;
+}
+.title{
+    text-align: center;
+    font-weight: 600;
+}
+.list{
+    list-style: none;
+    margin-left: 10px;
+}
+.list li{
+    margin-top: 10px;
+}
+.list li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
+.sidebar-footer{
+    text-align: center;
+    font-weight: 500;
+    color: #707070;
+}
+.flex-container-two{
+    margin-top: 100px;
+}
