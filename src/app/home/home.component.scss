@@ -1,4 +1,39 @@
-body{
+section{
     background: #ECECEC;
     height: 100vh;
+}
+.img-container{
+    margin: 20px 20px 0px 20px;
+}
+
+.img{
+    width: 95%;
+    margin: auto;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+}
+
+.sungi-yangilik{
+    background: #fff;
+    margin: 20px 20px 0px 0px;
+}
+.title{
+    text-align: center;
+}
+.img-two{
+    display: none;
+}
+@media screen and (max-width: 599px) {
+    .text{
+    width: 90%;
+    margin: auto;
+    background-position: center;
+    background-size: cover;
+}
+.img{
+    width: 100%;
+}
+
+    
 }
