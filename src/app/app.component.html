@@ -1,7 +1,7 @@
-<app-navbar></app-navbar>
+<app-navbar (sideNavOpen)="snav.toggle()"></app-navbar>
 
-<!-- <mat-sidenav-container>
-    <mat-sidenav style="background: dodgerblue" #snav mode="push">
+<mat-sidenav-container>
+    <mat-sidenav #snav mode="push">
         <app-sidenav></app-sidenav>
     </mat-sidenav>
     <mat-sidenav-content>
@@ -9,7 +9,5 @@
           <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
-  </mat-sidenav-container> -->
+</mat-sidenav-container>
 
-  
-  <router-outlet></router-outlet>
