@@ -11,6 +11,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from './share/material.model';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NavbarBottomComponent } from './navbar-bottom/navbar-bottom.component';
+import { HomePageTwoComponent } from './home-page-two/home-page-two.component';
+import { HomePageThreeComponent } from './home-page-three/home-page-three.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     SearchComponent,
     HomeComponent,
     SidenavComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarBottomComponent,
+    HomePageTwoComponent,
+    HomePageThreeComponent
   ],
   imports: [
     BrowserModule,

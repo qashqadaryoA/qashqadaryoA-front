@@ -1,13 +1,20 @@
+*{
+    box-sizing: border-box;
+}
 section{
-    background: #ECECEC;
+    background: #fff;
     height: 100%;
+}
+
+.navbar-two{
+    display: none;
 }
 .img-container{
     margin: 20px 20px 0px 20px;
 
 }
 .flex-container{
-    background: #EFF2F8;
+    background:  #fff;
 }
 .img{
     width: 95%;
@@ -15,10 +22,9 @@ section{
     height: 300px;
     background-position: center;
     background-size: cover;
-    border-radius: 20px;
 }
-// .data-time{
-// }
+
+
 .sungi-yangilik{
     background: #fff;
     margin: 20px 20px 0px 0px;
@@ -47,32 +53,28 @@ section{
     margin-top: 30px;
 }
 .images{
-    width: 280px;
-    height: 250px;
-    border-radius: 20px;
+    width: 250px;
+    height: 200px;
 }
 .flex-container-two{
     margin-top: 20px;
 }
+
 .images-title{
     width: 90%;
     margin: auto;
     font-weight: 500;
 }
 .reklama{
-    width: 95%;
-    height: 200px;
+    width:70%;
+    height: 100px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
 }
-.reklama div{
-    font-size: 70px;
+.reklama h1{
     color: #fff;
     text-align: center;
-    position: relative;
-    top: 80px;
-    
 }
 .containercha{
     text-align: center;
@@ -80,12 +82,20 @@ section{
 .display-none-image{
     display: none;
 }
+.navbar-button{
+    display: none;
+}
+
+
 @media screen and (max-width: 599px) {
     .text{
     width: 90%;
     margin: auto;
     background-position: center;
     background-size: cover;
+}
+.navbar-button{
+    display: block;
 }
 .images-mini{
     width: 100%;
@@ -107,6 +117,15 @@ section{
 .containercha{
     text-align: center;
 }
-
+.navbar-two{
+    display: block;
+}
+.reklama{
+    width:90%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+    margin-top: 20px;
+}
     
 }

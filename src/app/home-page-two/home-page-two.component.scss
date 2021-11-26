@@ -1,0 +1,57 @@
+.backgraund{
+    background: #FFF323;
+    height: 100%;
+}
+#container{
+    width: 100%;
+    height: 20px;
+}
+.reklama{
+    width:70%;
+    height: 100px;
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+    background-color: #ECECEC;
+}
+
+.containercha{
+    text-align: center;
+}
+.images{
+    width: 230px;
+    height: 150px;
+    
+}
+.images-title{
+    width: 80%;
+    margin: auto;
+    font-weight: 500;
+    color:  #000000;
+}
+.flex-container{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 599px) {
+    .box{
+        margin-top: 20px;
+    }
+    .reklama{
+        width: 90%;
+    }
+    .images{
+        width: 300px;
+        height: 180px;
+        
+    }
+    .images-title{
+        width: 80%;
+        margin: auto;
+        font-weight: 400;
+        font-size: 24px;
+        color:  #000000;
+    }
+}
