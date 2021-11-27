@@ -14,6 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NavbarBottomComponent } from './navbar-bottom/navbar-bottom.component';
 import { HomePageTwoComponent } from './home-page-two/home-page-two.component';
 import { HomePageThreeComponent } from './home-page-three/home-page-three.component';
+import { MostViewComponent } from './most-view/most-view.component';
+import { LatestNewsComponent } from './latest-news/latest-news.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { HomePageThreeComponent } from './home-page-three/home-page-three.compon
     FooterComponent,
     NavbarBottomComponent,
     HomePageTwoComponent,
-    HomePageThreeComponent
+    HomePageThreeComponent,
+    MostViewComponent,
+    LatestNewsComponent
   ],
   imports: [
     BrowserModule,

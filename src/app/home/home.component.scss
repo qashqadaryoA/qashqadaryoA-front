@@ -1,20 +1,22 @@
 *{
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 section{
-    background: #fff;
+    background: rgb(255, 255, 255);
     height: 100%;
 }
 
-.navbar-two{
-    display: none;
+.container1{
+    width: 97%;
+    margin: auto;
+    height: 100%;
+    margin-top: 20px;
 }
-.img-container{
-    margin: 20px 20px 0px 20px;
-
-}
-.flex-container{
-    background:  #fff;
+.main-message{
+    background: rgb(255, 255, 255);
+    width: 100%;
 }
 .img{
     width: 95%;
@@ -23,6 +25,78 @@ section{
     background-position: center;
     background-size: cover;
 }
+.text{
+    margin-top: 20px;
+}
+
+.type{
+    font-size: 16px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 17px;
+    font-weight: 400;
+}
+.data-time{
+    color: black;
+}
+.text-title{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: black;
+}
+.text-paragraf{
+    color: rgba(0, 0, 0, 0.801);
+    margin-top: 20px;
+}
+.fa-newspaper{
+    font-size: x-large;
+    margin-right: 3px;
+}
+
+.additional-message{
+    margin-top: 20px;
+}
+
+.images{
+    width: 95%;
+    height: 200px;
+}
+.card-position2{
+text-align: center;
+
+}
+.card-position3{
+    text-align: right;
+}
+.data-time-two{
+    color: rgba(0, 0, 0, 0.678);
+    text-align: center;
+}
+.images-title{
+    width: 90%;
+    margin: auto;
+    font-weight: 450;
+    font-size: large;
+}
+
+
+
+
+
+
+
+
+
+.navbar-two{
+    display: none;
+}
+.img-container{
+    margin: 20px 20px 0px 20px;
+}
+.flex-container{
+    background:  #fff;
+}
 
 
 .sungi-yangilik{
@@ -30,7 +104,7 @@ section{
     margin: 20px 20px 0px 0px;
 }
 .container{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 .time{
@@ -41,30 +115,13 @@ section{
 .title{
     text-align: center;
 }
-.img-two{
-    display: none;
-}
-.text-title{
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 10px;
-}
-.text-paragraf{
-    margin-top: 30px;
-}
-.images{
-    width: 250px;
-    height: 200px;
-}
+
 .flex-container-two{
     margin-top: 20px;
+    width: 100%;
 }
 
-.images-title{
-    width: 90%;
-    margin: auto;
-    font-weight: 500;
-}
+
 .reklama{
     width:70%;
     height: 100px;
@@ -85,7 +142,9 @@ section{
 .navbar-button{
     display: none;
 }
-
+.hr{
+    border: 1px dashed lightgrey;
+}
 
 @media screen and (max-width: 599px) {
     .text{
@@ -127,5 +186,24 @@ section{
     background-color: black;
     margin-top: 20px;
 }
+.text-paragraf{
+    display:none;
+}
     
+
+
+
+
+
+
+.card-margin{
+    margin-top: 20px;
+}
+.card-position1{
+    text-align: center;
+}
+
+.card-position3{
+    text-align: center;
+}
 }
