@@ -3,6 +3,9 @@
     text-decoration: none;
     list-style: none;
 }
+.navbar-button{
+    display: none;
+}
 section{
     background: rgb(255, 255, 255);
     height: 100%;
@@ -79,49 +82,6 @@ text-align: center;
     font-weight: 450;
     font-size: large;
 }
-
-
-
-
-
-
-
-
-
-.navbar-two{
-    display: none;
-}
-.img-container{
-    margin: 20px 20px 0px 20px;
-}
-.flex-container{
-    background:  #fff;
-}
-
-
-.sungi-yangilik{
-    background: #fff;
-    margin: 20px 20px 0px 0px;
-}
-.container{
-    width: 95%;
-    margin: auto;
-}
-.time{
-    margin-left: 10px;
-    position: relative;
-    bottom: 5px;
-}
-.title{
-    text-align: center;
-}
-
-.flex-container-two{
-    margin-top: 20px;
-    width: 100%;
-}
-
-
 .reklama{
     width:70%;
     height: 100px;
@@ -133,20 +93,14 @@ text-align: center;
     color: #fff;
     text-align: center;
 }
-.containercha{
-    text-align: center;
-}
-.display-none-image{
-    display: none;
-}
-.navbar-button{
-    display: none;
-}
-.hr{
-    border: 1px dashed lightgrey;
-}
+
+
+
 
 @media screen and (max-width: 599px) {
+    .container1{
+        width: 100%;
+    }
     .text{
     width: 90%;
     margin: auto;
@@ -156,26 +110,10 @@ text-align: center;
 .navbar-button{
     display: block;
 }
-.images-mini{
-    width: 100%;
-    height: 90%;
-    
-}
-.display-none-image{
-    display: block;
-}
-
 .img{
     width: 100%;
 }
-.sungi-yangilik{
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
-}
-.containercha{
-    text-align: center;
-}
+
 .navbar-two{
     display: block;
 }
@@ -205,5 +143,10 @@ text-align: center;
 
 .card-position3{
     text-align: center;
+}
+.img{
+    height: 250px;
+    background-position: center;
+    background-size: cover;
 }
 }
