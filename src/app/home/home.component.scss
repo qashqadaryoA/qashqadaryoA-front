@@ -3,23 +3,25 @@
     text-decoration: none;
     list-style: none;
 }
-.navbar-button{
-    display: none;
-}
+// .navbar-button{
+//     display: none;
+// }
 section{
-    background: rgb(255, 255, 255);
+    background: #ececec;
     height: 100%;
+    padding-top: 20px;
 }
 
 .container1{
     width: 97%;
     margin: auto;
     height: 100%;
-    margin-top: 20px;
+    padding-top: 20px;
 }
 .main-message{
     background: rgb(255, 255, 255);
     width: 100%;
+    height: auto;
 }
 .img{
     width: 95%;
@@ -28,9 +30,9 @@ section{
     background-position: center;
     background-size: cover;
 }
-.text{
-    margin-top: 20px;
-}
+// .text{
+//     padding-top: 20px;
+// }
 
 .type{
     font-size: 16px;
@@ -41,6 +43,7 @@ section{
 }
 .data-time{
     color: black;
+    margin-top: 20px;
 }
 .text-title{
     font-size: 24px;
@@ -87,7 +90,6 @@ text-align: center;
     height: 100px;
     margin: auto;
     background-color: black;
-    margin-top: 20px;
 }
 .reklama h1{
     color: #fff;
@@ -107,9 +109,9 @@ text-align: center;
     background-position: center;
     background-size: cover;
 }
-.navbar-button{
-    display: block;
-}
+// .navbar-button{
+//     display: block;
+// }
 .img{
     width: 100%;
 }

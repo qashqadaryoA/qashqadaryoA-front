@@ -34,7 +34,16 @@
     margin: auto;
     margin-top: 20px;
 }
-
+.data-time{
+    color: black;
+}
+.type{
+    font-size: 16px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 17px;
+    font-weight: 400;
+}
 @media screen and (max-width: 599px) {
     .box{
         margin-top: 20px;
