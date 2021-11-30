@@ -17,6 +17,8 @@ import { HomePageThreeComponent } from './home-page-three/home-page-three.compon
 import { MostViewComponent } from './most-view/most-view.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { HomeNewComponent } from './home-new/home-new.component';
+import { TypePageComponent } from './type-page/type-page.component';
+import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { HomeNewComponent } from './home-new/home-new.component';
     HomePageThreeComponent,
     MostViewComponent,
     LatestNewsComponent,
-    HomeNewComponent
+    HomeNewComponent,
+    TypePageComponent,
+    TypeLatestNewsComponent
   ],
   imports: [
     BrowserModule,

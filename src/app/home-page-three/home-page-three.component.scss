@@ -1,5 +1,5 @@
 .body{
-    background: #ececec;;
+    background: #ffffff;;
 }
 .margin{
     margin-top: 20px;
@@ -24,6 +24,16 @@
     width: 95%;
     margin: auto;
 
+}
+.data-time{
+    color: black;
+}
+.type{
+    font-size: 16px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 17px;
+    font-weight: 400;
 }
 @media screen and (max-width: 599px) {
     .img{
