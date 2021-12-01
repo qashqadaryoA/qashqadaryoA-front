@@ -19,6 +19,7 @@ import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { HomeNewComponent } from './home-new/home-new.component';
 import { TypePageComponent } from './type-page/type-page.component';
 import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.component';
+import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.com
     LatestNewsComponent,
     HomeNewComponent,
     TypePageComponent,
-    TypeLatestNewsComponent
+    TypeLatestNewsComponent,
+    TypePageTwoComponent
   ],
   imports: [
     BrowserModule,

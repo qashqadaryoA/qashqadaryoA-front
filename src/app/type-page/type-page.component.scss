@@ -4,6 +4,9 @@
     text-decoration: none;
     list-style: none;
 }
+.body{
+    background: #ffffff;
+}
 .container1{
     width: 97%;
     margin: auto;
@@ -87,11 +90,14 @@
     color: #fff;
     text-align: center;
 }
+
 .card-img{
     display: flex;
     align-items: center;
 }
-
+.flex-container{
+    margin-top: 20px;
+}
 
 
 
