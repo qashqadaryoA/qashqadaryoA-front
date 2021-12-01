@@ -16,13 +16,29 @@ section{
     height: 100%;
     padding-top: 20px;
 }
-
 .container1{
-    width: 97%;
     margin: auto;
-    height: 100%;
-    padding-top: 20px;
-    background: #ffffff ;
+}
+
+@media screen and (max-width: 1520px) {
+    
+    //this
+    .container1{
+        width: 95% !important;
+        margin: auto;
+    
+    }
+
+
+}
+@media screen and (min-width: 1520px) {
+    
+    //this
+    .container1{
+        width: 1350px !important;
+    }
+
+
 }
 .main-message{
     background: rgb(255, 255, 255);
@@ -137,6 +153,7 @@ text-align: center;
     height: 100px;
     margin: auto;
     background-color: black;
+    margin-bottom: 20px;
 }
 .reklama h1{
     color: #fff;
