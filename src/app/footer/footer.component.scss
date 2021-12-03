@@ -11,12 +11,34 @@ footer{
     transition: all 0.2s;
     
 }
-.container {
-    width: 95%;
+
+
+.container{
     margin: auto;
-    transition: all 0.2s;
+}
+
+@media screen and (max-width: 1520px) {
+    
+    //this
+    .container{
+        width: 95% !important;
+        margin: auto;
+    
+    }
+
 
 }
+@media screen and (min-width: 1520px) {
+    
+    //this
+    .container{
+        width: 1350px;
+    }
+
+
+}
+
+
 .footer-links ul li {
     list-style-type: none;
     text-decoration: none;
@@ -149,4 +171,8 @@ footer{
     .copyright h1 {
         font-size: 11px;
     }
+}
+
+@media only screen and (max-width: 300px) {
+    
 }

@@ -8,8 +8,28 @@ body{
     height: auto;
 }
 .container{
-    width: 95%;
     margin: auto;
+}
+
+@media screen and (max-width: 1520px) {
+    
+    //this
+    .container{
+        width: 95% !important;
+        margin: auto;
+    
+    }
+
+
+}
+@media screen and (min-width: 1520px) {
+    
+    //this
+    .container{
+        width: 1350px;
+    }
+
+
 }
 
 .search-form1{
