@@ -20,6 +20,7 @@ import { HomeNewComponent } from './home-new/home-new.component';
 import { TypePageComponent } from './type-page/type-page.component';
 import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.component';
 import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
     HomeNewComponent,
     TypePageComponent,
     TypeLatestNewsComponent,
-    TypePageTwoComponent
+    TypePageTwoComponent,
+    SocialMediaComponent
   ],
   imports: [
     BrowserModule,

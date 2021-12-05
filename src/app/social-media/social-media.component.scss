@@ -1,0 +1,61 @@
+.container{
+    margin: auto;
+}
+
+@media screen and (max-width: 1520px) {
+    
+    //this
+    .container{
+        width: 95% !important;
+        margin: auto;
+    
+    }
+
+
+}
+@media screen and (min-width: 1520px) {
+    
+    //this
+    .container{
+        width: 1350px !important;
+    }
+
+
+}
+
+.telegram{
+    background: #12ACED;
+}
+.facebook{
+    background: #3B5998;
+}
+.instagram{
+    background: #CD486B;
+}
+.youtube{
+    background: #FF0000;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.social-media-link i{
+    font-size: 35px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.social-media-link{
+    padding: 10px;
+    // margin-bottom: 10px;
+    // margin-right: 10px;
+}
+span{
+    color: #fff;
+}
+.social-media-link span {
+    position: relative;
+    top: -8px;
+}
