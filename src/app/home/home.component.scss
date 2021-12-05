@@ -1,50 +1,60 @@
 body{
-    background-color: #ffffff;
+    background-color: #FBFBFB;
 }
 *{
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
-
-// .navbar-button{
-//     display: none;
-// }
-
 section{
-    background: #ffffff ;
+    background: #FBFBFB ;
     height: 100%;
     padding-top: 20px;
 }
 .container1{
     margin: auto;
 }
-
 @media screen and (max-width: 1520px) {
-    
     //this
     .container1{
         width: 95% !important;
         margin: auto;
-    
     }
-
-
 }
 @media screen and (min-width: 1520px) {
-    
     //this
     .container1{
         width: 1350px !important;
     }
-
-
 }
+
+.flex-container{
+    background:  #FBFBFB;
+}
+
+// Reklama yozilgan qator
+.reklama{
+    width:70%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+.reklama h1{
+    color: #fff;
+    text-align: center;
+}
+
+
+
+// Asosiy xabar yozilgan qator
 .main-message{
     background: rgb(255, 255, 255);
     width: 100%;
     height: auto;
 }
+
 .img{
     width: 95%;
     margin: auto;
@@ -53,188 +63,232 @@ section{
     background-size: cover;
 }
 
-.type{
-    font-size: 16px;
-    color: #2344ff;
-    text-transform: capitalize;
-    line-height: 17px;
-    font-weight: 400;
-}
 .data-time{
     color: black;
     margin-top: 20px;
 }
-.text-title{
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 10px;
-    color: black;
-}
-.text-paragraf{
-    color: rgba(0, 0, 0, 0.801);
-    margin-top: 20px;
-}
-.fa-newspaper{
+
+#icon-newspaper{
     font-size: x-large;
     margin-right: 3px;
 }
 
-.additional-message{
-    margin-top: 20px;
+.type{
+    font-size: 16px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 400;
 }
 
+.text-title{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: black;
+    line-height: 1.4;
+}
+
+.text-paragraf{
+    color: rgba(0, 0, 0, 0.801);
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+// Qushimcha xabar yozilgan qator
+.card{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
 .images{
-    width: 95%;
-    height: 200px;
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
 }
-.card-position2{
-text-align: center;
+.data-time2{
+    color: black;
+    margin-top: 8px;
+}
 
-}
-.card-position3{
-    text-align: right;
-}
-.data-time-two{
-    color: rgba(0, 0, 0, 0.678);
-    text-align: center;
-}
-.images-title{
-    width: 90%;
-    margin: auto;
-    font-weight: 450;
+#icon-newspaper2{
     font-size: large;
-    text-align: center;
+    margin-right: 3px;
+}
+
+.type2{
+    font-size: 14px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.text2{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 
 
 
+// Ipad ga moslab yozilgan qator
+@media screen and (max-width: 959px) {
 
-
-
-
-
-.navbar-two{
-    display: none;
-}
-.img-container{
-    margin: 20px 20px 0px 20px;
-}
-.flex-container{
-    background:  #fff;
-}
-
-
-.sungi-yangilik{
-    background: #fff;
-    margin: 20px 20px 0px 0px;
-}
-.container{
-    width: 95%;
-    margin: auto;
-}
-.time{
-    margin-left: 10px;
-    position: relative;
-    bottom: 5px;
-}
-.title{
-    text-align: center;
-}
-
-.flex-container-two{
-    margin-top: 20px;
-    width: 100%;
-}
-
-
-.reklama{
-    width:70%;
-    height: 100px;
-    margin: auto;
-    background-color: black;
-    margin-bottom: 20px;
-}
-.reklama h1{
-    color: #fff;
-    text-align: center;
-}
-.containercha{
-    text-align: center;
-}
-.display-none-image{
-    display: none;
-}
-.navbar-button{
-    display: none;
-}
-.hr{
-    border: 1px dashed lightgrey;
-}
-
-@media screen and (max-width: 599px) {
-    .text{
-    width: 90%;
-    margin: auto;
-    background-position: center;
-    background-size: cover;
-}
-// .navbar-button{
-//     display: block;
-// }
-
-.navbar-button{
-    display: block;
-}
-.images-mini{
-
-    width: 100%;
-    height: 90%;
-    
-}
-.display-none-image{
-    display: block;
-}
+// Asosiy yangilik yozilgan qator
 
 .img{
+        width: 95%;
+        margin: auto;
+        height: 240px;
+        background-position: center;
+        background-size: cover;
+    }
+
+.data-time{
+    color: black;
+    margin-top: 5px;
+}
+
+#icon-newspaper{
+    font-size: x-large;
+    margin-right: 3px;
+}
+
+.type{
+    font-size: 16px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.text-title{
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0px;
+    color: black;
+    line-height: 1.4;
+}
+
+.text-paragraf{
+    color: rgba(63, 60, 60, 0.801);
+    margin-top: 5px;
+    font-size: 16px;
+}
+    
+// Qushimcha xabar yozilgan qator
+
+.images{
     width: 100%;
+    height: 140px;
 }
-.sungi-yangilik{
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
+
+.data-time2{
+    color: rgb(54, 49, 49);
+    margin-top: 0px;
 }
-.containercha{
-    text-align: center;
+
+.text2{
+    color: black;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
 }
-.navbar-two{
-    display: block;
+
 }
-.reklama{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+    // Reklama Kodi yozilgan qator
+
+    .reklama{
     width:90%;
     height: 100px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
 }
-.text-paragraf{
-    display:none;
-}
+    // Asosiy yanglik yozilgan qator
+
+    .img{
+        width: 100%;
+        height: 250px;
+    }
+
+    .text{
+    width: 95%;
+    margin: auto;
+    }
+
+    .data-time{
+        color: black;
+        margin-top: 10px;
+    }
     
+    .text-title{
+        font-size: x-large;
+        font-weight: 500;
+        margin-top: 10px;
+        color: black;
+    }
 
+    .text-paragraf{
+        display:none;
+    }
 
+    // Qushimcha xabarlar yozilgan qator
+      
+    .images{
+        width: 100%;
+        height: 100px;
+    }
 
+    .data-time2{
+        color: black;
+        margin-top: 0px;
+    }
 
+    #icon-newspaper2{
+        font-size: small;
+        margin-right: 3px;
+    }
 
+    .type2{
+        font-size: 14px;
+        color: #2344ff;
+        text-transform: capitalize;
+        line-height: 30px;
+        font-weight: 400;
+    }
 
-.card-margin{
-    margin-top: 20px;
-}
-.card-position1{
-    text-align: center;
-}
+    .hour{
+        display: none;
+    }
 
-.card-position3{
-    text-align: center;
-}
+    .text2{
+        color: black;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
 }

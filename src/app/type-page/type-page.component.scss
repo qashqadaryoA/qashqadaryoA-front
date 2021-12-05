@@ -8,12 +8,24 @@
     background: #ffffff;
 }
 .container1{
-    width: 97%;
     margin: auto;
-    height: 100%;
-    padding-top: 20px;
-    background: #ffffff ;
 }
+
+@media screen and (max-width: 1520px) {
+    //this
+    .container1{
+        width: 95% !important;
+        margin: auto;
+    
+    }
+}
+@media screen and (min-width: 1520px) {
+    //this
+    .container1{
+        width: 1350px !important;
+    }
+}
+
 .container2{
     margin-top: 20px;
 }
@@ -179,6 +191,10 @@
 
 .img{
     width: 100%;
+    height: 230px;
+}
+.text-title{
+    font-size: x-large;
 }
 
 .reklama{
