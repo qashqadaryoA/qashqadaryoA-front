@@ -1,55 +1,48 @@
 
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+.body{
+    background: #ffffff;
+}
 .container1{
     margin: auto;
 }
 
 @media screen and (max-width: 1520px) {
-    
     //this
     .container1{
         width: 95% !important;
         margin: auto;
     
     }
-
-
 }
 @media screen and (min-width: 1520px) {
-    
     //this
     .container1{
         width: 1350px !important;
     }
-
-
 }
-.margin{
+
+
+.container2{
     margin-top: 20px;
-    margin-bottom: 20px;
 }
-.container{
-    width: 95%;
-    margin: auto;
+.main-message{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
 }
 .img{
-    width: 90%;
-    height: 120px !important;
-}
-.text{
-    width: 48%;
-    margin: auto;
-}
-.margin-t{
-    margin-top: 30px;
-}
-.flex-container{
     width: 95%;
     margin: auto;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
 
-}
-.data-time{
-    color: black;
-}
 .type{
     font-size: 16px;
     color: #2344ff;
@@ -57,8 +50,169 @@
     line-height: 17px;
     font-weight: 400;
 }
-@media screen and (max-width: 599px) {
-    .img{
-        height: 90px !important;
+.data-time{
+    color: black;
+    margin-top: 20px;
+}
+.text-title{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: black;
+}
+.text-paragraf{
+    color: rgba(0, 0, 0, 0.801);
+    margin-top: 20px;
+}
+.fa-newspaper{
+    font-size: x-large;
+    margin-right: 3px;
+}
+
+// .sungi-yangilik{
+//     background: #fff;
+//     margin: 20px 20px 0px 0px;
+// }
+.container{
+    width: 95%;
+    margin: auto;
+}
+.img2{
+    width: 95%;
+    height: 120px !important;
+}
+.time{
+    margin-left: 10px;
+    position: relative;
+    bottom: 5px;
+}
+.title{
+    text-align: center;
+}
+
+.margin-t{
+    margin-top: 30px;
+}
+.reklama{
+    width:70%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+}
+.reklama h1{
+    color: #fff;
+    text-align: center;
+}
+
+.card-img{
+    display: flex;
+    align-items: center;
+}
+.flex-container{
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 959px) {
+    .reklama{
+        margin-top: 20px;
     }
+    .card-img{
+        display: flex;
+        align-items: center;
+    }
+    .data-time{
+        color: black;
+        margin-top: 0% !important;
+    }
+    .img2{
+        width: 95%;
+        height: 100px !important;
+    }
+    .text{
+        color: black;
+        font-weight: 500; 
+        font-size: small;
+        padding-bottom: 0 !important;
+        border-bottom: 0 !important;
+    }
+    .fa-newspaper{
+        font-size: large;
+    }
+    .type{
+        font-size: small;
+        color: #2344ff;
+        text-transform: capitalize;
+        line-height: 17px;
+        font-weight: 400;
+        margin-top: 5px;
+    }
+    .container2{
+        margin-top: 0%;
+    }
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 599px) {
+    .text{
+    width: 90%;
+    margin: auto;
+    background-position: center;
+    background-size: cover;
+}
+// .navbar-button{
+//     display: block;
+// }
+
+.images-mini{
+
+    width: 100%;
+    height: 90%;
+    
+}
+
+.img{
+    width: 100%;
+    height: 230px;
+}
+.text-title{
+    font-size: x-large;
+}
+
+.reklama{
+    width:90%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+    margin-top: 20px;
+}
+.text-paragraf{
+    display:none;
+}
+.margin-t{
+    border-bottom: 1px dashed black;
+    margin-top: 7px;
+}
+.container2{
+    margin-top: 0%;
+}
 }

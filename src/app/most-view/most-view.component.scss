@@ -4,30 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-.container1{
-    margin: auto;
-}
 
-@media screen and (max-width: 1520px) {
-    
-    //this
-    .container1{
-        width: 95% !important;
-        margin: auto;
-    
-    }
-
-
-}
-@media screen and (min-width: 1520px) {
-    
-    //this
-    .container1{
-        width: 1350px !important;
-    }
-
-
-}
 .title{
     text-align: center;
 }
