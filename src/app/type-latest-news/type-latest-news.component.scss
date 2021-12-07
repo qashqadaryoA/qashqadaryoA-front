@@ -4,9 +4,6 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-.body{
-    margin-bottom: 20px;
-}
 .title{
     text-align: center;
 }
@@ -48,14 +45,14 @@
 .button-card{
     width: 90%;
     margin: auto;
+    margin-top: 15px;
 }
 .button{
     width: 100%;
     margin-top: 8px;
 }
-.button-display2{
-    display: none;
-}
+
+
 @media screen and (max-width: 959px) {
     .card-img{
         display: block;
@@ -63,25 +60,6 @@
         align-items: center;
     }
 
-    .card-display{
-        display: block;
-    }
-    .button-display{
-        display: none;
-    }
-    .button-display2{
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-    }
-    .button-card2{
-        width: 80%;
-        margin: auto;
-    }
-    .button2{
-        width: 100%;
-        font-size: large;
-    }
     .container{
         width: 95%;
         margin: auto;
@@ -110,7 +88,6 @@
         display: block;
         margin-top: 10px;
     }
-
 }
 
 @media screen and (max-width: 599px) {
