@@ -4,20 +4,20 @@
 
         <div fxLayout="row wrap">
 
-                <div fxFlex="100%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutGap="10px" >
+                <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of latestNewsMessages" fxFlex.xs="100%" fxLayoutGap="10px" >
                     <a routerLink="/type">
                         <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="column">
                             <div class="card-img" fxFlex="5 1 0">
-                                <img class="img" src="../../assets/hokim.jpg">
+                                <img class="img" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">
+                                <app-image-download *ngIf="message?.image != null" [faylId]="message?.image?.id"></app-image-download>
                             </div>
                             <div fxFlex="10 1 0">
                                 <div class="data-time">
                                     <mat-icon class="mat-icon">date_range</mat-icon><span
-                                        class="type">Жаҳон</span>&nbsp;/&nbsp;
-                                    22.11.2021 18:21
+                                        class="type">{{message?.types?.name}}</span>&nbsp;/&nbsp;
+                                    {{message?.dateTime}}
                                 </div>
-                                <p class="text">Huawei ўзининг илк электромобили тақдимотини ўтказди
-
+                                <p class="text">{{message?.caption}}
                                 </p>
                             </div>
                         </div>

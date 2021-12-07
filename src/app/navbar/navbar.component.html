@@ -8,13 +8,7 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <li><a routerLink="type">Ўзбекистон</a></li>
-                    <li><a routerLink="type">Ўзбекистон</a></li>
-                    <li><a routerLink="type">Ўзбекистон</a></li>
-                    <li><a routerLink="/">Жаҳон</a></li>
-                    <li><a routerLink="/">Иқтисодиёт</a></li>
-                    <li><a routerLink="/">Иқтисодиёт</a></li>
-                    <li><a routerLink="/">Спорт</a></li>
+                    <li *ngFor="let type of types"><a (click)="openType(type.id)">{{type?.name}}</a></li>
                 </ul>
             </div>
             <div class="float-right">

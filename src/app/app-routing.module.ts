@@ -9,7 +9,11 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'find', component: SearchComponent },
   { path: 'homeNew', component: HomeNewComponent },
-  { path: 'type', component: TypePageComponent}
+  { path: 'type', component: TypePageComponent},
+  {
+    path: 'type/:id',
+    component: TypePageComponent
+  }
 ];
 
 @NgModule({

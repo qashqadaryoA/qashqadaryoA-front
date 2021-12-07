@@ -21,6 +21,8 @@ import { TypePageComponent } from './type-page/type-page.component';
 import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.component';
 import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ImageDownloadComponent } from './image-download/image-download.component';
 
 
 @NgModule({
@@ -40,16 +42,16 @@ import { SocialMediaComponent } from './social-media/social-media.component';
     TypePageComponent,
     TypeLatestNewsComponent,
     TypePageTwoComponent,
-    SocialMediaComponent
+    SocialMediaComponent,
+    ImageDownloadComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule 
-
-    
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

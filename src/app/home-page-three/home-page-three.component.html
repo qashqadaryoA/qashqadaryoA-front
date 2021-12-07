@@ -11,21 +11,19 @@
                 <!-- Qushimcha xabarlar yozilgan qator -->
 
                 <div fxLayout="row wrap">
-
-                    <div fxFlex="50%" fxFlex.sm="50%" fxFlex.xs="100%" fxLayoutGap="10px">
+                    <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%" fxLayoutGap="10px">
                         <div fxLayout="row" class="margin-t">
                             <div fxFlex="2 1 0" class="card-img">
-                                <img class="img2" src="../../assets/images (5).jpg">
+                                <img class="img2" *ngIf="message?.image == null" src="../../assets/images (5).jpg">
+                                <app-image-download [faylId]="message?.image?.id"></app-image-download>
                             </div>
                             <div fxFlex="3 1 0">
                                 <div class="data-time">
                                     <i class="far fa-newspaper"></i>
                                     <span class="type">
-                                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
+                                        {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
                                 </div>
-                                <div class="text">
-                                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                                    Huawei ўзининг илк электромобили тақдимотини ўтказди
+                                <div class="text">{{message?.caption}}
                                 </div>
                             </div>
                         </div>

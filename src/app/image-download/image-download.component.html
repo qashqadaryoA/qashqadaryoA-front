@@ -1,0 +1,27 @@
+<img #img  *ngIf="this.file" [width]='width' [height]='height' alt="" srcset="">
+
+
+<!-- <ng-container [ngSwitch]="shakl">
+    <mat-card class="kvadrat" *ngSwitchCase="'short'">
+        <mat-icon *ngIf="!this.file" [css.fontSize]='width' [css.fontSize]='height'>attach_file</mat-icon>
+        <img #img *ngIf="this.file" [width]='width' [height]='height' alt="" srcset="">
+    </mat-card>
+    <mat-card class="kvadrat" *ngSwitchCase="'full'">
+        <mat-icon *ngIf="!this.file" [css.fontSize]='width' [css.fontSize]='height'>attach_file</mat-icon>
+        <img #img *ngIf="this.file" [width]='width' [height]='height' alt="" srcset="">
+        
+        <div mat-line>{{fayl.nom ?? '-'}} {{fayl.hajm ? (fayl.hajm/(1024)).toFixed(0) + " KB" : '-'}}</div>
+        <div mat-line> {{fayl.faylTur }} </div>
+        <div mat-line> {{fayl.izoh }} </div>
+    </mat-card>
+
+    <mat-card *ngSwitchDefault>
+
+        <mat-icon mat-list-icon>attach_file</mat-icon>
+
+        <div mat-line>{{fayl.nom ?? '-'}} {{fayl.hajm ?? '-'}}</div>
+        <div mat-line> {{fayl.faylTur }} </div>
+        <div mat-line> {{fayl.izoh }} </div>
+
+    </mat-card>
+</ng-container> -->
