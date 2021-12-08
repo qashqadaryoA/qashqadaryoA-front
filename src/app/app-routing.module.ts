@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutMessageComponent } from './about-message/about-message.component';
 import { HomeNewComponent } from './home-new/home-new.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {
     path: 'type/:id',
     component: TypePageComponent
-  }
+  },
+  { path: 'message', component: AboutMessageComponent}
 ];
 
 @NgModule({

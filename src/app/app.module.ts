@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -23,6 +22,10 @@ import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ImageDownloadComponent } from './image-download/image-download.component';
+import { AboutMessageComponent } from './about-message/about-message.component';
+import { AboutMessageMostViewComponent } from './about-message-most-view/about-message-most-view.component';
+import { AboutMessageRelatedToTheSubjectComponent } from './about-message-related-to-the-subject/about-message-related-to-the-subject.component';
+import { AboutMessageTypeComponent } from './about-message-type/about-message-type.component';
 
 
 @NgModule({
@@ -44,6 +47,10 @@ import { ImageDownloadComponent } from './image-download/image-download.componen
     TypePageTwoComponent,
     SocialMediaComponent,
     ImageDownloadComponent,
+    AboutMessageComponent,
+    AboutMessageMostViewComponent,
+    AboutMessageRelatedToTheSubjectComponent,
+    AboutMessageTypeComponent
   ],
   imports: [
     BrowserModule,

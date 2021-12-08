@@ -28,9 +28,9 @@
 }
 
 
-.container2{
-    margin-top: 20px;
-}
+// .container2{
+//     padding-top: 20px;
+// }
 .main-message{
     background: rgb(255, 255, 255);
     width: 100%;
@@ -89,6 +89,8 @@
 }
 .title{
     text-align: center;
+    font-size: x-large;
+    font-weight: 600;
 }
 
 .margin-t{
@@ -211,6 +213,45 @@
         margin-top: 0%;
     }
 
+    
+// Qushimcha xabarlarga berilgan style
+
+.card{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.images{
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    object-position: center;
+}
+.data-time2{
+    color: black;
+    margin-top: 0px;
+}
+
+#icon-newspaper2{
+    font-size: large;
+    margin-right: 3px;
+}
+
+.type2{
+    font-size: 14px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.text2{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
 }
 
 
@@ -219,6 +260,12 @@
 
 
 @media screen and (max-width: 599px) {
+
+    .title{
+        text-align: center;
+        font-size: large;
+        font-weight: 550;
+    }
     .text{
     width: 90%;
     margin: auto;
@@ -263,5 +310,42 @@
 }
 
 // Qushimcha xabarlarga berilgan style
+
+.card{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+.images{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}
+.data-time2{
+    color: black;
+    margin-top: 0px;
+}
+
+#icon-newspaper2{
+    font-size: large;
+    margin-right: 3px;
+}
+
+.type2{
+    font-size: 14px;
+    color: #2344ff;
+    text-transform: capitalize;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.text2{
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
 
 }

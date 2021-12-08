@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
+  @Output() sideNavOpen2: EventEmitter<boolean> = new EventEmitter(true);
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  
 }

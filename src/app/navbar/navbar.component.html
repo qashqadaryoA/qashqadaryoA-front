@@ -8,7 +8,8 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <li *ngFor="let type of types"><a (click)="openType(type.id)">{{type?.name}}</a></li>
+                    <li *ngFor="let type of types"><a  class="navbar-color" (click)="openType(type.id)">{{type?.name}}</a></li>
+
                 </ul>
             </div>
             <div class="float-right">
@@ -19,10 +20,27 @@
                             transform="translate(-2 -2)" fill="none" stroke="#4a5568" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" />
                     </svg></a>
-
                 <span (click)="sideNavOpen.emit(true)" class="menu-icon"><i class="fas fa-bars"></i></span>
-
             </div>
-        </div>
+
+<div class="tuman">
+        <ul class="list">
+            <li>Kitob</li>
+            <li>Beshkent</li>
+            <li>G'uzor</li>
+            <li>Kitob</li>
+            <li>Beshkent</li>
+            <li>G'uzor</li>
+            <li>Kitob</li>
+            <li>Beshkent</li>
+            <li>G'uzor</li>
+            <li>Kitob</li>
+            <li>Beshkent</li>
+            <li>G'uzor</li>
+        </ul>
     </div>
+        </div>
+   
+    </div>
+ 
 </nav>

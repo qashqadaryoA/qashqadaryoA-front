@@ -4,15 +4,17 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
 .title{
     text-align: center;
 }
-
 .container{
-    width: 98%;
+    width: 95%;
     margin: auto;
 }
-
+// .body{
+//     background: blanchedalmond;
+// }
 .fa-newspaper{
     font-size: 20px;
 }
@@ -41,15 +43,11 @@
 .card-img{
     display: none;
 }
-.button-card{
-    width: 90%;
-    margin: auto;
-}
-.button{
-    width: 100%;
-    margin-top: 8px;
-}
+
 @media screen and (max-width: 959px) {
+    .title{
+        margin-top: 20px;
+    }
     .card-img{
         display: block;
         display: flex;
@@ -57,8 +55,7 @@
     }
 
     .container{
-        width: 95%;
-        margin: auto;
+        display: none;
     }
     .text{
         color: black;
@@ -88,6 +85,9 @@
 
 @media screen and (max-width: 599px) {
 
+    .container1{
+        display: none;
+    }
     .card-img{
         display: block;
         display: flex;
@@ -102,7 +102,7 @@
         color: black;
         font-weight: 500; 
         font-size: small;
-        padding-bottom: 0 !important;
+        padding-bottom: 0px !important;
         border-bottom: 0 !important;
     }
     .images{
