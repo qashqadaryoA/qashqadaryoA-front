@@ -13,13 +13,13 @@ export class HomePageService {
   getAll():Observable<any> {
     return this.http.get<any>(this.api+"/home-page");
   }
-  getLatestNews():Observable<any> {
-    return this.http.get<any>(this.api+"/latest-news");
+  getLatestNews(pageNumber:number):Observable<any> {
+    return this.http.get<any>(this.api+"/latest-news?page="+pageNumber);
   }
   getSortView():Observable<any> {
     return this.http.get<any>(this.api+"/sort-view");
   }
-  getFilterType(id:number):Observable<any> {
-    return this.http.get<any>(this.api+"/filter-type?typeId="+id);
+  getFilterType(id:number,pageNumber:number):Observable<any> {
+      return this.http.get<any>(this.api+"/filter-type?typeId="+id+"&page="+pageNumber);
   }
 }

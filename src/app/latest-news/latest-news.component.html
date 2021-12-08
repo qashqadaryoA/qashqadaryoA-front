@@ -5,7 +5,7 @@
         <div fxLayout="row wrap">
 
                 <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of latestNewsMessages" fxFlex.xs="100%" fxLayoutGap="10px" >
-                    <a routerLink="/type">
+                    <a>
                         <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="column">
                             <div class="card-img" fxFlex="5 1 0">
                                 <img class="img" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">

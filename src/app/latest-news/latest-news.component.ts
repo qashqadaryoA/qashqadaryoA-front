@@ -11,7 +11,7 @@ export class LatestNewsComponent implements OnInit,AfterViewInit {
   latestNewsMessages:Message[] = [];
   constructor(private homePageService:HomePageService) { }
   ngAfterViewInit(): void {
-    this.homePageService.getLatestNews().subscribe(data => {
+    this.homePageService.getLatestNews(0).subscribe(data => {
       this.latestNewsMessages = data.content;
     });
   }
