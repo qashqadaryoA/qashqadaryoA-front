@@ -4,18 +4,18 @@ import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
 
 @Component({
-  selector: 'app-type-page',
-  templateUrl: './type-page.component.html',
-  styleUrls: ['./type-page.component.scss']
+  selector: 'app-tuman-page',
+  templateUrl: './tuman-page.component.html',
+  styleUrls: ['./tuman-page.component.scss']
 })
-export class TypePageComponent implements OnInit {
+export class TumanPageComponent implements OnInit {
   id?:any;
   pageNumber:number=0;
-  typeMessages:Message[] = [];
+  tumanMessages:Message[] = [];
   constructor(private homePageService:HomePageService,private activeRoute: ActivatedRoute,private router:Router) { }
   ngAfterViewInit(): void {
-    this.homePageService.getFilterType(this.id,this.pageNumber).subscribe(data => {
-      this.typeMessages = data.content;
+    this.homePageService.getFilterTuman(this.id,this.pageNumber).subscribe(data => {
+      this.tumanMessages = data.content;
     });
   }
   ngOnInit(): void {
@@ -25,10 +25,11 @@ export class TypePageComponent implements OnInit {
   }
   koproq(){
     this.pageNumber =  this.pageNumber + 1;
-    this.homePageService.getFilterType(this.id,this.pageNumber).subscribe(data => {
-      this.typeMessages = this.typeMessages.concat(data.content);
+    this.homePageService.getFilterTuman(this.id,this.pageNumber).subscribe(data => {
+      this.tumanMessages = this.tumanMessages.concat(data.content);
     });
   }
+  
   openMessage(id: any){
     this.router.navigate(['message', id]);
   }  

@@ -17,15 +17,13 @@ import { MostViewComponent } from './most-view/most-view.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { HomeNewComponent } from './home-new/home-new.component';
 import { TypePageComponent } from './type-page/type-page.component';
-import { TypeLatestNewsComponent } from './type-latest-news/type-latest-news.component';
-import { TypePageTwoComponent } from './type-page-two/type-page-two.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ImageDownloadComponent } from './image-download/image-download.component';
 import { AboutMessageComponent } from './about-message/about-message.component';
-import { AboutMessageMostViewComponent } from './about-message-most-view/about-message-most-view.component';
 import { AboutMessageRelatedToTheSubjectComponent } from './about-message-related-to-the-subject/about-message-related-to-the-subject.component';
 import { AboutMessageTypeComponent } from './about-message-type/about-message-type.component';
+import { TumanPageComponent } from './tuman-page/tuman-page.component';
 
 
 @NgModule({
@@ -43,14 +41,12 @@ import { AboutMessageTypeComponent } from './about-message-type/about-message-ty
     LatestNewsComponent,
     HomeNewComponent,
     TypePageComponent,
-    TypeLatestNewsComponent,
-    TypePageTwoComponent,
     SocialMediaComponent,
     ImageDownloadComponent,
     AboutMessageComponent,
-    AboutMessageMostViewComponent,
     AboutMessageRelatedToTheSubjectComponent,
-    AboutMessageTypeComponent
+    AboutMessageTypeComponent,
+    TumanPageComponent
   ],
   imports: [
     BrowserModule,

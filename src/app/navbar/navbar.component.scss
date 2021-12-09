@@ -44,7 +44,9 @@
 .navbar-brand{
     display: inline;
 }
-
+li{
+    cursor: pointer;
+}
 
 .navbar .navbar-brand img{
     width: 40px;
@@ -114,7 +116,7 @@
 }
 .list li{
     display: inline-block !important;
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: 400;
     color: rgb(255, 255, 255);
 }

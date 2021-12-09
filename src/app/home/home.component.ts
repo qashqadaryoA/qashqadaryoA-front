@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Message } from '../model/message';
 import { HomePageService } from './home.service';
 
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   homePageMessageLevel8: Message[] = [];
   constructor(
     public homePageService: HomePageService,
+    private router:Router
   ) {
 
   }
@@ -31,4 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.homePageMessages[10],this.homePageMessages[11],this.homePageMessages[12]];
     });
   }
+  openMessage(id: any){
+    this.router.navigate(['message', id]);
+  }  
 }

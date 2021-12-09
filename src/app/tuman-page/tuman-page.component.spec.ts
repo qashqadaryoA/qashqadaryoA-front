@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TypeLatestNewsComponent } from './type-latest-news.component';
+import { TumanPageComponent } from './tuman-page.component';
 
-describe('TypeLatestNewsComponent', () => {
-  let component: TypeLatestNewsComponent;
-  let fixture: ComponentFixture<TypeLatestNewsComponent>;
+describe('TumanPageComponent', () => {
+  let component: TumanPageComponent;
+  let fixture: ComponentFixture<TumanPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TypeLatestNewsComponent ]
+      declarations: [ TumanPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TypeLatestNewsComponent);
+    fixture = TestBed.createComponent(TumanPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

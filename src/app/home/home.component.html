@@ -3,7 +3,7 @@
 
         <div class="container1">
 
-            <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
+            <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px" (click)="openMessage(homePageMessageLevel10[0].id)">
 
                 <div fxFlex="5.5 1 0">
                     <!-- Asosiy xabar yozilgan qator -->
@@ -36,7 +36,7 @@
 
 
                     <div fxLayout="row wrap" >
-                        <div fxFlex="33.3%" fxFlex.sm="33.3%" fxFlex.xs="50%" *ngFor="let message of homePageMessageLevel9">
+                        <div fxFlex="33.3%" fxFlex.sm="33.3%" fxFlex.xs="50%" *ngFor="let message of homePageMessageLevel9" (click)="openMessage(message?.id)">
                             <a>
                                 <div class="card">
                                 <img class="images" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">

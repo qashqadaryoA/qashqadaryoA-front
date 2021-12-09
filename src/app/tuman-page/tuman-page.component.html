@@ -1,0 +1,40 @@
+<section class="body">
+
+    <div class="container1">
+        <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
+            <div fxFlex="5.5 1 0">
+                <!-- Qushimcha xabarlar yozilgan qator -->
+
+                <div fxLayout="row wrap">
+                    <div fxFlex="33.3%" *ngFor="let message of tumanMessages" fxFlex.sm="33.3%" fxFlex.xs="50%" (click)="openMessage(message?.id)">
+                        <a>
+                            <div class="card">
+                                <img class="images" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">
+                                <app-image-download [faylId]="message?.image?.id"></app-image-download>
+                                <div class="data-time2">
+                                    <i class="far fa-newspaper" id="icon-newspaper2"></i>
+                                    <span class="type2">
+                                        {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}} 
+                                </div>
+                                <div class="text2">{{message?.caption}}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- button joylashgan qator -->
+                <div fxLayoutGap="10px">
+                    <a>
+                        <div class="button-card">
+                            <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Sungi yangiliklar qatori -->
+            <div fxFlex="2 1 0">
+                <app-latest-news></app-latest-news>
+            </div>
+        </div>
+    </div>
+</section>

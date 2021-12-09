@@ -3,98 +3,25 @@
     <div class="container">
 
         <div fxLayout="row wrap">
-            <div fxFlex="100%" fxFlex.sm="50%">
-                <a routerLink="/message">
+            <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of titleMessages" (click)="openMessage(message.id)">
+                <a>
                     <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="row">
                         <div class="card-img" fxFlex="4 1 0">
-                            <img class="img" src="../../assets/hokim.jpg">
+                            <img class="img" *ngIf="message?.image == null" src="../../assets/images (5).jpg">
+                            <app-image-download [faylId]="message?.image?.id"></app-image-download>
+                        
                         </div>
                         <div fxFlex="10 1 0" class="border-bottom">
                             <div class="data-time">
                                 <mat-icon class="mat-icon">date_range</mat-icon><span
-                                    class="type">Жаҳон</span>&nbsp;/&nbsp;
-                                22.11.2021 18:21
+                                    class="type">{{message?.types?.name}}</span>&nbsp;/&nbsp;
+                                {{message?.dateTime}}
                             </div>
-                            <p class="text">Huawei ўзининг илк электромобили тақдимотини ўтказди
-
+                            <p class="text">{{message?.caption}}
                             </p>
                         </div>
                     </div>
                 </a>
-
-
-            </div>
-
-            <div fxFlex="100%" fxFlex.sm="50%">
-
-
-                <a routerLink="/message">
-                    <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="row">
-                        <div class="card-img" fxFlex="4 1 0">
-                            <img class="img" src="../../assets/hokim.jpg">
-                        </div>
-                        <div fxFlex="10 1 0" class="border-bottom">
-                            <div class="data-time">
-                                <mat-icon class="mat-icon">date_range</mat-icon><span
-                                    class="type">Жаҳон</span>&nbsp;/&nbsp;
-                                22.11.2021 18:21
-                            </div>
-                            <p class="text">Huawei ўзининг илк электромобили тақдимотини ўтказди
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-
-
-            </div>
-
-            <div fxFlex="100%" fxFlex.sm="50%">
-
-
-                <a routerLink="/message">
-                    <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="row">
-                        <div class="card-img" fxFlex="4 1 0">
-                            <img class="img" src="../../assets/hokim.jpg">
-                        </div>
-                        <div fxFlex="10 1 0" class="border-bottom">
-                            <div class="data-time">
-                                <mat-icon class="mat-icon">date_range</mat-icon><span
-                                    class="type">Жаҳон</span>&nbsp;/&nbsp;
-                                22.11.2021 18:21
-                            </div>
-                            <p class="text">Huawei ўзининг илк электромобили тақдимотини ўтказди
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-
-
-            </div>
-
-            <div fxFlex="100%" fxFlex.sm="50%">
-
-
-                <a routerLink="/message">
-                    <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="row">
-                        <div class="card-img" fxFlex="4 1 0">
-                            <img class="img" src="../../assets/hokim.jpg">
-                        </div>
-                        <div fxFlex="10 1 0" class="border-bottom">
-                            <div class="data-time">
-                                <mat-icon class="mat-icon">date_range</mat-icon><span
-                                    class="type">Жаҳон</span>&nbsp;/&nbsp;
-                                22.11.2021 18:21
-                            </div>
-                            <p class="text">Huawei ўзининг илк электромобили тақдимотини ўтказди
-
-                            </p>
-                        </div>
-                    </div>
-                </a>
-
-
             </div>
         </div>
 

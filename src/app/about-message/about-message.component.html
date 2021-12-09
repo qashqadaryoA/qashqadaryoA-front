@@ -1,42 +1,31 @@
 <div class="container1">
     <div fxLayout="row wrap">
         <div fxFlex="22%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.sm="3" fxFlexOrder.xs="3">
-            <app-about-message-most-view></app-about-message-most-view>
+            <app-most-view></app-most-view>
         </div>
-
         <div style="background: #ffffff;" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.sm="1" fxFlexOrder.xs="1">
                             <div class="data-time">
                     <i class="far fa-newspaper" id="icon-newspaper"></i>
                     <span class="type">
-                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
+                        {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
                 </div>
             <div class="card">
-                <div class="title">
-                    “Фақат интернетга эмас, Ўзбекистон тараққиётига қўйилган тўсиқ”. IT-тадбиркорлар
-                    –
-                    тармоқлар
-                    блокланиши ҳақида
+                <div class="title">{{message?.caption}}
                 </div>
-                <img class="img" src="../../assets/elon.jpg">
+                <img class="img" *ngIf="message?.image == null" src="../../assets/elon.jpg">
+                <app-image-download [faylId]="message?.image?.id"></app-image-download>
 
-
-
-                <div class="long-text">
-                    “Фақат интернетга эмас, Ўзбекистон тараққиётига қўйилган тўсиқ”. IT-тадбиркорлар -блокланиши ҳақида
-                    “Фақат интернетга эмас, Ўзбекистон тараққиётига қўйилган тўсиқ”. IT-тадбиркорлар -блокланиши ҳақида
-                    “Фақат интернетга эмас, Ўзбекистон тараққиётига қўйилган тўсиқ”. IT-тадбиркорлар -блокланиши ҳақида
-                    “Фақат интернетга эмас, Ўзбекистон тараққиётига қўйилган тўсиқ”. IT-тадбиркорлар -блокланиши ҳақида
+                <div class="long-text">{{message?.shortText?.shortText}}
                 </div>
                 
             </div>
 <div class="hashtag">
-    <span class="span-padding">#hashtag</span><span class="span-padding">#hashtag</span><span  class="span-padding">#hashtag</span>
+    <span *ngFor="let element of hashtags" class="span-padding">#{{element.hashtag}}</span>
 </div>
         </div>
-
         <div fxFlex="28%" fxFlex.sm="100%"  fxFlex.xs="100%" fxFlexOrder.sm="2" fxFlexOrder.xs="2">
-            <app-about-message-related-to-the-subject></app-about-message-related-to-the-subject>
+            <app-about-message-related-to-the-subject *ngIf="hashtags!=null" [hashtags]="hashtags"></app-about-message-related-to-the-subject>
         </div>
     </div>
-    <app-about-message-type></app-about-message-type>
+    <app-about-message-type *ngIf="hashtags!=null" [hashtags]="hashtags"></app-about-message-type>
 </div>

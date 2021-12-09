@@ -7,13 +7,16 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class NavbarService {
-  api = environment.baseUrl + '/api/type';
-  apiType= environment.baseUrl + "api/type";
+  api = environment.baseUrl + '/api';
+  apiType= environment.baseUrl + "api";
   messager: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(public http:HttpClient) { }
-  getAllStatus():Observable<any> {
-    return this.http.get<any>(this.api+"/status");
+  getAllTypeStatus():Observable<any> {
+    return this.http.get<any>(this.api+"/type/status");
+  }
+  getAllTumanStatus():Observable<any> {
+    return this.http.get<any>(this.api+"/tuman/status");
   }
   navigation(){
     this.messager.next(true);

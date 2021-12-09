@@ -38,7 +38,7 @@
                 <!-- Qushimcha xabarlar yozilgan qator -->
 
                 <div fxLayout="row wrap">
-                    <div fxFlex="33.3%" *ngFor="let message of typeMessages" fxFlex.sm="33.3%" fxFlex.xs="50%">
+                    <div fxFlex="33.3%" *ngFor="let message of typeMessages" fxFlex.sm="33.3%" fxFlex.xs="50%" (click)="openMessage(message?.id)">
                         <a>
                             <div class="card">
                                 <img class="images" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">
@@ -77,4 +77,3 @@
         </div>
     </div>
 </section>
-<app-type-page-two></app-type-page-two>
