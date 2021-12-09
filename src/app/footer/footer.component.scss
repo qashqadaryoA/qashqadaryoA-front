@@ -104,6 +104,16 @@ footer{
 .footer-bottom .created-by span {
     color: #1091FF;
     font-size: 13px;
+    text-decoration: none;
+}
+.footer-bottom .created-by span a {
+    color: #1091FF;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.2s all;
+}
+.footer-bottom .created-by span a:hover {
+    color: #FFFFFF;
 }
 
 
@@ -134,9 +144,14 @@ footer{
     }
     
     footer{
-        height: 180px;
+        height: 185px;
     }
     
+    // .created-by span a{
+    //     color: #1091FF !important;
+        // font-size: 13px;
+        // text-decoration: none;
+    // }
     .float-right .social-links a{
         text-decoration: none;
         margin-left: 10px;

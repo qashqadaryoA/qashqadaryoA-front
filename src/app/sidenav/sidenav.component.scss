@@ -43,3 +43,40 @@
 .flex-container-two{
     margin-top: 100px;
 }
+
+.valyuta{
+    width: 90%;
+    margin: auto;
+    background: rgb(241, 241, 241);
+    margin-top: 10px;
+    font-family: sans-serif;
+    border-radius: 10px;
+}
+
+.content-box{
+    width: 90%;
+    margin: auto;
+}
+.value{
+    float: right;
+}
+.content-box{
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.valyutaa span{
+    font-size: 17px;
+}
+.valyuta-text p{
+    font-size: 18px;
+    text-align: center;
+    color: #577BC1;
+    font-weight: 700;
+}
+.valyutaa i {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.to-uzs{
+    color: #707070; 
+}
