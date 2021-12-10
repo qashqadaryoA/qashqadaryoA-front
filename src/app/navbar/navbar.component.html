@@ -4,12 +4,10 @@
       <div class="navbar-brand">
         <a class="search-icon" routerLink="find"><i class="fas fa-search"></i></a>
         <a class="logo-img" routerLink="/"><img [src]="siteBrand" alt={{siteName}}></a>
-        <!-- <a href="#">{{siteName}}</a> -->
       </div>
       <div class="nav-links">
         <ul>
-          <li *ngFor="let type of types"><a class="navbar-color" (click)="openType(type?.id)">{{type?.name}}</a></li>
-
+          <li *ngFor="let type of types"><a class="navbar-color"  (click)="openType(type?.id)">{{type?.name}}</a></li>
         </ul>
       </div>
       <div class="float-right">

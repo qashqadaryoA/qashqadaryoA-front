@@ -2,115 +2,25 @@
     <div class="title">
         <div class="wrap">
             <div class="search">
-               <input type="text" class="searchTerm" placeholder="Қидириш">
-               <button type="submit" class="searchButton">
+               <input type="text" id="input" class="searchTerm" placeholder="Қидириш">
+               <button type="submit" class="searchButton" (click)="search()">
                  <i class="fa fa-search"></i>
               </button>
             </div>
          </div>
     </div>
     <div fxLayout="row wrap" class="messages">
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
+        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message.id)" *ngFor="let message of searchMessages">
             <div class="card">
-                <img class="img" src="../../assets/xiva.jpg">
+                <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <app-image-download [faylId]="message?.image?.id"></app-image-download>
                 <div class="data-time">
                     <i class="far fa-newspaper" id="icon-newspaper"></i>
                     <span class="type">
-                        Жаҳон</span>/ 22.11.2021 18:21
+                        {{message?.types?.name}}</span>/ {{message?.dateTime}}
                 </div>
                 <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/reklama media.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>/ 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/hokim.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span> / 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/hokim.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>/  22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/hokim.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/hokim.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/hokim.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
-                </div>
-            </div>
-        </div>
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%">
-            <div class="card">
-                <img class="img" src="../../assets/ice cream.jpg">
-                <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        Жаҳон</span>&nbsp; / &nbsp; 22.11.2021 18:21
-                </div>
-                <div class="text2">
-                    Huawei ўзининг илк электромобили тақдимотини ўтказди
+                    {{message?.caption}}
                 </div>
             </div>
         </div>
@@ -118,7 +28,7 @@
 
     <div fxLayoutGap="10px">
             <div class="button-card">
-                <button class="button" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+                <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
             </div>
     </div>
 </div>

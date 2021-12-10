@@ -15,7 +15,6 @@ import { HomePageTwoComponent } from './home-page-two/home-page-two.component';
 import { HomePageThreeComponent } from './home-page-three/home-page-three.component';
 import { MostViewComponent } from './most-view/most-view.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
-import { HomeNewComponent } from './home-new/home-new.component';
 import { TypePageComponent } from './type-page/type-page.component';
 import { SocialMediaComponent } from './social-media/social-media.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -39,7 +38,6 @@ import { TumanPageComponent } from './tuman-page/tuman-page.component';
     HomePageThreeComponent,
     MostViewComponent,
     LatestNewsComponent,
-    HomeNewComponent,
     TypePageComponent,
     SocialMediaComponent,
     ImageDownloadComponent,

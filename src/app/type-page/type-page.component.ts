@@ -14,14 +14,18 @@ export class TypePageComponent implements OnInit {
   typeMessages:Message[] = [];
   constructor(private homePageService:HomePageService,private activeRoute: ActivatedRoute,private router:Router) { }
   ngAfterViewInit(): void {
+    
+  }
+  ngOnInit(): void {
+    window.scroll({
+      top : 0
+    });
+    this.activeRoute.paramMap.subscribe(data =>{
+      this.id = data.get("id");
+    });
     this.homePageService.getFilterType(this.id,this.pageNumber).subscribe(data => {
       this.typeMessages = data.content;
     });
-  }
-  ngOnInit(): void {
-    this.activeRoute.paramMap.subscribe(data =>{
-      this.id = data.get("id");
-    })
   }
   koproq(){
     this.pageNumber =  this.pageNumber + 1;

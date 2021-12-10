@@ -21,9 +21,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
+    window.scroll({
+      top : 0
+    });
     this.homePageService.getAll().subscribe(data => {
       this.homePageMessages = data;
       this.homePageMessageLevel10 = [this.homePageMessages[0]];
@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.homePageMessageLevel8 = [this.homePageMessages[7],this.homePageMessages[8],this.homePageMessages[9],
       this.homePageMessages[10],this.homePageMessages[11],this.homePageMessages[12]];
     });
+  }
+
+  ngAfterViewInit(): void {
+    
   }
   openMessage(id: any){
     this.router.navigate(['message', id]);

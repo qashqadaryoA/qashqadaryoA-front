@@ -12,7 +12,7 @@
             <div class="card">
                 <div class="title">{{message?.caption}}
                 </div>
-                <img class="img" *ngIf="message?.image == null" src="../../assets/elon.jpg">
+                <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
                 <app-image-download [faylId]="message?.image?.id"></app-image-download>
 
                 <div class="long-text">{{message?.shortText?.shortText}}

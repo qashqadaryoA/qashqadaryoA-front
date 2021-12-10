@@ -41,7 +41,7 @@
                     <div fxFlex="33.3%" *ngFor="let message of typeMessages" fxFlex.sm="33.3%" fxFlex.xs="50%" (click)="openMessage(message?.id)">
                         <a>
                             <div class="card">
-                                <img class="images" *ngIf="message?.image == null" src="../../assets/background-screening.jpg">
+                                <img class="images" *ngIf="message?.image == null" src="../../assets/moon.jpg">
                                 <app-image-download [faylId]="message?.image?.id"></app-image-download>
                                 <div class="data-time2">
                                     <i class="far fa-newspaper" id="icon-newspaper2"></i>

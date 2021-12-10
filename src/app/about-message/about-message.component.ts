@@ -18,6 +18,9 @@ export class AboutMessageComponent implements OnInit {
     
   }
   ngOnInit(): void {
+    window.scroll({
+      top : 0
+    })
     this.activeRoute.paramMap.subscribe(data =>{
       this.id = data.get("id");
     });
@@ -36,4 +39,5 @@ export class AboutMessageComponent implements OnInit {
   openMessage(id: any){
     this.router.navigate(['message', id]);
   }  
+  
 }
