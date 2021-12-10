@@ -13,7 +13,13 @@
                 </ul>
             </div>
             <div class="float-right">
-  
+
+              <div class="language" style="display: inline;">
+                <select name="languages" id="languages">
+                  <option value="1">УЗ</option>
+                  <option value="2">UZ</option>
+                </select>
+              </div>
 
                 <a class="nav-search" routerLink="find"><svg xmlns="http://www.w3.org/2000/svg" width="26.301"
                         height="25.669" viewBox="0 0 26.301 25.669">
@@ -25,24 +31,13 @@
                 <span (click)="sideNavOpen.emit(true)" class="menu-icon"><i class="fas fa-bars"></i></span>
             </div>
 
-<div class="tuman">
+
+      <div class="tuman">
         <ul class="list">
-            <li>Kitob</li>
-            <li>Beshkent</li>
-            <li>G'uzor</li>
-            <li>Kitob</li>
-            <li>Beshkent</li>
-            <li>G'uzor</li>
-            <li>Kitob</li>
-            <li>Beshkent</li>
-            <li>G'uzor</li>
-            <li>Kitob</li>
-            <li>Beshkent</li>
-            <li>G'uzor</li>
+          <li *ngFor="let tuman of tumans"><a (click)="openTuman(tuman?.id)">{{tuman?.name}}</a></li> 
         </ul>
+      </div>
     </div>
-        </div>
-   
-    </div>
- 
+  </div>
+
 </nav>

@@ -15,10 +15,10 @@
                 </div>
 
                 <div fxLayout="row wrap">
-                    <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%" fxLayoutGap="10px">
+                    <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%" fxLayoutGap="10px" (click)="openMessage(message?.id)">
                         <div fxLayout="row" class="margin-t">
                             <div fxFlex="2 1 0" class="card-img">
-                                <img class="img2" *ngIf="message?.image == null" src="../../assets/images (5).jpg">
+                                <img class="img2" *ngIf="message?.image == null" src="../../assets/moon.jpg">
                                 <app-image-download [faylId]="message?.image?.id"></app-image-download>
                             </div>
                             <div fxFlex="3 1 0">

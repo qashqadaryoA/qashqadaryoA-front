@@ -1,14 +1,16 @@
-.container{
-    margin: auto;
+.social-media-links{
+    margin: auto !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
 }
+
+
 
 @media screen and (max-width: 1520px) {
     
     //this
-    .container{
+    .social-media-links{
         width: 95% !important;
-        margin: auto;
-    
     }
 
 
@@ -16,7 +18,7 @@
 @media screen and (min-width: 1520px) {
     
     //this
-    .container{
+    .social-media-links{
         width: 1350px !important;
     }
 
@@ -59,3 +61,7 @@ span{
     position: relative;
     top: -8px;
 }
+div{
+    display: inline;
+}
+

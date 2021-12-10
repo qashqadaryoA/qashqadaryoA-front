@@ -1,118 +1,36 @@
-<!-- <label for="" class="contact-input">
-    <input type="text" placeholder="Қидирув">
-    <button type="submit" class="btn">
-      <span>Submit</span>
-    </button>
-</label> -->
-
-<!-- <form action="/action_page.php" method="get" id="form1"> -->
 <body>
     <div class="container">
-        <header>
-            <div class="search-form1">
-                <form id="search-form">
-                    <label for="search-text"></label>
-                    <input type="text" id="search-text" name="search-text" placeholder="Қидирув">
-                    <button type="submit" id="search-submit-btn">
-                        <i class="fas fa-search"></i>         
-                    </button>
-                </form>
+        <div class="title">
+            <div class="wrap">
+                <div class="search">
+                <input type="text" id="input" class="searchTerm" placeholder="Қидириш">
+                <button type="submit" class="searchButton" (click)="search()">
+                    <i class="fa fa-search"></i>
+                </button>
+                </div>
             </div>
-        </header>
-        <main>
-            <div class="boxes">
+        </div>
+        <div fxLayout="row wrap" class="messages">
+            <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message.id)" *ngFor="let message of searchMessages">
+                <div class="card">
+                    <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                    <app-image-download [faylId]="message?.image?.id"></app-image-download>
+                    <div class="data-time">
+                        <i class="far fa-newspaper" id="icon-newspaper"></i>
+                        <span class="type">
+                            {{message?.types?.name}}</span>/ {{message?.dateTime}}
+                    </div>
+                    <div class="text2">
+                        {{message?.caption}}
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                <div class="box">
-                    <div class="box-img">
-                        <img src="../../assets/elon.jpg" alt="">
-                    </div>
-                    <div class="box-text">
-                        <div class="box-time">
-                            <div class="box-time-logo">
-                                <i class="far fa-calendar"></i>             
-                            </div>
-                            <div class="box-time-text">
-                                <span>18:21/22.11.2021</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom-text">
-                            <span>Млар аввал ва ҳозир: Магнатлар ўз ўрнини йўқотмоқда, ақл ғолиб чиқяпти</span>
-                        </div>
-                    </div>
+        <div fxLayoutGap="10px">
+                <div class="button-card">
+                    <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
                 </div>
-                <div class="box">
-                    <!-- <div class="box-img"> -->
-                        <img src="../../assets/elon.jpg" alt="">
-                    <!-- </div> -->
-                    <div class="box-text">
-                        <div class="box-time">
-                            <div class="box-time-logo">
-                                <i class="far fa-calendar"></i>             
-                            </div>
-                            <div class="box-time-text">
-                                <span>18:21/22.11.2021</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom-text">
-                            <span>Миллиардерлар аввал ва ҳозир: Магнатлар ўз ўрнини йўқотмоқда, ақл ғолиб чиқяпти</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <!-- <div class="box-img"> -->
-                        <img src="../../assets/elon.jpg" alt="">
-                    <!-- </div> -->
-                    <div class="box-text">
-                        <div class="box-time">
-                            <div class="box-time-logo">
-                                <i class="far fa-calendar"></i>             
-                            </div>
-                            <div class="box-time-text">
-                                <span>18:21/22.11.2021</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom-text">
-                            <span>лар аввал ва ҳозир: Магнатлар ўз ўрнини йўқотмоқда, ақл ғолиб чиқяпти</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <!-- <div class="box-img"> -->
-                        <img src="../../assets/elon.jpg" alt="">
-                    <!-- </div> -->
-                    <div class="box-text">
-                        <div class="box-time">
-                            <div class="box-time-logo">
-                                <i class="far fa-calendar"></i>             
-                            </div>
-                            <div class="box-time-text">
-                                <span>18:21/22.11.2021</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom-text">
-                            <span>лар аввал ва ҳозир: Магнатлар ўз ўрнини йўқотмоқда, ақл ғолиб чиқяпти</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <!-- <div class="box-img"> -->
-                        <img src="../../assets/elon.jpg" alt="">
-                    <!-- </div> -->
-                    <div class="box-text">
-                        <div class="box-time">
-                            <div class="box-time-logo">
-                                <i class="far fa-calendar"></i>             
-                            </div>
-                            <div class="box-time-text">
-                                <span>18:21/22.11.2021</span>
-                            </div>
-                        </div>
-                        <div class="box-bottom-text">
-                            <span>лар аввал ва ҳозир: Магнатлар ўз ўрнини йўқотмоқда, ақл ғолиб чиқяпти</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+        </div>
     </div>
 </body>

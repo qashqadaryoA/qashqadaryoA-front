@@ -8,19 +8,43 @@
 .container{
     margin: auto;
 }
-.nav-links{
-    cursor: pointer;
-}
+// .nav-links{
+//     cursor: pointer;
+// }
 
 
 //til
   
-  /* Dropdown */
+  .language select{
+      width: 40px;
+      height: 30px;
+      border-radius: 10px;
+      border: none;
+      position: relative;
+      top: -7px;
+      margin-right: 40px;
+      transition: 0.2s all;
+
+  }
+
   
-//ss
+@media screen and (max-width: 835px) {
+    .language select{
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+    }  
+}
+@media screen and (max-width: 700px) {
+    .language select{
+        width: 40px;
+        height: 25px;
+        margin-right: 20px;
+    }  
+}
 
 
-  
+//container bu o'zgartirilmaydi
 @media screen and (max-width: 1520px) {
     
     //this
@@ -41,6 +65,7 @@
 
 
 }
+//tepadagi container bu o'zgartirilmaydi
 
 .navbar{
     width: 100%;
@@ -54,7 +79,9 @@
 .navbar-brand{
     display: inline;
 }
-
+li{
+    cursor: pointer;
+}
 
 .navbar .navbar-brand img{
     width: 40px;
@@ -124,7 +151,7 @@
 }
 .list li{
     display: inline-block !important;
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: 400;
     color: rgb(255, 255, 255);
 }
@@ -156,7 +183,7 @@
     .logo-img{
        position: absolute;
        left: 45%;
-       top: 8px;
+       top: 8px;    
     }
 
     .search-icon{
@@ -166,6 +193,10 @@
         width: 30px;
         list-style: none;
         color: #fff !important;
+    }
+
+    .language select{
+        display: none;
     }
 
 }
