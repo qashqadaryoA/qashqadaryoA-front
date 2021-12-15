@@ -82,17 +82,18 @@ section{
 }
 
 .text-title{
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     margin-top: 10px;
     color: black;
-    line-height: 1.4;
+    line-height: 1.2;
 }
 
 .text-paragraf{
     color: rgba(0, 0, 0, 0.801);
     margin-top: 15px;
     line-height: 1.6;
+    font-size: 14px;
 }
 
 // Qushimcha xabar yozilgan qator
@@ -134,8 +135,19 @@ section{
 
 
 
+
+@media screen and (max-width: 850px) {
+    .text-title{
+        font-size: 18px !important;
+        line-height: 1.2 !important;
+    }
+    
+    .text-paragraf{
+        font-size: 13px !important;
+    }
+}
 // Ipad ga moslab yozilgan qator
-@media screen and (max-width: 959px) {
+    @media screen and (max-width: 959px) {
 
 // Asosiy yangilik yozilgan qator
 
@@ -176,8 +188,9 @@ section{
 .text-paragraf{
     color: rgba(63, 60, 60, 0.801);
     margin-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
 }
+
     
 // Qushimcha xabar yozilgan qator
 

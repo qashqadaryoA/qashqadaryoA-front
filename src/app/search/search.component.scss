@@ -90,6 +90,8 @@
     text-transform: capitalize;
     line-height: 30px;
     font-weight: 400;
+    
+    transition: all 0.2s;
 }
 .text2{
     width: 95%;
@@ -97,6 +99,7 @@
     font-size: 16px;
     line-height: 18px;
     font-weight: 500;
+    transition: all 0.2s;
 }
 
 .button-card{
@@ -196,6 +199,16 @@
         height: 130px;
     }
 }
+@media screen and (max-width: 835px) {
+    .type{
+        font-size: 11px !important;
+    }
+    .text2{
+        font-size: 13px !important;
+    }
+
+}
+
 @media screen and (max-width: 800px) {
 
     .img{
