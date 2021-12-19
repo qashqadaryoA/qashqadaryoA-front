@@ -346,6 +346,21 @@
     font-weight: 500;
     line-height: 20px;
 }
+}
+.reklama{
+    width:70%;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+}
 
 
+@media screen and (max-width: 599px) {
+    .reklama{
+    width:90%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+    margin-top: 20px;
+}
 }

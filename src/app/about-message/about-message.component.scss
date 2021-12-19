@@ -2,6 +2,9 @@
 .container1{
     margin: auto;
 }
+.long-text figure{
+    max-width: 100px;
+}
 @media screen and (max-width: 1520px) {
     .container1{
         width: 95% !important;
@@ -56,4 +59,21 @@
     font-size: medium;
     color: #2344ff;
     margin: auto;
+}
+.reklama{
+    width:70%;
+    height: 100px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+
+@media screen and (max-width: 599px) {
+    .reklama{
+    width:90%;
+    height: 100px;
+    margin: auto;
+    background-color: black;
+    margin-top: 20px;
+}
 }

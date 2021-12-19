@@ -16,11 +16,9 @@ export class MostViewComponent implements OnInit,AfterViewInit {
       this.viewMessages = data.content;
     });
   }
-
   ngOnInit(): void {
   }
-
-  openMessage(id: any){
-    this.router.navigate(['message', id]);
-  }  
+  openMessage(id:any,caption:any){
+    this.router.navigate(["message",id,caption]);
+  }
 }

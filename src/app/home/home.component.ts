@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Message } from '../model/message';
+import { NavbarService } from '../navbar/navbar.service';
 import { HomePageService } from './home.service';
 
 @Component({
@@ -13,9 +14,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   homePageMessageLevel10: Message[] = [];
   homePageMessageLevel9: Message[] = [];
   homePageMessageLevel8: Message[] = [];
+  reklama1:any;
+  reklama2:any;
   constructor(
     public homePageService: HomePageService,
-    private router:Router
+    private router:Router, 
+    private navbarService:NavbarService
   ) {
 
   }
@@ -32,12 +36,29 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.homePageMessageLevel8 = [this.homePageMessages[7],this.homePageMessages[8],this.homePageMessages[9],
       this.homePageMessages[10],this.homePageMessages[11],this.homePageMessages[12]];
     });
+    this.navbarService.getAllAdversitement().subscribe(data => {
+      if(data.length>0){
+        if(data.length==2){
+          this.reklama1 = data[0];
+          this.reklama2 = data[1];
+        }
+        else{
+          if(data[0].daraja==1){
+            this.reklama1=data[0];
+          }
+          else{
+            this.reklama2=data[0];
+          }
+        }
+      }
+    });
   }
-
-  ngAfterViewInit(): void {
-    
+  openMessage(id:any,caption:any){
+    this.router.navigate(["message",id,caption]);
   }
-  openMessage(id: any){
-    this.router.navigate(['message', id]);
+  ngAfterViewInit(): void {    
   }  
+  rekOpen(url:any){
+    location.href=url;
+  }
 }

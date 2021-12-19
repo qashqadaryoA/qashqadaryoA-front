@@ -10,14 +10,15 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'find', component: SearchComponent },
   {
-    path: 'type/:id',
+    path: 'type/:id/:nom',
     component: TypePageComponent
   },
   {
-    path: 'tuman/:id',
+    path: 'tuman/:id/:nom',
     component: TumanPageComponent
   },
-  { path: 'message/:id', component: AboutMessageComponent},
+  { path: 'message/:id/:nom', 
+  component: AboutMessageComponent},
   { path: '**', component: HomeComponent}
 ];
 

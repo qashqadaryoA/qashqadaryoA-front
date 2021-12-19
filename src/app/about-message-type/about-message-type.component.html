@@ -3,10 +3,13 @@
         Shunga оид сўнги янгиликлар
     </div>
     <div fxLayout="row wrap">
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let message of hashtagMessages" (click)="openMessage(message?.id)">
+        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let message of hashtagMessages" (click)="openMessage(message?.id,message?.caption)">
             <div class="card">
                 <img class="img" src="../../assets/moon.jpg">
-                <div class="data-time">
+                <div style="display: inline-block;" *ngIf="message?.image != null" class="img">
+                    <app-image-download  [fayl]="message?.image"></app-image-download>
+                  </div>                
+                  <div class="data-time">
                     <i class="far fa-newspaper" id="icon-newspaper"></i>
                     <span class="type">{{message?.types?.name}}
                         </span>/ {{message?.dateTime}}

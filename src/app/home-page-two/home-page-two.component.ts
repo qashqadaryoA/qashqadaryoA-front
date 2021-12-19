@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HomePageTwoService } from './home-page-two.service';
 
 @Component({
@@ -7,8 +7,7 @@ import { HomePageTwoService } from './home-page-two.service';
   styleUrls: ['./home-page-two.component.scss']
 })
 export class HomePageTwoComponent implements OnInit {
-  youtubeLinks!:any;
-  lo:any="https://www.youtube.com/embed/zcAalMeaKso";
+  youtubeLinks:any;
   constructor(private homePageTwoService:HomePageTwoService) { }
   ngAfterViewInit(): void {
     this.homePageTwoService.getAll().subscribe(data => {

@@ -12,20 +12,24 @@ export class AboutMessageTypeComponent implements OnInit,AfterViewInit {
   @Input("hashtags") hashtags!: any;
   hashtagMessages:any=[];
   pageNumber: number = 1;
-  constructor(private homePageService: HomePageService,private router: Router) { }
+  id:any;
+  constructor(private homePageService: HomePageService,private router: Router,private activeRoute:ActivatedRoute) { }
   ngAfterViewInit(): void {
-    this.koproq();
   }
   ngOnInit(): void {
-
+    this.activeRoute.paramMap.subscribe(data =>{
+      this.id = data.get("id");
+      this.pageNumber=1;
+      this.hashtagMessages=[];
+      this.koproq();
+    });  
   }
-  openMessage(id: any) {
-    this.router.navigate(['message', id]);
+  openMessage(id:any,caption:any){
+    this.router.navigate(["message",id,caption]);
   }
-
   koproq() {
     if(this.hashtags!=null){
-      if (this.hashtags.length == 4) {
+      if (this.hashtags.length > 3) {
         this.homePageService.getFilterHashtags(this.hashtags[0].hashtag, this.hashtags[1].hashtag, this.hashtags[2].hashtag, this.hashtags[3].hashtag, this.pageNumber).subscribe(data => {
           this.hashtagMessages = this.hashtagMessages.concat(data.content);
         });
@@ -46,8 +50,6 @@ export class AboutMessageTypeComponent implements OnInit,AfterViewInit {
         });
       }
       this.pageNumber=this.pageNumber+1;
-    }
-    
+    }    
   }
-
 }

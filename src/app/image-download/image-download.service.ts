@@ -16,7 +16,7 @@ export class ImageDownloadService {
     return this.http.get<any>(this.api, { params: { 'sort': sort } });
   }
   download(fileName: string | undefined): Observable<Blob> {
-    return  this.http.get(this.api + "/download/"+fileName,  { responseType: 'blob' });
+    return  this.http.get(this.api +fileName,  { responseType: 'blob' });
   }
 
 }

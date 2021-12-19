@@ -27,11 +27,4 @@ export class NavbarComponent implements OnInit {
       this.tumans = data;
     });
   }
-  openType(id: any){
-    this.router.navigate(['type', id]);
-  }
-  openTuman(id: any){
-    this.router.navigate(['tuman', id])
-  }
-
 }

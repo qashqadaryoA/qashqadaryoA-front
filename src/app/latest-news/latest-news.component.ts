@@ -12,15 +12,15 @@ export class LatestNewsComponent implements OnInit,AfterViewInit {
   latestNewsMessages:Message[] = [];
   constructor(private homePageService:HomePageService,private router:Router) { }
   ngAfterViewInit(): void {
+    
+  }
+
+  ngOnInit(): void {
     this.homePageService.getLatestNews(0).subscribe(data => {
       this.latestNewsMessages = data.content;
     });
   }
-
-  ngOnInit(): void {
+  openMessage(id:any,caption:any){
+    this.router.navigate(["message",id,caption]);
   }
-
-  openMessage(id: any){
-    this.router.navigate(['message', id]);
-  }  
 }

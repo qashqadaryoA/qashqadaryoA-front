@@ -23,8 +23,7 @@ import { AboutMessageComponent } from './about-message/about-message.component';
 import { AboutMessageRelatedToTheSubjectComponent } from './about-message-related-to-the-subject/about-message-related-to-the-subject.component';
 import { AboutMessageTypeComponent } from './about-message-type/about-message-type.component';
 import { TumanPageComponent } from './tuman-page/tuman-page.component';
-
-
+import { YoutubePipe } from './youtube.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +43,8 @@ import { TumanPageComponent } from './tuman-page/tuman-page.component';
     AboutMessageComponent,
     AboutMessageRelatedToTheSubjectComponent,
     AboutMessageTypeComponent,
-    TumanPageComponent
+    TumanPageComponent,
+    YoutubePipe,
   ],
   imports: [
     BrowserModule,

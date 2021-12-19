@@ -7,11 +7,25 @@
                 <button type="submit" class="searchButton" (click)="search()">
                     <i class="fa fa-search"></i>
                 </button>
+            </div>
+         </div>
+    </div>
+    <div fxLayout="row wrap" class="messages">
+        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id,message?.caption)" *ngFor="let message of searchMessages">
+            <div class="card">
+                <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <div style="display: inline-block;" class="images" *ngIf="message?.image != null">
+                    <app-image-download  [fayl]="message?.image"></app-image-download>
+                  </div>
+                  <div class="data-time">
+                    <i class="far fa-newspaper" id="icon-newspaper"></i>
+                    <span class="type">
+                        {{message?.types?.name}}</span>/ {{message?.dateTime}}
                 </div>
             </div>
         </div>
         <div fxLayout="row wrap" class="messages">
-            <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message.id)" *ngFor="let message of searchMessages">
+            <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message.id,message.caption)" *ngFor="let message of searchMessages">
                 <div class="card">
                     <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
                     <app-image-download [faylId]="message?.image?.id"></app-image-download>
@@ -33,4 +47,5 @@
                 </div>
         </div>
     </div>
+</div>
 </body>

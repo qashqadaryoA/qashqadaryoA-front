@@ -18,6 +18,9 @@ export class NavbarService {
   getAllTumanStatus():Observable<any> {
     return this.http.get<any>(this.api+"/tuman/status");
   }
+  getAllAdversitement():Observable<any> {
+    return this.http.get<any>(this.api+"/advertisement/people");
+  }
   navigation(){
     this.messager.next(true);
   }

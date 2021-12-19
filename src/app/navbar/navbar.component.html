@@ -8,7 +8,7 @@
             </div>
             <div class="nav-links">
                 <ul>
-                    <li *ngFor="let type of types"><a  class="navbar-color" (click)="openType(type.id)">{{type?.name}}</a></li>
+                    <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
 
                 </ul>
             </div>
@@ -31,10 +31,9 @@
                 <span (click)="sideNavOpen.emit(true)" class="menu-icon"><i class="fas fa-bars"></i></span>
             </div>
 
-
       <div class="tuman">
         <ul class="list">
-          <li *ngFor="let tuman of tumans"><a (click)="openTuman(tuman?.id)">{{tuman?.name}}</a></li> 
+          <li *ngFor="let tuman of tumans"><a class="tuman-a" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li> 
         </ul>
       </div>
     </div>
