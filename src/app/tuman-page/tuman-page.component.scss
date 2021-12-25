@@ -96,9 +96,10 @@
     margin-top: 30px;
 }
 .reklama{
-    width:70%;
-    height: 100px;
+    width:75% !important;
+    height: 140px !important;
     margin: auto;
+    margin-top: 20px !important;
     background-color: black;
 }
 .reklama h1{
@@ -176,7 +177,10 @@
 
 @media screen and (max-width: 959px) {
     .reklama{
-        margin-top: 20px;
+        width:85% !important;
+        height: 90px !important;
+        margin: auto !important;
+        margin-top: 20px !important;
     }
     .card-img{
         display: flex;
@@ -292,7 +296,7 @@
 
 .reklama{
     width:90%;
-    height: 100px;
+    height: 600px;
     margin: auto;
     background-color: black;
     margin-top: 20px;

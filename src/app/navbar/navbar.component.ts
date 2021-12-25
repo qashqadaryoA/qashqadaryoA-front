@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { AppModule } from '../app.module';
 import { Tuman } from '../model/tuman';
 import { Types } from '../model/types';
 import { TypePageComponent } from '../type-page/type-page.component';
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
   types:Types[] = [];
   tumans:Tuman[] = [];
   constructor(private navbarService:NavbarService, 
-       private router: Router) { }
+       private router: Router,
+       public app:AppModule) { }
   ngOnInit(): void {
     this.navbarService.getAllTypeStatus().subscribe(data => {
       this.types = data;
@@ -26,5 +28,8 @@ export class NavbarComponent implements OnInit {
     this.navbarService.getAllTumanStatus().subscribe(data => {
       this.tumans = data;
     });
+  }
+  til(){
+    
   }
 }

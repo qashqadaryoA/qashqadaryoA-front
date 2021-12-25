@@ -11,7 +11,6 @@
           <div class="flex-container" *ngIf="homePageMessageLevel10[0]!=null"
             [routerLink]='["message",homePageMessageLevel10[0]?.id,homePageMessageLevel10[0]?.caption]' fxLayout="row"
             fxLayout.xs="column" class="main-message">
-
             <div fxFlex="2 1 0">
               <a>
                 <img class="img" *ngIf="homePageMessageLevel10[0]?.image == null" src="../../assets/moon.jpg">
@@ -27,13 +26,19 @@
                 <div class="text">
                   <div class="data-time">
                     <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                      {{homePageMessageLevel10[0]?.types?.name}}</span>&nbsp; / &nbsp;
+                    <span class="type" *ngIf="!app.lotin">
+                      {{homePageMessageLevel10[0]?.types?.name}}</span>
+                      <span class="type" *ngIf="app.lotin">
+                        {{homePageMessageLevel10[0]?.types?.name | translate}}</span>&nbsp; / &nbsp;
                     {{homePageMessageLevel10[0]?.dateTime}}
                   </div>
-                  <div class="text-title">{{homePageMessageLevel10[0]?.caption}}
+                  <div *ngIf="!app.lotin" class="text-title">{{homePageMessageLevel10[0]?.caption}}
                   </div>
-                  <div class="text-paragraf">{{homePageMessageLevel10[0]?.shortText?.shortText}}
+                  <div *ngIf="app.lotin" class="text-title">{{homePageMessageLevel10[0]?.caption | translate}}
+                  </div>
+                  <div *ngIf="!app.lotin" class="text-paragraf">{{homePageMessageLevel10[0]?.shortText?.shortText}}
+                  </div>
+                  <div *ngIf="app.lotin" class="text-paragraf">{{homePageMessageLevel10[0]?.shortText?.shortText | translate}}
                   </div>
                 </div>
               </a>
@@ -54,11 +59,16 @@
                   </div>
                   <div class="data-time2">
                     <i class="far fa-newspaper" id="icon-newspaper2"></i>
-                    <span class="type2">
-                      {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
+                    <span *ngIf="!app.lotin" class="type2">
+                      {{message?.types?.name}}</span>
+                      <span *ngIf="app.lotin" class="type2">
+                        {{message?.types?.name | translate}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
                   </div>
-                  <div class="text2">
+                  <div *ngIf="!app.lotin" class="text2">
                     {{message?.caption}}
+                  </div>
+                  <div *ngIf="app.lotin" class="text2">
+                    {{message?.caption | translate}}
                   </div>
                 </div>
               </a>

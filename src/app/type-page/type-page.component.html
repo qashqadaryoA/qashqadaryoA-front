@@ -8,8 +8,11 @@
     <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
       <div fxFlex="5.5 1 0">
 
-        <div class="title">
+        <div class="title" *ngIf="!app.lotin">
           {{typeMessages[0]?.types?.name}} турга оид сўнги янгиликлар
+        </div>
+        <div class="title" *ngIf="app.lotin">
+          {{typeMessages[0]?.types?.name | translate}} turga oid so'ngi yangiliklar
         </div>
         <!-- <div class="flex-container" fxLayout="row" fxLayout.xs="column" class="main-message">
                     <div fxFlex="2 1 0">
@@ -52,10 +55,14 @@
                 </div>
                 <div class="data-time2">
                   <i class="far fa-newspaper" id="icon-newspaper2"></i>
-                  <span class="type2">
-                    {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
+                  <span class="type2" *ngIf="!app.lotin">
+                    {{message?.types?.name}}</span>
+                    <span class="type2" *ngIf="app.lotin">
+                      {{message?.types?.name | translate}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
                 </div>
-                <div class="text2">{{message?.caption}}
+                <div class="text2" *ngIf="!app.lotin">{{message?.caption}}
+                </div>
+                <div class="text2" *ngIf="app.lotin">{{message?.caption | translate}}
                 </div>
               </div>
             </a>
@@ -65,7 +72,8 @@
         <div fxLayoutGap="10px">
           <a>
             <div class="button-card">
-              <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+              <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+              <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
             </div>
           </a>
         </div>

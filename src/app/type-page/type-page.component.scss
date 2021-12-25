@@ -97,9 +97,10 @@
     margin-top: 30px;
 }
 .reklama{
-    width:70%;
-    height: 100px;
+    width:75%;
+    height: 140px;
     margin: auto;
+    margin-top: 20px;
     background-color: black;
 }
 .reklama h1{
@@ -176,8 +177,13 @@
 
 
 @media screen and (max-width: 959px) {
-    .reklama{
-        margin-top: 20px;
+
+        .reklama{
+            width:85%;
+            height: 90px;
+            margin: auto;
+            background-color: black;
+            margin-top: 20px;
     }
     .card-img{
         display: flex;
@@ -293,7 +299,7 @@
 
 .reklama{
     width:90%;
-    height: 100px;
+    height: 60px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
@@ -347,20 +353,7 @@
     line-height: 20px;
 }
 }
-.reklama{
-    width:70%;
-    height: 100px;
-    margin: auto;
-    margin-bottom: 20px;
-}
 
 
-@media screen and (max-width: 599px) {
-    .reklama{
-    width:90%;
-    height: 100px;
-    margin: auto;
-    background-color: black;
-    margin-top: 20px;
-}
-}
+
+

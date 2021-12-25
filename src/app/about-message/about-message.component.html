@@ -1,37 +1,54 @@
+<div style="display: none;" id="div"></div>  
+
+
 <div class="container1">
   <div class="reklama" (click)="rekOpen(reklama1?.address)" *ngIf="reklama1!=null">
     <app-image-download 
     [fayl]="reklama1?.filename"></app-image-download>
   </div>
   <div fxLayout="row wrap">
-    <div fxFlex="22%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.sm="3" fxFlexOrder.xs="3">
-      <app-most-view></app-most-view>
+    <div fxFlex="22%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.xs='3' fxFlexOrder.sm="3" >
+      <app-most-view class="most"></app-most-view>
     </div>
-    <div style="background: #ffffff;" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.sm="1"
-      fxFlexOrder.xs="1">
-      <div class="data-time">
+    <div class="flex-boxx" style="background: #ffffff;" fxFlex="50%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.xs='1' fxFlexOrder.sm="1" >
+      <div class="data-time" *ngIf="!appModule.lotin">
         <i class="far fa-newspaper" id="icon-newspaper"></i>
-        <span class="type">
+        <span class="type" >
           {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}} &nbsp;&nbsp;<i class="far fa-eye"></i>
         {{message?.view}}
       </div>
+      <div class="data-time" *ngIf="appModule.lotin">
+        <i class="far fa-newspaper" id="icon-newspaper"></i>
+        <span class="type" >
+          {{message?.types?.name | translate}}</span>&nbsp; / &nbsp; {{message?.dateTime}} &nbsp;&nbsp;<i class="far fa-eye"></i>
+        {{message?.view}}
+      </div>
       <div class="card">
-        <div class="title">{{message?.caption}}
+        <div class="title" [innerText]="message?.caption" *ngIf="!appModule.lotin">
+        </div>
+        <div class="title" [innerText]="message?.caption | translate" *ngIf="appModule.lotin">
         </div>
         <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
         <div style="display: inline-block;" *ngIf="message?.image != null" class="img">
           <app-image-download  [fayl]="message?.image"></app-image-download>
         </div>
-        <div class="long-text">{{message?.shortText?.shortText}}
+        <div *ngIf="!appModule.lotin" class="long-text">{{message?.shortText?.shortText}}
         </div>
-        <div class="long-text" [innerHtml]="message?.fullText?.fullText">
+        <div *ngIf="appModule.lotin" class="long-text">{{message?.shortText?.shortText | translate}}
+        </div>
+        <div class="long-text" *ngIf="!appModule.lotin" [innerHtml]="malumot | urlFilter"> 
+        </div>
+        <div class="long-text" *ngIf="appModule.lotin" [innerHtml]="malumot | urlFilterLotin"> 
         </div>
       </div>
-      <div class="hashtag">
+      <div class="hashtag" *ngIf="!appModule.lotin">
         <span *ngFor="let element of hashtags" class="span-padding">#{{element.hashtag}}</span>
       </div>
+      <div class="hashtag" *ngIf="appModule.lotin">
+        <span *ngFor="let element of hashtags" class="span-padding">#{{element.hashtag | translate}}</span>
+      </div>
     </div>
-    <div fxFlex="28%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.sm="2" fxFlexOrder.xs="2">
+    <div fxFlex="28%" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.xs='2' fxFlexOrder.sm="2" >
       <app-about-message-related-to-the-subject *ngIf="hashtags!=null" [hashtags]="hashtags">
       </app-about-message-related-to-the-subject>
     </div>

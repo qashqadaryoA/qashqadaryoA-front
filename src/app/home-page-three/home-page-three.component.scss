@@ -96,12 +96,15 @@
 .margin-t{
     margin-top: 30px;
 }
+
 .reklama{
-    width:70%;
-    height: 100px;
+    width:75%;
+    height: 140px;
     margin: auto;
-    background-color: black;
+    margin-bottom: 20px;
 }
+
+
 .reklama h1{
     color: #fff;
     text-align: center;
@@ -141,9 +144,17 @@
 
 
 @media screen and (max-width: 959px) {
+
+
     .reklama{
+        width:85%;
+        height: 90px;
+        margin: auto;
+        margin-bottom: 20px;
         margin-top: 20px;
     }
+
+    
     .card-img{
         display: flex;
         align-items: center;
@@ -213,11 +224,12 @@
 
 .reklama{
     width:90%;
-    height: 100px;
+    height: 60px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
 }
+
 .text-paragraf{
     display:none;
 }

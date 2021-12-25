@@ -7,17 +7,18 @@
                 <!-- <a href="#">{{siteName}}</a> -->
             </div>
             <div class="nav-links">
-                <ul>
-                    <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
-
-                </ul>
+              <ul *ngIf="!app.lotin">
+                  <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
+              </ul>
+              <ul *ngIf="app.lotin">
+                  <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
+              </ul>
             </div>
             <div class="float-right">
-
               <div class="language" style="display: inline;">
-                <select name="languages" id="languages">
-                  <option value="1">УЗ</option>
-                  <option value="2">UZ</option>
+                <select name="languages" (select)="til()" id="languages">
+                  <option value="Ўзбекча">Ўзбекча</option>
+                  <option value="Lotincha">Lotincha</option>
                 </select>
               </div>
 
@@ -32,8 +33,11 @@
             </div>
 
       <div class="tuman">
-        <ul class="list">
+        <ul class="list" *ngIf="!app.lotin">
           <li *ngFor="let tuman of tumans"><a class="tuman-a" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li> 
+        </ul>
+        <ul class="list" *ngIf="app.lotin">
+          <li *ngFor="let tuman of tumans"><a class="tuman-a" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name | translate}}</a></li> 
         </ul>
       </div>
     </div>

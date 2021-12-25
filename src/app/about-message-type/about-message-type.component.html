@@ -1,27 +1,35 @@
 <div class="container">
-    <div class="title">
-        Shunga оид сўнги янгиликлар
-    </div>
-    <div fxLayout="row wrap">
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let message of hashtagMessages" (click)="openMessage(message?.id,message?.caption)">
-            <div class="card">
-                <img class="img" src="../../assets/moon.jpg">
-                <div style="display: inline-block;" *ngIf="message?.image != null" class="img">
-                    <app-image-download  [fayl]="message?.image"></app-image-download>
-                  </div>                
-                  <div class="data-time">
-                    <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">{{message?.types?.name}}
-                        </span>/ {{message?.dateTime}}
-                </div>
-                <div class="text2">{{message?.caption}}</div>
-            </div>
+  <div *ngIf="!app.lotin" class="title">
+    Shunga оид сўнги янгиликлар
+  </div>
+  <div *ngIf="app.lotin" class="title">
+    Shunga oid so'ngi yangiliklar
+  </div>
+  <div fxLayout="row wrap">
+    <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let message of hashtagMessages"
+      (click)="openMessage(message?.id,message?.caption)">
+      <div class="card">
+        <img class="img" src="../../assets/moon.jpg">
+        <div style="display: inline-block;" *ngIf="message?.image != null" class="img">
+          <app-image-download [fayl]="message?.image"></app-image-download>
         </div>
+        <div  class="data-time">
+          <i class="far fa-newspaper" id="icon-newspaper"></i>
+          <span class="type" *ngIf="!app.lotin">{{message?.types?.name}}
+        </span>
+        <span class="type" *ngIf="app.lotin">{{message?.types?.name | translate}}
+        </span>/ {{message?.dateTime}}
+        </div>
+        <div *ngIf="!app.lotin" class="text2">{{message?.caption}}</div>
+        <div *ngIf="app.lotin" class="text2">{{message?.caption | translate}}</div>
+      </div>
     </div>
+  </div>
 
-    <div fxLayoutGap="10px">
-            <div class="button-card">
-                <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
-            </div>
+  <div fxLayoutGap="10px">
+    <div class="button-card">
+        <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+        <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
     </div>
+  </div>
 </div>

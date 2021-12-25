@@ -3,20 +3,21 @@
     <div class="valyuta">
         <div class="content-box">
             <div class="valyuta-text">
-                <p>Валюта Курси</p>
+                <p *ngIf="!app.lotin">Валюта Курси</p>
+                <p *ngIf="app.lotin">VAlyuta kursi</p>
             </div>
             <div class="valyutaa">
                 <div>
-                    <span>USD</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
-                    <span class="value">10782.94</span>
+                    <span>{{currency ? currency[23]?.code: "-"}}</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
+                    <span class="value">{{currency ? currency[23]?.cb_price: "-"}}</span>
                 </div>
                 <div>
-                    <span>EUR</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
-                    <span class="value">12159.13</span>
+                    <span>{{currency ? currency[7]?.code: "-"}}</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
+                    <span class="value">{{currency ? currency[7]?.cb_price: "-"}}</span>
                 </div>
                 <div>
-                    <span>USD</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
-                    <span class="value">145.01</span>
+                    <span>{{currency ? currency[18]?.code: "-"}}</span> <i class="fas fa-arrow-right"></i> <span class="to-uzs">UZS</span>
+                    <span class="value">{{currency ? currency[18]?.cb_price: "-"}}</span>
                 </div>
             </div>
         </div>
@@ -29,26 +30,40 @@
     </div>
 
     <div class="flex-container" fxLayout="row">
-        <div fxFlex="2 1 0">
-            <h2 class="title">Rukunlar</h2>
+        <div fxFlex="2 1 0" *ngIf="!app.lotin">
+            <h2 class="title">Турлар</h2>
             <ul class="list">
                 <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" (click)="openType(type?.id)">{{type?.name}}</a></li>
             </ul>
         </div>
-        <div fxFlex="2 1 0">
-            <h2 class="title">Tumanlar</h2>
+        <div fxFlex="2 1 0" *ngIf="app.lotin">
+            <h2 class="title">Turlar</h2>
+            <ul class="list">
+                <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" (click)="openType(type?.id)">{{type?.name | translate}}</a></li>
+            </ul>
+        </div>
+        <div fxFlex="2 1 0" *ngIf="!app.lotin">
+            <h2 class="title">Туманлар</h2>
             <ul class="list">
                 <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" (click)="openTuman(tuman?.id)">{{tuman?.name}}</a></li>
+            </ul>
+        </div>
+        <div fxFlex="2 1 0" *ngIf="app.lotin">
+            <h2 class="title">Tumanlar</h2>
+            <ul class="list">
+                <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" (click)="openTuman(tuman?.id)">{{tuman?.name | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div class="flex-container-two" fxLayout="row">
         <div fxFlex="2 1 0">
-            <h2 class="sidebar-footer">Sayt Haqida</h2>
+            <h2 class="sidebar-footer" *ngIf="!app.lotin">Сайт Ҳақида</h2>
+            <h2 class="sidebar-footer" *ngIf="app.lotin">Sayt Haqida</h2>
         </div>
         <div fxFlex="2 1 0">
-            <h2 class="sidebar-footer">Reklama</h2>
+            <h2 class="sidebar-footer" *ngIf="!app.lotin">Реклама</h2>
+            <h2 class="sidebar-footer" *ngIf="app.lotin">Reklama</h2>
         </div>
     </div>
 </div>

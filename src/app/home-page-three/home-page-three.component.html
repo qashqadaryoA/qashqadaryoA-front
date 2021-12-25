@@ -1,62 +1,61 @@
 <section class="body">
 
-    <div class="container1">
-        <!-- <div class="reklama">
+  <div class="container1">
+    <!-- <div class="reklama">
             <h1>Reklama</h1>
         </div> -->
-        <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
-        
+    <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
 
-            <div fxFlex="5.5 1 0">
+ 
+      <div fxFlex="5.5 1 0">
 
-                <!-- Qushimcha xabarlar yozilgan qator -->
-                <div class="title">
-                    Қўшимча янгиликлар
-                </div>
-
-                <div fxLayout="row wrap">
-                    <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8"  fxFlex.xs="100%" fxLayoutGap="10px" (click)="openMessage(message?.id,message?.caption)">
-                        <div fxLayout="row" class="margin-t" *ngIf="message!=null">
-                            <div fxFlex="2 1 0" class="card-img">
-                                <img class="img2" *ngIf="message?.image == null" src="../../assets/moon.jpg">
-                                <div style="display: inline-block;" *ngIf="message?.image != null" class="img2">
-                                    <app-image-download [fayl]="message?.image"></app-image-download>
-                                  </div>
-                            </div>
-                            <div fxFlex="3 1 0">
-                                <div class="data-time">
-                                    <i class="far fa-newspaper"></i>
-                                    <span class="type">
-                                        {{message?.types?.name}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
-                                </div>
-                                <div class="text">{{message?.caption}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- button joylashgan qator -->
-                <div fxLayoutGap="10px">
-                    <a>
-                        <div class="button-card">
-                            <button class="button" (click)="koproq()"  mat-flat-button color="primary">Кўпроқ ўқиш</button>
-                        </div>
-                    </a>
-                </div>
-
-
-
-            </div>
-
-
-
-
-
-
-            <!-- Sungi yangiliklar qatori -->
-            <div fxFlex="2 1 0">
-                <app-most-view></app-most-view>
-            </div>
+        <!-- Qushimcha xabarlar yozilgan qator -->
+        <div class="title" *ngIf="!app.lotin">
+          Қўшимча янгиликлар
         </div>
+        <div class="title" *ngIf="app.lotin">
+          Qo'shimcha yangiliklar
+        </div>
+        <div fxLayout="row wrap">
+          <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%"
+            fxLayoutGap="10px" (click)="openMessage(message?.id,message?.caption)">
+            <div fxLayout="row" class="margin-t" *ngIf="message!=null">
+              <div fxFlex="2 1 0" class="card-img">
+                <img class="img2" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <div style="display: inline-block;" *ngIf="message?.image != null" class="img2">
+                  <app-image-download [fayl]="message?.image"></app-image-download>
+                </div>
+              </div>
+              <div fxFlex="3 1 0">
+                <div class="data-time">
+                  <i class="far fa-newspaper"></i>
+                  <span class="type" *ngIf="!app.lotin">
+                    {{message?.types?.name}}</span>
+                  <span class="type" *ngIf="app.lotin">
+                    {{message?.types?.name | translate}}</span>&nbsp; / &nbsp; {{message?.dateTime}}
+                </div>
+                <div class="text" *ngIf="!app.lotin">{{message?.caption}}
+                </div>
+                <div class="text" *ngIf="app.lotin">{{message?.caption | translate}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- button joylashgan qator -->
+        <div fxLayoutGap="10px">
+          <a>
+            <div class="button-card">
+                <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+                <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Sungi yangiliklar qatori -->
+      <div fxFlex="2 1 0">
+        <app-most-view></app-most-view>
+      </div>
     </div>
+  </div>
 </section>

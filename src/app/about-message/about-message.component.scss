@@ -1,9 +1,8 @@
-
+.flex-boxx{
+    box-sizing: border-box !important;    
+}
 .container1{
     margin: auto;
-}
-.long-text figure{
-    max-width: 100px;
 }
 @media screen and (max-width: 1520px) {
     .container1{
@@ -30,6 +29,7 @@
 .img{
     width: 100%;
     height: 380px;
+
 }
 
 .data-time{
@@ -61,19 +61,73 @@
     margin: auto;
 }
 .reklama{
-    width:70%;
-    height: 100px;
+    width:75%;
+    height: 140px;
     margin: auto;
     margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 959px) {
+    .most{
+        display: none;
+    }
+}
+@media screen and (max-width: 1700px) and (min-width:1300px) {
+    .img{
+        height: 400px;
+    }
+}
+@media screen and (max-width: 1299px) and (min-width:971px) {
+    .img{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 970px) and (min-width:800px) {
+    .img{
+        height: 533px;
+    }
+}
+@media screen and (max-width: 799px) and (min-width:600px) {
+    .img{
+        height: 410px;
+    }
+}
+@media screen and (max-width: 599px) and (min-width:400px) {
+    .img{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 399px) {
+    .img{
+        height: 180px;
+    }
+}
+@media screen and (max-width: 959px) {
+    .reklama{
+        width:85%;
+        height: 90px;
+        margin: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
 }
 
 
 @media screen and (max-width: 599px) {
-    .reklama{
+
+.reklama{
     width:90%;
-    height: 100px;
+    height: 60px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
 }
+
+}
+img{
+    width: 100px !important;
+}
+.long-text img{
+    width: 100px !important;
 }

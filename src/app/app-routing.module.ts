@@ -17,13 +17,16 @@ const routes: Routes = [
     path: 'tuman/:id/:nom',
     component: TumanPageComponent
   },
-  { path: 'message/:id/:nom', 
+  { path: 'post/:id/:nom', 
   component: AboutMessageComponent},
   { path: '**', component: HomeComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      scrollPositionRestoration: 'enabled'
+    })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -34,8 +34,8 @@ section{
 
 // Reklama yozilgan qator
 .reklama{
-    width:70%;
-    height: 100px;
+    width:75%;
+    height: 140px;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -210,15 +210,34 @@ section{
     line-height: 16px;
 }
 
+.reklama{
+    width:85%;
+    height: 90px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+
+
 }
 
 
 @media screen and (max-width: 599px) {
     // Reklama Kodi yozilgan qator
 
+    section{
+        background: #FBFBFB ;
+        height: 100%;
+        padding-top: 0px;
+    }
+
+    .flex-container{
+        background:  #FBFBFB;
+        margin-top: 20px;
+    }
     .reklama{
     width:90%;
-    height: 100px;
+    height: 60px;
     margin: auto;
     background-color: black;
     margin-top: 20px;

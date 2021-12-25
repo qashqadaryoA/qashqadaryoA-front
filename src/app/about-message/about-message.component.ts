@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AboutMessageRelatedToTheSubjectComponent } from '../about-message-related-to-the-subject/about-message-related-to-the-subject.component';
+import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
-import { Message } from '../model/message';
 import { NavbarService } from '../navbar/navbar.service';
 
 @Component({
@@ -12,27 +12,31 @@ import { NavbarService } from '../navbar/navbar.service';
 })
 export class AboutMessageComponent implements OnInit {
   id?:any;
-  message!:Message;
+  message!:any;
   hashtags:any;
   status:boolean=false;
   reklama1:any;
   reklama2:any;
-  constructor(private homePageService:HomePageService,private activeRoute: ActivatedRoute,
+  malumot:any;
+  txt:string="";
+  constructor(private homePageService:HomePageService,private activeRoute: ActivatedRoute,private sanitizer: DomSanitizer,
     private router:Router,
-    private navbarService:NavbarService) { }
+    private navbarService:NavbarService,
+    public appModule:AppModule) { }
   ngAfterViewInit(): void {
-    
+    window.scroll(0,0);    
   }
   ngOnInit(): void {
-    window.scroll({
-      top : 0
-    })
     this.activeRoute.paramMap.subscribe(data =>{
+      this.malumot="";
       this.id = data.get("id");
+      this.message=[];
       this.homePageService.getById(this.id).subscribe(data => {
       let message = data;
+      this.txt="";
+      this.txt=message?.fullText?.fullText?.replaceAll('<img','<img height="100%" width="100%"');
+      this.malumot=this.txt;
       let baza: any[] = [];
-      console.log(data);
       for(let j=0;j<message.hashtags.length;j++){
         let hashtags!:JSON;
         hashtags=JSON.parse('{"hashtag":'+'"'+message.hashtags[j]+'"'+'}');
@@ -57,9 +61,11 @@ export class AboutMessageComponent implements OnInit {
         }
       }
     });
-  });       
+   
+  });  
   }  
   rekOpen(url:any){
     location.href=url;
   }
+  
 }

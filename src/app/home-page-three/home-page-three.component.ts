@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
 
@@ -11,7 +12,9 @@ import { Message } from '../model/message';
 export class HomePageThreeComponent implements OnInit ,AfterViewInit{
   @Input("HomePageMessageLevel8") homePageMessageLevel8!: Message[];
   pageNumber:number=0;
-  constructor(private homePageService:HomePageService,private router:Router) { }
+  constructor(private homePageService:HomePageService,
+    private router:Router,
+    public app:AppModule) { }
   ngAfterViewInit(): void {
   }
   ngOnInit(): void {
@@ -24,6 +27,6 @@ export class HomePageThreeComponent implements OnInit ,AfterViewInit{
     });    
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["message",id,caption]);
+    this.router.navigate(["post",id,caption]);
   }
 }

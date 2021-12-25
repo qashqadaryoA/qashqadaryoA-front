@@ -3,8 +3,9 @@
         <div class="title">
             <div class="wrap">
                 <div class="search">
-                <input type="text" id="input" class="searchTerm" placeholder="Қидириш">
-                <button type="submit" class="searchButton" (click)="search()">
+                    <input type="text" *ngIf="!app.lotin" id="input" class="searchTerm" placeholder="Қидириш">
+                    <input type="text" *ngIf="app.lotin" id="input" class="searchTerm" placeholder="Qidirish">
+                    <button type="submit" class="searchButton" (click)="search()">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
@@ -19,33 +20,30 @@
                   </div>
                   <div class="data-time">
                     <i class="far fa-newspaper" id="icon-newspaper"></i>
-                    <span class="type">
-                        {{message?.types?.name}}</span>/ {{message?.dateTime}}
+                    <span class="type" *ngIf="!app.lotin">
+                        {{message?.types?.name}}</span>
+                        <span class="type" *ngIf="app.lotin">
+                            {{message?.types?.name | translate}}</span>/ {{message?.dateTime}}
+                </div>
+                <div class="text2" *ngIf="!app.lotin">
+                    {{message?.caption}}
+                </div>
+                <div class="text2" *ngIf="app.lotin">
+                    {{message?.caption | translate}}
                 </div>
             </div>
         </div>
-        <div fxLayout="row wrap" class="messages">
-            <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message.id,message.caption)" *ngFor="let message of searchMessages">
-                <div class="card">
-                    <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
-                    <app-image-download [faylId]="message?.image?.id"></app-image-download>
-                    <div class="data-time">
-                        <i class="far fa-newspaper" id="icon-newspaper"></i>
-                        <span class="type">
-                            {{message?.types?.name}}</span>/ <span>{{message?.dateTime}}</span>
-                    </div>
-                    <div class="text2">
-                        {{message?.caption}}
-                    </div>
-                </div>
-            </div>
+    
+        <div class="button-card"  *ngIf="h1 && !app.lotin">
+            <h1 class="searchH1" >{{h1Text}}</h1>
         </div>
-
-        <div fxLayoutGap="10px">
-                <div class="button-card">
-                    <button class="button" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
-                </div>
+        <div class="button-card"  *ngIf="h1 && app.lotin">
+            <h1 class="searchH1" >{{h1Text | translate}}</h1>
         </div>
+        <div class="button-card">
+            <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+            <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
+        </div> 
     </div>
 </div>
 </body>

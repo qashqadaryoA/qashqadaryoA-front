@@ -1,7 +1,7 @@
 <section class="container1">
-    <h2 class="title">Мавзуга оид</h2>
+    <h2 class="title" *ngIf="!app.lotin"  [innerText]="'Мавзуга оид'"></h2>
+    <h2 class="title" *ngIf="app.lotin"  [innerText]="'Mavzuga oid'"></h2>
     <div class="container">
-
         <div fxLayout="row wrap">
             <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of titleMessages" (click)="openMessage(message?.id,message?.caption)">
                 <a>
@@ -13,19 +13,24 @@
                             </div>
                         </div>
                         <div fxFlex="10 1 0" class="border-bottom">
-                            <div class="data-time">
+                            <div class="data-time" *ngIf="!app.lotin">
                                 <mat-icon class="mat-icon">date_range</mat-icon><span
                                     class="type">{{message?.types?.name}}</span>&nbsp;/&nbsp;
                                 {{message?.dateTime}}
                             </div>
-                            <p class="text">{{message?.caption}}
+                            <div class="data-time" *ngIf="app.lotin">
+                                <mat-icon class="mat-icon">date_range</mat-icon><span
+                                    class="type">{{message?.types?.name | translate}}</span>&nbsp;/&nbsp;
+                                {{message?.dateTime}}
+                            </div>
+                            <p *ngIf="!app.lotin" class="text">{{message?.caption}}
+                            </p>
+                            <p *ngIf="app.lotin" class="text">{{message?.caption | translate}}
                             </p>
                         </div>
                     </div>
                 </a>
             </div>
         </div>
-
-
     </div>
 </section>

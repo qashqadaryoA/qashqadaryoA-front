@@ -30,8 +30,8 @@ export class HomePageService {
   getFilterTuman(id: number, pageNumber: number): Observable<any> {
     return this.http.get<any>(this.api + "/filter-tuman?tumanId=" + id + "&page=" + pageNumber);
   }
-  getSearch(searchText:string, pageNumber: number): Observable<any> {
-    return this.http.get<any>(this.api + "/search?searchText=" + searchText + "&page=" + pageNumber);
+  getSearch(searchText1:string,searchText2:string, pageNumber: number): Observable<any> {
+    return this.http.get<any>(this.api + "/search?searchText1=" + searchText1 +"&searchText2="+searchText2+ "&page=" + pageNumber);
   }
   getFilterHashtags(hashtag1: any, hashtag2: any, hashtag3: any, hashtag4: any, pageNumber: number): Observable<any> {
     let txt="?page="+pageNumber;

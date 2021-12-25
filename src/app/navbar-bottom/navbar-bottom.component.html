@@ -1,26 +1,32 @@
 <div class="navbar-two" fxLayout="row" fxLayout.xs="row">
     <div class="fx" fxFlex="2 1 0">
         <div class="container">
-            <h4>
+            <h4 *ngIf="!app.lotin">
                 Телеграм &nbsp;&nbsp; канал
             </h4>
-
+            <h4 *ngIf="app.lotin">
+                Telegram &nbsp;&nbsp; kanal
+            </h4>
         </div>
     </div>
 
     <div class="fx" fxFlex="2 1 0">
-        <div>Уз
+        <div>
+            <span>Уз</span>
             <span>Uz</span> 
         </div>
-        
     </div>
 
-    <div class="fx" fxFlex="2 1 0">
-        valyuta
+    <div *ngIf="!app.lotin" class="fx" fxFlex="2 1 0">
+        Валюта
     </div>
-    <div style="border-right: none;" class="fx" fxFlex="2 1 0">
-        ob havo
+    <div *ngIf="app.lotin" class="fx" fxFlex="2 1 0">
+        Valyuta
     </div>
-
-
+    <div *ngIf="!app.lotin" style="border-right: none;" class="fx" fxFlex="2 1 0">
+        Об ҳаво
+    </div>
+    <div *ngIf="app.lotin" style="border-right: none;" class="fx" fxFlex="2 1 0">
+        Ob havo
+    </div>
 </div>

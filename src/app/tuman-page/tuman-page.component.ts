@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
 import { NavbarService } from '../navbar/navbar.service';
@@ -18,7 +19,8 @@ export class TumanPageComponent implements OnInit {
   constructor(private homePageService:HomePageService,
     private activeRoute: ActivatedRoute,
     private router:Router,
-    private navbarService:NavbarService) { }
+    private navbarService:NavbarService,
+    public app:AppModule) { }
   ngAfterViewInit(): void {
     
   }
@@ -58,7 +60,7 @@ export class TumanPageComponent implements OnInit {
     });
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["message",id,caption]);
+    this.router.navigate(["post",id,caption]);
   }
   rekOpen(url:any){
     location.href=url;

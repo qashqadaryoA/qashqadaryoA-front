@@ -24,6 +24,9 @@ import { AboutMessageRelatedToTheSubjectComponent } from './about-message-relate
 import { AboutMessageTypeComponent } from './about-message-type/about-message-type.component';
 import { TumanPageComponent } from './tuman-page/tuman-page.component';
 import { YoutubePipe } from './youtube.pipe';
+import { UrlFilterPipe } from './url-filter.pipe';
+import { TranslatePipe } from './translate.pipe';
+import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,9 @@ import { YoutubePipe } from './youtube.pipe';
     AboutMessageTypeComponent,
     TumanPageComponent,
     YoutubePipe,
+    UrlFilterPipe,
+    TranslatePipe,
+    UrlFilterLotinPipe,
   ],
   imports: [
     BrowserModule,
@@ -57,4 +63,31 @@ import { YoutubePipe } from './youtube.pipe';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  public lotin=false;  
+  storeKirill(): any {
+    sessionStorage.setItem("language", "Ўзбекча");
+    this.getUrl();
+  }
+  storeLotin(): any {
+    sessionStorage.setItem("language", "Lotincha");
+    this.getUrl();
+  }
+  getUrl(): string | null {
+    if(sessionStorage.getItem("language")==null){
+      return this.storeKirill();
+    }
+    else{
+      if(sessionStorage.getItem("language")=="Lotincha"){
+        this.lotin=true;
+      }
+      else{
+        this.lotin=false;
+      }
+      return sessionStorage.getItem("language") as string | null;
+    }
+  }
+  clearUrl(): void {
+    sessionStorage.removeItem("language");
+  }  
+}

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
 
@@ -10,7 +11,9 @@ import { Message } from '../model/message';
 })
 export class LatestNewsComponent implements OnInit,AfterViewInit {
   latestNewsMessages:Message[] = [];
-  constructor(private homePageService:HomePageService,private router:Router) { }
+  constructor(private homePageService:HomePageService,
+    private router:Router,
+    public app:AppModule) { }
   ngAfterViewInit(): void {
     
   }
@@ -21,6 +24,6 @@ export class LatestNewsComponent implements OnInit,AfterViewInit {
     });
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["message",id,caption]);
+    this.router.navigate(["post",id,caption]);
   }
 }

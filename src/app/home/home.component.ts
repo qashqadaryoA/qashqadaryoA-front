@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from '../app.module';
 import { Message } from '../model/message';
 import { NavbarService } from '../navbar/navbar.service';
 import { HomePageService } from './home.service';
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
     public homePageService: HomePageService,
     private router:Router, 
-    private navbarService:NavbarService
+    private navbarService:NavbarService,
+    public app:AppModule
   ) {
 
   }
@@ -54,7 +56,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["message",id,caption]);
+    this.router.navigate(["post",id,caption]);
   }
   ngAfterViewInit(): void {    
   }  

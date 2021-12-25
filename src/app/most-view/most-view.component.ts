@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
 
@@ -10,7 +11,9 @@ import { Message } from '../model/message';
 })
 export class MostViewComponent implements OnInit,AfterViewInit {
   viewMessages:Message[] = [];
-  constructor(private homePageService:HomePageService,private router:Router) { }
+  constructor(private homePageService:HomePageService,
+    private router:Router,
+    public app:AppModule) { }
   ngAfterViewInit(): void {
     this.homePageService.getSortView().subscribe(data => {
       this.viewMessages = data.content;
@@ -19,6 +22,7 @@ export class MostViewComponent implements OnInit,AfterViewInit {
   ngOnInit(): void {
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["message",id,caption]);
+    this.router.navigate(["post",id,caption]);
+    window.scroll(0,0);
   }
 }

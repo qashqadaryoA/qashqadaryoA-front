@@ -1,47 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppModule } from '../app.module';
-import { HomePageService } from '../home/home.service';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+@Pipe({
+  name: 'translate'
 })
-export class SearchComponent implements OnInit {
-  pageNumber:number=0;
-  searchText1!:string;
-  searchText2!:string;
-  searchMessages?:any=[];
-  h1:Boolean=false;
-  h1Text:String="Қидиришингиз мумкин";
+export class TranslatePipe implements PipeTransform {
 
-  constructor(private homePageService:HomePageService,
-    private router:Router,
-    public app:AppModule) { }
-
-  ngOnInit(): void {
-    window.scroll({
-      top : 0
-    });
-    this.h1=true;
-  }
-  search(){
-    this.h1Text="Қидириляпти кутинг"
-    this.pageNumber=0;
-    this.searchMessages=[];
-    this.searchText1 = (<HTMLInputElement>document.getElementById("input")).value;
-    let word=this.searchText1;
+  transform(value: any, ...args: any): unknown {
+    let word=value;
     let answer: any = ""
       , a: any = {};
     //Kiril to Lotin
-    a["Ё"] = "YO"; a["Й"] = "I"; a["Ц"] = "J"; a["У"] = "U"; a["К"] = "K"; a["Е"] = "E"; a["Н"] = "N"; a["Г"] = "G"; a["Ш"] = "SH"; a["Щ"] = "SCH"; a["З"] = "Z"; a["Х"] = "x"; a["Ъ"] = "'";
+    a["Ё"] = "YO"; a["Й"] = "I"; a["Ц"] = "J"; a["У"] = "U"; a["К"] = "K"; a["Е"] = "E"; a["Н"] = "N"; a["Г"] = "G"; a["Ш"] = "Sh"; a["Щ"] = "SCh"; a["З"] = "Z"; a["Х"] = "x"; a["Ъ"] = "'";
     a["ё"] = "yo"; a["й"] = "y"; a["ц"] = "ts"; a["у"] = "u"; a["к"] = "k"; a["е"] = "e"; a["н"] = "n"; a["г"] = "g"; a["ш"] = "sh"; a["щ"] = "sch"; a["з"] = "z"; a["х"] = "x"; a["ъ"] = "'";
-    a["Ф"] = "F"; a["Ы"] = "I"; a["В"] = "V"; a["А"] = "a"; a["П"] = "P"; a["Р"] = "R"; a["О"] = "O"; a["Л"] = "L"; a["Д"] = "D"; a["Ж"] = "j"; a["Э"] = "E";
+    a["Ф"] = "F"; a["Ы"] = "I"; a["В"] = "V"; a["А"] = "a"; a["П"] = "P"; a["Р"] = "R"; a["О"] = "O"; a["Л"] = "L"; a["Д"] = "D"; a["Ж"] = "J"; a["Э"] = "E";
     a["ф"] = "f"; a["ы"] = "i"; a["в"] = "v"; a["а"] = "a"; a["п"] = "p"; a["р"] = "r"; a["о"] = "o"; a["л"] = "l"; a["д"] = "d"; a["ж"] = "j"; a["э"] = "e";
-    a["Я"] = "Ya"; a["Ч"] = "CH"; a["С"] = "S"; a["М"] = "M"; a["И"] = "I"; a["Т"] = "T"; a["Ь"] = "'"; a["Б"] = "B"; a["Ю"] = "YU";
+    a["Я"] = "Ya"; a["Ч"] = "Ch"; a["С"] = "S"; a["М"] = "M"; a["И"] = "I"; a["Т"] = "T"; a["Ь"] = "'"; a["Б"] = "B"; a["Ю"] = "YU";
     a["я"] = "ya"; a["ч"] = "ch"; a["с"] = "s"; a["м"] = "m"; a["и"] = "i"; a["т"] = "t"; a["ь"] = "'"; a["б"] = "b"; a["ю"] = "yu";
-    a["қ"] = "q"; a["ў"] = "o'"; a["Қ"] = "Q"; a["ҳ"] = "h"; a["Ҳ"] = "H"; a["ғ"] = "g'";
+    a["қ"] = "q"; a["ў"] = "o'"; a["Қ"] = "Q"; a["ҳ"] = "h"; a["Ҳ"] = "H"; a["ғ"] = "g'";a["Ў"]="O'";a["Ғ"] = "G'";
     //Lotin to Kirill
     a["YO"] = "Ё"; a["I"] = "Й"; a["J"] = "Ц"; a["U"] = "У"; a["K"] = "К"; a["E"] = "Е"; a["N"] = "Н"; a["G"] = "Г"; a["SCH"] = "Щ"; a["Z"] = "З"; a["X"] = "Х";
     a["yo"] = "ё"; a["y"] = "й"; a["j"] = "ц"; a["u"] = "у"; a["k"] = "к"; a["e"] = "е"; a["n"] = "н"; a["g"] = "г"; a["sch"] = "щ"; a["z"] = "з"; a["x"] = "х";
@@ -85,19 +60,8 @@ export class SearchComponent implements OnInit {
         }
       }
     }
-    this.searchText2=answer;
-    this.koproq();
+    value=answer;
+    return value;
   }
-  koproq(){
-    this.homePageService.getSearch(this.searchText1,this.searchText2,this.pageNumber).subscribe(data => {
-      if(data.totalElements<1){
-        this.h1Text=`"`+this.searchText1+`"`+" бу сўзга оид малумот юқ";
-      }
-      this.searchMessages = this.searchMessages.concat(data.content);
-      this.pageNumber =  this.pageNumber + 1;
-    });
-  }
-  openMessage(id:any,caption:any){
-    this.router.navigate(["post",id,caption]);
-  }
+
 }
