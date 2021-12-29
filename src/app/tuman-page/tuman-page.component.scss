@@ -11,6 +11,12 @@
     margin: auto;
 }
 
+@media screen and (max-width: 590px) {
+    .data-time2 .type2{
+        font-size: 12px;
+    }
+}
+
 @media screen and (max-width: 1520px) {
     //this
     .container1{
