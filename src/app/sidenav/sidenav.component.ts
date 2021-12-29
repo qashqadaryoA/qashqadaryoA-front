@@ -34,10 +34,12 @@ export class SidenavComponent implements OnInit{
       this.tumans = data;
     });
   }
-  openType(id: any){
-    this.router.navigate(['type', id])
+  til(til:any){
+    if(til=="Lotincha"){
+      this.app.storeLotin();
+    }
+    else{
+      this.app.storeKirill();
+    }
   }
-  openTuman(id: any){
-    this.router.navigate(['tuman', id])
-  }  
 }

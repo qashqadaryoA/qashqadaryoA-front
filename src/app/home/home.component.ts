@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   homePageMessageLevel8: Message[] = [];
   reklama1:any;
   reklama2:any;
+  load:Boolean=true;
   constructor(
     public homePageService: HomePageService,
     private router:Router, 
@@ -37,7 +38,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       this.homePageMessages[4],this.homePageMessages[5],this.homePageMessages[6]];
       this.homePageMessageLevel8 = [this.homePageMessages[7],this.homePageMessages[8],this.homePageMessages[9],
       this.homePageMessages[10],this.homePageMessages[11],this.homePageMessages[12]];
-    });
+      this.load=false;     });
     this.navbarService.getAllAdversitement().subscribe(data => {
       if(data.length>0){
         if(data.length==2){
@@ -58,7 +59,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   openMessage(id:any,caption:any){
     this.router.navigate(["post",id,caption]);
   }
-  ngAfterViewInit(): void {    
+  ngAfterViewInit(): void {
+       
   }  
   rekOpen(url:any){
     location.href=url;

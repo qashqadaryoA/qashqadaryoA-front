@@ -1,3 +1,4 @@
+<app-loading *ngIf="load"></app-loading>
 <section class="body">
   <div class="container1">
     <div class="reklama" *ngIf="reklama1!=null" (click)="rekOpen(reklama1?.address)">
@@ -11,7 +12,7 @@
             (click)="openMessage(message?.id,message?.caption)">
             <a>
               <div class="card">
-                <img class="images" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <img class="images" *ngIf="message?.image == null" src="assets/moon.jpg">
                 <div style="display: inline-block;" class="images" *ngIf="message?.image != null">
                   <app-image-download [fayl]="message?.image"></app-image-download>
                 </div>

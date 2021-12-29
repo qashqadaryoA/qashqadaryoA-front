@@ -4,7 +4,6 @@
             <div class="navbar-brand">
                 <a class="search-icon" routerLink="find"><i class="fas fa-search"></i></a>
                 <a class="logo-img" routerLink="/"><img [src]="siteBrand" alt={{siteName}}></a>
-                <!-- <a href="#">{{siteName}}</a> -->
             </div>
             <div class="nav-links">
               <ul *ngIf="!app.lotin">
@@ -16,12 +15,11 @@
             </div>
             <div class="float-right">
               <div class="language" style="display: inline;">
-                <select name="languages" (select)="til()" id="languages">
+                <select name="languages" #select (change)="til()" [value]="selectValue" id="languages">
                   <option value="Ўзбекча">Ўзбекча</option>
-                  <option value="Lotincha">Lotincha</option>
+                  <option value="Lotincha">Lotincha</option> 
                 </select>
               </div>
-
                 <a class="nav-search" routerLink="find"><svg xmlns="http://www.w3.org/2000/svg" width="26.301"
                         height="25.669" viewBox="0 0 26.301 25.669">
                         <path id="search_icon_152764"
@@ -31,7 +29,6 @@
                     </svg></a>
                 <span (click)="sideNavOpen.emit(true)" class="menu-icon"><i class="fas fa-bars"></i></span>
             </div>
-
       <div class="tuman">
         <ul class="list" *ngIf="!app.lotin">
           <li *ngFor="let tuman of tumans"><a class="tuman-a" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li> 
@@ -42,5 +39,4 @@
       </div>
     </div>
   </div>
-
 </nav>

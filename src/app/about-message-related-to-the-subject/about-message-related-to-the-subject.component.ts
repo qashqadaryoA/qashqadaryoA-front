@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AboutMessageComponent } from '../about-message/about-message.component';
 import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 import { Message } from '../model/message';
@@ -15,7 +16,8 @@ export class AboutMessageRelatedToTheSubjectComponent implements OnInit, AfterVi
   constructor(private homePageService: HomePageService,
      private activeRoute: ActivatedRoute,
       private router: Router,
-      public app:AppModule) { }
+      public app:AppModule,
+      public aboutMessageTs:AboutMessageComponent) { }
   ngAfterViewInit(): void {
     this.activeRoute.paramMap.subscribe(data =>{
       this.titleMessages = [];
@@ -46,6 +48,5 @@ export class AboutMessageRelatedToTheSubjectComponent implements OnInit, AfterVi
   }
   openMessage(id: any, caption: any) {    
     this.router.navigate(["post", id, caption]);
-    window.scroll(0,0);
   }
 }

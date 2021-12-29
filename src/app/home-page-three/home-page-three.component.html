@@ -21,7 +21,7 @@
             fxLayoutGap="10px" (click)="openMessage(message?.id,message?.caption)">
             <div fxLayout="row" class="margin-t" *ngIf="message!=null">
               <div fxFlex="2 1 0" class="card-img">
-                <img class="img2" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <img class="img2" *ngIf="message?.image == null" src="assets/moon.jpg">
                 <div style="display: inline-block;" *ngIf="message?.image != null" class="img2">
                   <app-image-download [fayl]="message?.image"></app-image-download>
                 </div>

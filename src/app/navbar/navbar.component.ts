@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AppModule } from '../app.module';
@@ -16,12 +16,20 @@ export class NavbarComponent implements OnInit {
   @Output() sideNavOpen: EventEmitter<boolean> = new EventEmitter(true);
   siteBrand = environment.siteBrand;
   siteName = environment.siteName;
+  selectValue:any;
   types:Types[] = [];
   tumans:Tuman[] = [];
+  @ViewChild('select') select!: ElementRef;
   constructor(private navbarService:NavbarService, 
        private router: Router,
        public app:AppModule) { }
   ngOnInit(): void {
+    if(this.app.lotin){
+      this.selectValue="Lotincha";
+    }
+    else{
+      this.selectValue="Ўзбекча";
+    }
     this.navbarService.getAllTypeStatus().subscribe(data => {
       this.types = data;
     });
@@ -30,6 +38,11 @@ export class NavbarComponent implements OnInit {
     });
   }
   til(){
-    
+    if(this.select.nativeElement.value=="Lotincha"){
+      this.app.storeLotin();
+    }
+    else{
+      this.app.storeKirill();
+    }
   }
 }

@@ -4,7 +4,7 @@
         <div class="content-box">
             <div class="valyuta-text">
                 <p *ngIf="!app.lotin">Валюта Курси</p>
-                <p *ngIf="app.lotin">VAlyuta kursi</p>
+                <p *ngIf="app.lotin">Valyuta kursi</p>
             </div>
             <div class="valyutaa">
                 <div>
@@ -24,8 +24,8 @@
     </div>
     <div class="toggle-select-lenguage">
         <mat-button-toggle-group class="button-toggle" name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle class="button" value="bold">Uz</mat-button-toggle>
-            <mat-button-toggle class="button" value="italic">Уз</mat-button-toggle>
+            <mat-button-toggle class="button" (click)="til('Lotincha')"  value="bold">Uz</mat-button-toggle>
+            <mat-button-toggle class="button"  (click)="til('Ўзбекча')" value="italic">Уз</mat-button-toggle>
         </mat-button-toggle-group>
     </div>
 
@@ -33,37 +33,37 @@
         <div fxFlex="2 1 0" *ngIf="!app.lotin">
             <h2 class="title">Турлар</h2>
             <ul class="list">
-                <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" (click)="openType(type?.id)">{{type?.name}}</a></li>
+                <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="app.lotin">
             <h2 class="title">Turlar</h2>
             <ul class="list">
-                <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" (click)="openType(type?.id)">{{type?.name | translate}}</a></li>
+                <li *ngFor="let type of types"><a (click)="sideNavOpen2.emit(true)" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="!app.lotin">
             <h2 class="title">Туманлар</h2>
             <ul class="list">
-                <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" (click)="openTuman(tuman?.id)">{{tuman?.name}}</a></li>
+                <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="app.lotin">
             <h2 class="title">Tumanlar</h2>
             <ul class="list">
-                <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" (click)="openTuman(tuman?.id)">{{tuman?.name | translate}}</a></li>
+                <li *ngFor="let tuman of tumans"><a (click)="sideNavOpen2.emit(true)" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name | translate}}</a></li>
             </ul>
         </div>
     </div>
 
     <div class="flex-container-two" fxLayout="row">
         <div fxFlex="2 1 0">
-            <h2 class="sidebar-footer" *ngIf="!app.lotin">Сайт Ҳақида</h2>
-            <h2 class="sidebar-footer" *ngIf="app.lotin">Sayt Haqida</h2>
+            <h2 class="sidebar-footer" *ngIf="!app.lotin"><a href="https://t.me/Ziyobaxsh" target="_blank">Сайт Ҳақида</a></h2>
+            <h2 class="sidebar-footer" *ngIf="app.lotin"><a href="https://t.me/Ziyobaxsh" target="_blank">Sayt Haqida</a></h2>
         </div>
         <div fxFlex="2 1 0">
-            <h2 class="sidebar-footer" *ngIf="!app.lotin">Реклама</h2>
-            <h2 class="sidebar-footer" *ngIf="app.lotin">Reklama</h2>
+            <h2 class="sidebar-footer" *ngIf="!app.lotin"><a href="https://t.me/Ziyobaxsh" target="_blank">Реклама</a></h2>
+            <h2 class="sidebar-footer" *ngIf="app.lotin"><a href="https://t.me/Ziyobaxsh" target="_blank">Reklama</a></h2>
         </div>
     </div>
 </div>

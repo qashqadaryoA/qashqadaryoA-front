@@ -16,6 +16,7 @@ export class TumanPageComponent implements OnInit {
   tumanMessages:Message[] = [];
   reklama1:any;
   reklama2:any;
+  load?:Boolean;
   constructor(private homePageService:HomePageService,
     private activeRoute: ActivatedRoute,
     private router:Router,
@@ -29,6 +30,7 @@ export class TumanPageComponent implements OnInit {
       top : 0
     });
     this.activeRoute.paramMap.subscribe(data =>{
+      this.load=true;
       this.pageNumber=0;
       this.id = data.get("id");
       this.homePageService.getFilterTuman(this.id,this.pageNumber).subscribe(data => {
@@ -49,6 +51,7 @@ export class TumanPageComponent implements OnInit {
             }
           }
         });
+        this.load=false;
       });
     });
   }
@@ -56,7 +59,6 @@ export class TumanPageComponent implements OnInit {
     this.pageNumber =  this.pageNumber + 1;
     this.homePageService.getFilterTuman(this.id,this.pageNumber).subscribe(data => {
       this.tumanMessages = this.tumanMessages.concat(data.content);
-      
     });
   }
   openMessage(id:any,caption:any){

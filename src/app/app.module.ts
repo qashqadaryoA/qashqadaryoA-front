@@ -27,6 +27,7 @@ import { YoutubePipe } from './youtube.pipe';
 import { UrlFilterPipe } from './url-filter.pipe';
 import { TranslatePipe } from './translate.pipe';
 import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
+import { LoadingComponent } from './loading/loading.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +52,7 @@ import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
     UrlFilterPipe,
     TranslatePipe,
     UrlFilterLotinPipe,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

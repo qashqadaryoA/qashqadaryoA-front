@@ -10,3 +10,13 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+  
+// setTimeout(() => {
+//   const loadingElement = document.querySelector(".app-loading");
+
+//   platformBrowserDynamic()
+//     .bootstrapModule(AppModule)
+//     .then(() => loadingElement!.classList.add("lds-dual-ring"))
+//     .then(() => setTimeout(() => loadingElement!.remove(), 1000));
+// }, 2000);

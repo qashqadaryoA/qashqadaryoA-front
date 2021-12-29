@@ -7,7 +7,7 @@
                 <a>
                     <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="column">
                         <div class="card-img" fxFlex="5 1 0">
-                            <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                            <img class="img" *ngIf="message?.image == null" src="assets/moon.jpg">
                             <div style="display: inline-block;" *ngIf="message?.image != null" class="img">
                                 <app-image-download  [fayl]="message?.image"></app-image-download>
                               </div>

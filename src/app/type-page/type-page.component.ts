@@ -16,6 +16,7 @@ export class TypePageComponent implements OnInit {
   typeMessages:Message[] = [];
   reklama1:any;
   reklama2:any;
+  load?:Boolean;
   constructor(private homePageService:HomePageService,
     private activeRoute: ActivatedRoute,
     private router:Router,
@@ -29,6 +30,7 @@ export class TypePageComponent implements OnInit {
       top : 0
     });
     this.activeRoute.paramMap.subscribe(data => {
+      this.load=true;
       this.id = data.get("id");
       this.homePageService.getFilterType(this.id, this.pageNumber).subscribe(data => {
         this.typeMessages = data.content;
@@ -47,6 +49,7 @@ export class TypePageComponent implements OnInit {
               }
             }
           }
+          this.load=false;
         });
       });
     });

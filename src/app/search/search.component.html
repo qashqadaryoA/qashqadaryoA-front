@@ -14,7 +14,7 @@
     <div fxLayout="row wrap" class="messages">
         <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id,message?.caption)" *ngFor="let message of searchMessages">
             <div class="card">
-                <img class="img" *ngIf="message?.image == null" src="../../assets/moon.jpg">
+                <img class="img" *ngIf="message?.image == null" src="assets/moon.jpg">
                 <div style="display: inline-block;" class="images" *ngIf="message?.image != null">
                     <app-image-download  [fayl]="message?.image"></app-image-download>
                   </div>
