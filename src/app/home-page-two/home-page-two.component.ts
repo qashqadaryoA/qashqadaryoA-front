@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { AppModule } from '../app.module';
 import { HomePageTwoService } from './home-page-two.service';
 
@@ -8,15 +8,18 @@ import { HomePageTwoService } from './home-page-two.service';
   styleUrls: ['./home-page-two.component.scss']
 })
 export class HomePageTwoComponent implements OnInit {
-  youtubeLinks:any;
-  constructor(private homePageTwoService:HomePageTwoService,
-    public app:AppModule) { }
+  youtubeLinks: any;
+  @Input("youtubestatus") youstatus: any;
+  constructor(private homePageTwoService: HomePageTwoService,
+    public app: AppModule) { }
   ngAfterViewInit(): void {
-    this.homePageTwoService.getAll().subscribe(data => {
-      this.youtubeLinks = data.content;
-    });  
+    if (this.youstatus == true) {
+      this.homePageTwoService.getAll().subscribe(data => {
+        this.youtubeLinks = data.content;
+      });
+    }
   }
   ngOnInit(): void {
-      
+
   }
 }

@@ -12,27 +12,39 @@ import { NavbarService } from '../navbar/navbar.service';
 })
 export class TypePageComponent implements OnInit {
   id?:any;
+  nom?:any;
   pageNumber:number=0;
   typeMessages:Message[] = [];
   reklama1:any;
   reklama2:any;
   load?:Boolean;
+  h1?:Boolean;
+  h1Text?:String="Юкланмоқда...";
+  dataText:String = "Малумот ёқ";
+  dataStatus?:Boolean;
   constructor(private homePageService:HomePageService,
     private activeRoute: ActivatedRoute,
     private router:Router,
     private navbarService:NavbarService,
     public app:AppModule) { }
   ngAfterViewInit(): void {
-    
   }
   ngOnInit(): void {
     window.scroll({
       top : 0
     });
     this.activeRoute.paramMap.subscribe(data => {
+      this.typeMessages=[];
+      this.dataStatus=false;
+      this.h1=true;
       this.load=true;
       this.id = data.get("id");
+      this.nom = data.get("nom");
       this.homePageService.getFilterType(this.id, this.pageNumber).subscribe(data => {
+        this.h1=false;
+        if(data.totalElements == 0){
+          this.dataStatus = true;
+        }
         this.typeMessages = data.content;
         this.navbarService.getAllAdversitement().subscribe(data => {
           if(data.length>0){

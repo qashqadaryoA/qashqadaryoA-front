@@ -12,11 +12,16 @@ import { NavbarService } from '../navbar/navbar.service';
 })
 export class TumanPageComponent implements OnInit {
   id?:any;
+  nom?:any;
   pageNumber:number=0;
   tumanMessages:Message[] = [];
   reklama1:any;
   reklama2:any;
   load?:Boolean;
+  h1?:Boolean;
+  h1Text?:String="Юкланмоқда...";
+  dataText:String = "Малумот ёқ";
+  dataStatus?:Boolean;
   constructor(private homePageService:HomePageService,
     private activeRoute: ActivatedRoute,
     private router:Router,
@@ -30,11 +35,19 @@ export class TumanPageComponent implements OnInit {
       top : 0
     });
     this.activeRoute.paramMap.subscribe(data =>{
+      this.tumanMessages=[];
+      this.dataStatus=false;
+      this.h1=true;
       this.load=true;
       this.pageNumber=0;
       this.id = data.get("id");
+      this.nom = data.get("nom");
       this.homePageService.getFilterTuman(this.id,this.pageNumber).subscribe(data => {
-        this.tumanMessages = data.content;      
+        this.h1=false;
+        if(data.totalElements == 0 || data.totalElements == null){
+          this.dataStatus = true;
+        }
+        this.tumanMessages = data.content;
         this.navbarService.getAllAdversitement().subscribe(data => {
           if(data.length>0){
             if(data.length==2){

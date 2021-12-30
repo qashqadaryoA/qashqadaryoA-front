@@ -1,4 +1,4 @@
-<app-loading *ngIf="load"></app-loading>
+<!-- <app-loading *ngIf="load"></app-loading> -->
 <body>
   <section>
     <div class="container1" >
@@ -7,7 +7,11 @@
         [fayl]="reklama1?.filename"></app-image-download>
       </div>
       <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
-        <div fxFlex="5.5 1 0">
+        <div fxFlex="5.5 1 0">    
+          <h1 class="searchH1" *ngIf="h1 && !app.lotin" >{{h1Text}}</h1>
+          <h1 class="searchH1" *ngIf="h1 && app.lotin" >{{h1Text | translate}}</h1>
+          <h1 class="searchH1" *ngIf="dataStatus && !app.lotin" >{{dataText}}</h1>
+          <h1 class="searchH1" *ngIf="dataStatus && app.lotin" >{{dataText | translate}}</h1>
           <!-- Asosiy xabar yozilgan qator -->
           <div class="flex-container" *ngIf="homePageMessageLevel10[0]!=null"
             [routerLink]='["post",homePageMessageLevel10[0]?.id,homePageMessageLevel10[0]?.caption]' fxLayout="row"
@@ -89,9 +93,7 @@
       </div>
     </div>
   </section>
-
-
-  <app-home-page-two></app-home-page-two>
-
+  <app-home-page-two *ngIf="!youtubeStatus" [youtubestatus]="youtubeStatus"></app-home-page-two>
+  <app-home-page-two *ngIf="youtubeStatus" [youtubestatus]="youtubeStatus"></app-home-page-two>
   <app-home-page-three [HomePageMessageLevel8]="homePageMessageLevel8"></app-home-page-three>
 </body>

@@ -20,6 +20,7 @@ export class AboutMessageComponent implements OnInit {
   malumot: any;
   txt: string = "";
   load?: Boolean;
+  aboutstatus?: Boolean;
   @ViewChild('div1') div1!: ElementRef;
   lastPoppedUrl: string | undefined;
   yScrollStack: any[] = [];
@@ -35,6 +36,7 @@ export class AboutMessageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(data => {
+      this.aboutstatus=false;
       this.load = true;
       this.malumot = "";
       this.hashtags = null;
@@ -55,22 +57,23 @@ export class AboutMessageComponent implements OnInit {
         this.hashtags = baza;
         this.load = false;
         window.scroll(0, 0);
-      });
-      this.navbarService.getAllAdversitement().subscribe(data => {
-        if (data.length > 0) {
-          if (data.length == 2) {
-            this.reklama1 = data[0];
-            this.reklama2 = data[1];
-          }
-          else {
-            if (data[0].daraja == 1) {
+        this.aboutstatus=true;
+        this.navbarService.getAllAdversitement().subscribe(data => {
+          if (data.length > 0) {
+            if (data.length == 2) {
               this.reklama1 = data[0];
+              this.reklama2 = data[1];
             }
             else {
-              this.reklama2 = data[0];
+              if (data[0].daraja == 1) {
+                this.reklama1 = data[0];
+              }
+              else {
+                this.reklama2 = data[0];
+              }
             }
           }
-        }
+        });
       });
     });
   }

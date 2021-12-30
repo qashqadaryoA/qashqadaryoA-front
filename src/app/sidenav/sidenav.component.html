@@ -24,8 +24,8 @@
     </div>
     <div class="toggle-select-lenguage">
         <mat-button-toggle-group class="button-toggle" name="fontStyle" aria-label="Font Style">
-            <mat-button-toggle class="button" (click)="til('Lotincha')"  value="bold">Uz</mat-button-toggle>
-            <mat-button-toggle class="button"  (click)="til('Ўзбекча')" value="italic">Уз</mat-button-toggle>
+            <mat-button-toggle class="button"  (click)="til('Lotincha')" (click)="sideNavOpen2.emit(true)" value="bold">Uz</mat-button-toggle>
+            <mat-button-toggle class="button"  (click)="til('Ўзбекча')" (click)="sideNavOpen2.emit(true)" value="italic">Уз</mat-button-toggle>
         </mat-button-toggle-group>
     </div>
 

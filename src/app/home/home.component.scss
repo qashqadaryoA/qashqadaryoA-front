@@ -21,6 +21,12 @@ section{
         margin: auto;
     }
 }
+.searchH1{
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
 @media screen and (min-width: 1520px) {
     //this
     .container1{
@@ -135,11 +141,6 @@ section{
 
 
 
-@media screen and (max-width: 590px) {
-    .data-time2 .type2{
-        font-size: 12px;
-    }
-}
 @media screen and (max-width: 850px) {
     .text-title{
         font-size: 18px !important;

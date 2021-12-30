@@ -1,4 +1,4 @@
-<app-loading *ngIf="load"></app-loading>
+<!-- <app-loading *ngIf="load"></app-loading> -->
 <section class="body">
   <div class="container1">
     <div class="reklama" *ngIf="reklama1!=null" (click)="rekOpen(reklama1?.address)">
@@ -7,14 +7,16 @@
     </div>   
     <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
       <div fxFlex="5.5 1 0">
-
         <div class="title" *ngIf="!app.lotin">
-          {{typeMessages[0]?.types?.name}} турга оид сўнги янгиликлар
+          {{nom}} турга оид сўнги янгиликлар
         </div>
         <div class="title" *ngIf="app.lotin">
-          {{typeMessages[0]?.types?.name | translate}} turga oid so'ngi yangiliklar
+          {{nom | translate}} turga oid so'ngi yangiliklar
         </div>
-        
+        <h1 class="searchH1" *ngIf="h1 && !app.lotin" >{{h1Text}}</h1>
+        <h1 class="searchH1" *ngIf="h1 && app.lotin" >{{h1Text | translate}}</h1>
+        <h1 class="searchH1" *ngIf="dataStatus && !app.lotin" >{{dataText}}</h1>
+        <h1 class="searchH1" *ngIf="dataStatus && app.lotin" >{{dataText | translate}}</h1>
         <div fxLayout="row wrap">
           <div fxFlex="33.3%" *ngFor="let message of typeMessages" fxFlex.sm="33.3%" fxFlex.xs="50%"
             (click)="openMessage(message?.id,message?.caption)">
