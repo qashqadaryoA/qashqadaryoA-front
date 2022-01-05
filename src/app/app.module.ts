@@ -66,7 +66,10 @@ import { LoadingComponent } from './loading/loading.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  public lotin=false;  
+  public lotin=false;
+  public home=true;  
+  public sidenav1Status?:Boolean=false;
+  public sidenav2Status?:Boolean=false;
   storeKirill(): any {
     sessionStorage.setItem("language", "Ўзбекча");
     this.getUrl();

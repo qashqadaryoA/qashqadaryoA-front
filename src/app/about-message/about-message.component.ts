@@ -24,6 +24,8 @@ export class AboutMessageComponent implements OnInit {
   @ViewChild('div1') div1!: ElementRef;
   lastPoppedUrl: string | undefined;
   yScrollStack: any[] = [];
+  h1?:Boolean;
+  h1Text?:String="Юкланмоқда...";
   constructor(private homePageService: HomePageService,
     private activeRoute: ActivatedRoute,
     private router: Router,
@@ -36,6 +38,7 @@ export class AboutMessageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(data => {
+      this.appModule.home=false;
       this.aboutstatus=false;
       this.load = true;
       this.malumot = "";
@@ -58,22 +61,24 @@ export class AboutMessageComponent implements OnInit {
         this.load = false;
         window.scroll(0, 0);
         this.aboutstatus=true;
-        this.navbarService.getAllAdversitement().subscribe(data => {
-          if (data.length > 0) {
-            if (data.length == 2) {
-              this.reklama1 = data[0];
-              this.reklama2 = data[1];
-            }
-            else {
-              if (data[0].daraja == 1) {
+        setTimeout(() => {
+          this.navbarService.getAllAdversitement().subscribe(data => {
+            if (data.length > 0) {
+              if (data.length == 2) {
                 this.reklama1 = data[0];
+                this.reklama2 = data[1];
               }
               else {
-                this.reklama2 = data[0];
+                if (data[0].daraja == 1) {
+                  this.reklama1 = data[0];
+                }
+                else {
+                  this.reklama2 = data[0];
+                }
               }
             }
-          }
-        });
+          });  
+        }, 2000);
       });
     });
   }

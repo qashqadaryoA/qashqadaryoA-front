@@ -14,9 +14,11 @@ export class HomePageTwoComponent implements OnInit {
     public app: AppModule) { }
   ngAfterViewInit(): void {
     if (this.youstatus == true) {
-      this.homePageTwoService.getAll().subscribe(data => {
-        this.youtubeLinks = data.content;
-      });
+      setTimeout(() => {
+        this.homePageTwoService.getAll().subscribe(data => {
+          this.youtubeLinks = data.content;
+        });  
+      }, 3000);
     }
   }
   ngOnInit(): void {

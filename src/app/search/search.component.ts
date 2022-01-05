@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-search',
@@ -9,6 +10,7 @@ import { HomePageService } from '../home/home.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
+  @Output() sideNavOpen3: EventEmitter<boolean> = new EventEmitter(true);
   pageNumber:number=0;
   searchText1!:string;
   searchText2!:string;
@@ -21,6 +23,7 @@ export class SearchComponent implements OnInit {
     public app:AppModule) { }
 
   ngOnInit(): void {
+    
     window.scroll({
       top : 0
     });
@@ -92,6 +95,10 @@ export class SearchComponent implements OnInit {
     this.homePageService.getSearch(this.searchText1,this.searchText2,this.pageNumber).subscribe(data => {
       if(data.totalElements<1){
         this.h1Text=`"`+this.searchText1+`"`+" бу сўзга оид малумот юқ";
+        this.h1=true;
+      }
+      else{
+        this.h1=false;
       }
       this.searchMessages = this.searchMessages.concat(data.content);
       this.pageNumber =  this.pageNumber + 1;

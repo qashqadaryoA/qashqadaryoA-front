@@ -12,13 +12,11 @@ import { CurrentService } from './sidenav.service';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit{
-
   @Output() sideNavOpen2: EventEmitter<boolean> = new EventEmitter(true);
   types:Types[] = [];
   tumans:Tuman[] = [];
   currency?:any=[];
   constructor(private navbarService:NavbarService,
-    private router: Router,
     private currencyService:CurrentService,
     public app:AppModule) { }
   ngAfterViewInit(): void {

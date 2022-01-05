@@ -8,15 +8,9 @@
 .container{
     margin: auto;
 }
-// .nav-links{
-//     cursor: pointer;
-// }
-
-
-//til
   
   .language select{
-      width: 80px;
+      width: 45px;
       height: 30px;
       border-radius: 10px;
       border: none;
@@ -66,36 +60,26 @@
 }
 
 
-//container bu o'zgartirilmaydi
-@media screen and (max-width: 1520px) {
-    
-    //this
+@media screen and (max-width: 1520px) {    
     .container{
         width: 95% !important;
         margin: auto;
     
     }
-
-
 }
-@media screen and (min-width: 1520px) {
-    
-    //this
+@media screen and (min-width: 1520px) {    
     .container{
         width: 1350px;
     }
-
-
 }
-//tepadagi container bu o'zgartirilmaydi
 
 .navbar{
     width: 100%;
     height: auto;
     background-color: #577BC1;
     border-bottom: solid 1px #707070;
-    padding-top: 13px;
-    padding-bottom: 22px;
+    padding-top: 8px;
+    padding-bottom: 15px;
 }
 
 .navbar-brand{
@@ -129,7 +113,6 @@ li{
 }
 .nav-links ul{
     display: inline;
-    // border: solid 1px #000;
     border-radius: 10px;
     background-color: #fff;
     box-sizing: border-box;
@@ -225,4 +208,6 @@ li{
     }
 
 }
-
+.icons{
+    font-size: medium;
+}

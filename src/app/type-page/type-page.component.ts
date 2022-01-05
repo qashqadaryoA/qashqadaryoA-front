@@ -35,6 +35,7 @@ export class TypePageComponent implements OnInit {
     });
     this.activeRoute.paramMap.subscribe(data => {
       this.typeMessages=[];
+      this.app.home=false;
       this.dataStatus=false;
       this.h1=true;
       this.load=true;
@@ -46,23 +47,24 @@ export class TypePageComponent implements OnInit {
           this.dataStatus = true;
         }
         this.typeMessages = data.content;
-        this.navbarService.getAllAdversitement().subscribe(data => {
-          if(data.length>0){
-            if(data.length==2){
-              this.reklama1 = data[0];
-              this.reklama2 = data[1];
-            }
-            else{
-              if(data[0].daraja==1){
-                this.reklama1=data[0];
+        setTimeout(() => {
+          this.navbarService.getAllAdversitement().subscribe(data => {
+            if(data.length>0){
+              if(data.length==2){
+                this.reklama1 = data[0];
+                this.reklama2 = data[1];
               }
               else{
-                this.reklama2=data[0];
+                if(data[0].daraja==1){
+                  this.reklama1=data[0];
+                }
+                else{
+                  this.reklama2=data[0];
+                }
               }
             }
-          }
-          this.load=false;
-        });
+          });  
+        },2000);
       });
     });
   }
