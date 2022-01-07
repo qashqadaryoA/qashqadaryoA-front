@@ -55,8 +55,8 @@
           <div fxLayout="row wrap">
             <div fxFlex="33.3%" fxFlex.sm="33.3%" fxFlex.xs="50%" *ngFor="let message of homePageMessageLevel9"
               (click)="openMessage(message?.id,message?.caption)">
-              <a>
-                <div class="card" *ngIf="message!=null">
+              <a >
+                <div class="card" *ngIf="message!=null" style="cursor: pointer;">
                   <img class="images" *ngIf="message?.image == null" src="assets/moon.jpg">
                   <div style="display: inline-block;" *ngIf="message?.image != null" class="images">
                     <app-image-download [fayl]="message?.image"></app-image-download>
