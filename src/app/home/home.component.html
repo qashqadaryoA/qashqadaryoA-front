@@ -2,7 +2,7 @@
   <section>
     <div class="container1" >
       <div class="reklama" (click)="rekOpen(reklama1?.address)" *ngIf="reklama1!=null">
-        <app-image-download 
+        <app-image-download style="cursor: pointer;"
         [fayl]="reklama1?.filename"></app-image-download>
       </div>
       <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
