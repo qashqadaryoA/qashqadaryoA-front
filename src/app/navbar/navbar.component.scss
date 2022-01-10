@@ -8,7 +8,7 @@
 .container{
     margin: auto;
 }
-  
+
   .language select{
       width: 45px;
       height: 30px;
@@ -76,10 +76,10 @@
 .navbar{
     width: 100%;
     height: auto;
-    background-color: #577BC1;
+    background-color: #000B49;
     border-bottom: solid 1px #707070;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-top: 8px;
+    padding-bottom: 15px;
 }
 
 .navbar-brand{
@@ -90,9 +90,8 @@ li{
 }
 
 .navbar .navbar-brand img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 120px;
+    height: 80px;
 }
 
 .nav-links ul li{
@@ -113,20 +112,21 @@ li{
 }
 .nav-links ul{
     display: inline;
-    border-radius: 10px;
-    background-color: #fff;
+    background-color: #000B49;
     box-sizing: border-box;
     padding: 10px;
-    
     transition: 0.2s all;
+}
+.navbar-color{
+    color: #fff !important;
+    text-shadow: 2px 2px 10px rgb(0, 0, 0) !important;
 }
 
 .nav-links{
     display: block;
     width: auto;
-    margin-top: -35px;
+    margin-top: -75px;
     text-align: center;
-   
 }
 .float-right{
     float: right;
@@ -153,12 +153,14 @@ li{
  margin-top: 20px; 
 }
 .list{
-    background: #577BC1;
+    background: #000B49;
     padding: 5px;
     text-align: center;
     width: 80%;
     margin: auto;
+    box-shadow: 1px 1px 10px #000000;
 }
+
 .list li{
     display: inline-block !important;
     margin-left: 20px;
@@ -166,7 +168,7 @@ li{
     color: rgb(255, 255, 255);
 }
 .tuman-a{
-    color: #fff;
+    color: rgb(255, 250, 250);
 }
 
 @media screen and (max-width: 599px) {

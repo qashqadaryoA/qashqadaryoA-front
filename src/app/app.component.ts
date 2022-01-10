@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { AppModule } from './app.module';
 
 @Component({
@@ -10,12 +10,9 @@ import { AppModule } from './app.module';
 export class AppComponent {
   title = 'Qashqadaryo-Ahli';
   @ViewChild("topScrollAnchor") topScroll?:ElementRef;
-  constructor(private appModule:AppModule, private router: Router){
+  constructor(private appModule:AppModule, private router: Router,public activeRoute:ActivatedRoute){
   }
   onNavigate(event:any){
-    this.topScroll?.nativeElement.scrollIntoView({behavior:'smooth'});
   }
-  scroll(){
-    
-  }
+  
 }

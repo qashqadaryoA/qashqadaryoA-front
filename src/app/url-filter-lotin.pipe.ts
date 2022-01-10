@@ -32,58 +32,73 @@ export class UrlFilterLotinPipe implements PipeTransform {
     for (let i = 0; i <= word?.length; i++) {
       if (word.hasOwnProperty(i)) {
         if (a[word[i]] === undefined) {
-          if (word[i] == "&") {
-            answer += "  ";
-            i = i + 5;
+          let kkk=word[i]+word[i+1]+word[i+2]+word[i+3];        
+          if (kkk=="<img") {
+            answer += '<img width="95%"';
+            i = i + 4;
+            wordStatus=true;
           }
-          else {
-            answer += word[i];
-            if (word[i] == ">") {
-              wordStatus = false;
+          else{
+            if (word[i] == "&") {
+              answer += "  ";
+              i = i + 5;
             }
-            if (word[i] == "<") {
-              wordStatus = true;
+            else {
+              answer += word[i];
+              if (word[i] == ">") {
+                wordStatus = false;
+              }
+              if (word[i] == "<") {
+                wordStatus = true;
+              }
             }
           }
         } else {
-          if (wordStatus == true || word[i] == "<") {
-            answer += word[i];
-            wordStatus = true;
-            if (word[i] == ">") {
-              wordStatus = false;
-            }
+          let kkk=word[i]+word[i+1]+word[i+2]+word[i+3];        
+          if (kkk=="<img") {
+            answer += '<img width="95%"';
+            i = i + 4;
+            wordStatus=true;
           }
-          else {
-            let b = word[i] + word[i + 1];
-            if (b == "sh" || b == "Sh" || b == "ch" || b == "Ch" || b == "Ya" || b == "ya" || b == "o'" || b == "O'" || b == "o'" || b == "O'" || b == "o‘" || b == "O‘" || b == "yo" || b == "Yo" || b == "yu" || b == "Yu" || b=="g'" || b=="G'") {
-              switch (b) {
-                case "Sh": answer += "Ш"; break;
-                case "sh": answer += "ш"; break;
-                case "Ch": answer += "Ч"; break;
-                case "ch": answer += "ч"; break;
-                case "Ya": answer += "Я"; break;
-                case "ya": answer += "я"; break;
-                case "O'": answer += "Ў"; break;
-                case "o'": answer += "ў"; break;
-                case "O'": answer += "Ў"; break;
-                case "o'": answer += "ў"; break;
-                case "Yo": answer += "Ё"; break;
-                case "yo": answer += "ё"; break;
-                case "Yu": answer += "Ю"; break;
-                case "yu": answer += "ю"; break;
-                case "o‘": answer += "ў"; break;
-                case "O‘": answer += "ў"; break;
-                case "G'": answer += "Ғ"; break;
-                case "g'": answer += "ғ"; break;
-                default: ;
+          else{
+            if (wordStatus == true || word[i] == "<") {
+              answer += word[i];
+              wordStatus = true;
+              if (word[i] == ">") {
+                wordStatus = false;
               }
-              i = i + 1;
             }
             else {
-              answer += a[word[i]];
+              let b = word[i] + word[i + 1];
+              if (b == "sh" || b == "Sh" || b == "ch" || b == "Ch" || b == "Ya" || b == "ya" || b == "o'" || b == "O'" || b == "o'" || b == "O'" || b == "o‘" || b == "O‘" || b == "yo" || b == "Yo" || b == "yu" || b == "Yu" || b=="g'" || b=="G'") {
+                switch (b) {
+                  case "Sh": answer += "Ш"; break;
+                  case "sh": answer += "ш"; break;
+                  case "Ch": answer += "Ч"; break;
+                  case "ch": answer += "ч"; break;
+                  case "Ya": answer += "Я"; break;
+                  case "ya": answer += "я"; break;
+                  case "O'": answer += "Ў"; break;
+                  case "o'": answer += "ў"; break;
+                  case "O'": answer += "Ў"; break;
+                  case "o'": answer += "ў"; break;
+                  case "Yo": answer += "Ё"; break;
+                  case "yo": answer += "ё"; break;
+                  case "Yu": answer += "Ю"; break;
+                  case "yu": answer += "ю"; break;
+                  case "o‘": answer += "ў"; break;
+                  case "O‘": answer += "ў"; break;
+                  case "G'": answer += "Ғ"; break;
+                  case "g'": answer += "ғ"; break;
+                  default: ;
+                }
+                i = i + 1;
+              }
+              else {
+                answer += a[word[i]];
+              }
             }
           }
-
         }
       }
     }

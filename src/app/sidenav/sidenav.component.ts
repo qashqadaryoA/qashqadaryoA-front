@@ -40,4 +40,11 @@ export class SidenavComponent implements OnInit{
       this.app.storeKirill();
     }
   }
+  
+  sidenavchange(){
+    if(this.app.sidenav1Status==true){
+      this.app.sidenav1Status=false;
+      this.sideNavOpen2.emit(false);
+    }
+  }
 }

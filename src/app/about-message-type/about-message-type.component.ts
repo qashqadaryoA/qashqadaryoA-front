@@ -1,5 +1,6 @@
+import { DOCUMENT } from '@angular/common';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
@@ -29,7 +30,8 @@ export class AboutMessageTypeComponent implements OnInit,AfterViewInit {
     });  
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["post",id,caption]);
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
   koproq() {
     if(this.hashtags!=null){

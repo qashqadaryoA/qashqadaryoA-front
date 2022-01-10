@@ -2,7 +2,7 @@
     <div class="top-margin">
         <div class="container">
             <div class="navbar-brand">
-              <a class="search-icon" *ngIf="app.home"  (click)="sideNavOpen3.emit(true)" (click)="sidenav2()"><i class="fas fa-search icons"></i></a>
+              <a class="search-icon" *ngIf="app.home" (click)="sideNavOpen3.emit(true)" (click)="sidenav2()"><i class="fas fa-search icons"></i></a>
               <a class="search-icon" routerLink="/" *ngIf="!app.home" (click)="sidenavchange()"><i class="fas fa-home icons"></i></a>
               <a class="logo-img" routerLink="/" (click)="sidenavchange()"><img [src]="siteBrand" alt={{siteName}}></a>
             </div>

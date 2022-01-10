@@ -2,7 +2,7 @@
   <section>
     <div class="container1" >
       <div class="reklama" (click)="rekOpen(reklama1?.address)" *ngIf="reklama1!=null">
-        <app-image-download style="cursor: pointer;"
+        <app-image-download 
         [fayl]="reklama1?.filename"></app-image-download>
       </div>
       <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
@@ -13,7 +13,7 @@
           <h1 class="searchH1" *ngIf="dataStatus && app.lotin" >{{dataText | translate}}</h1>
           <!-- Asosiy xabar yozilgan qator -->
           <div class="flex-container" *ngIf="homePageMessageLevel10[0]!=null"
-            [routerLink]='["post",homePageMessageLevel10[0]?.id,homePageMessageLevel10[0]?.caption]' fxLayout="row"
+            [routerLink]='[app.post,homePageMessageLevel10[0]?.id,homePageMessageLevel10[0]?.caption]' (click)="app.postChange()" fxLayout="row"
             fxLayout.xs="column" class="main-message">
             <div fxFlex="2 1 0">
               <a>
@@ -55,8 +55,8 @@
           <div fxLayout="row wrap">
             <div fxFlex="33.3%" fxFlex.sm="33.3%" fxFlex.xs="50%" *ngFor="let message of homePageMessageLevel9"
               (click)="openMessage(message?.id,message?.caption)">
-              <a >
-                <div class="card" *ngIf="message!=null" style="cursor: pointer;">
+              <a>
+                <div class="card" *ngIf="message!=null">
                   <img class="images" *ngIf="message?.image == null" src="assets/moon.jpg">
                   <div style="display: inline-block;" *ngIf="message?.image != null" class="images">
                     <app-image-download [fayl]="message?.image"></app-image-download>

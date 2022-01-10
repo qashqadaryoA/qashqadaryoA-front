@@ -28,6 +28,7 @@ import { UrlFilterPipe } from './url-filter.pipe';
 import { TranslatePipe } from './translate.pipe';
 import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
 import { LoadingComponent } from './loading/loading.component';
+import { Router } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { LoadingComponent } from './loading/loading.component';
     UrlFilterPipe,
     TranslatePipe,
     UrlFilterLotinPipe,
-    LoadingComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +69,7 @@ import { LoadingComponent } from './loading/loading.component';
 export class AppModule { 
   public lotin=false;
   public home=true;  
+  public post="post"
   public sidenav1Status?:Boolean=false;
   public sidenav2Status?:Boolean=false;
   storeKirill(): any {
@@ -77,6 +79,14 @@ export class AppModule {
   storeLotin(): any {
     sessionStorage.setItem("language", "Lotincha");
     this.getUrl();
+  }
+  postChange(){
+    if(this.post=="post"){
+      this.post="newpost";
+    }
+    else{
+      this.post="post";
+    }
   }
   getUrl(): string | null {
     if(sessionStorage.getItem("language")==null){

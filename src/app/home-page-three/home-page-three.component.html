@@ -28,7 +28,7 @@
               </div>
               <div fxFlex="3 1 0">
                 <div class="data-time">
-                  <i style="font-size: large;" class="far fa-newspaper"  id="icon-newspaper"></i>
+                  <i class="far fa-newspaper"></i>
                   <span class="type" *ngIf="!app.lotin">
                     {{message?.types?.name}}</span>
                   <span class="type" *ngIf="app.lotin">
@@ -46,8 +46,10 @@
         <div fxLayoutGap="10px">
           <a>
             <div class="button-card">
-                <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
-                <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
+                 <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
+                <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button> 
+
+                Kuproq o'qish
             </div>
           </a>
         </div>

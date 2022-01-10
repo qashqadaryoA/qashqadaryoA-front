@@ -19,11 +19,13 @@ const routes: Routes = [
   },
   { path: 'post/:id/:nom', 
   component: AboutMessageComponent},
+  { path: 'newpost/:id/:nom', 
+  component: AboutMessageComponent},
   { path: '**', component: HomeComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

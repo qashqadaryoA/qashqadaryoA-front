@@ -17,7 +17,6 @@ export class AboutMessageComponent implements OnInit {
   status: boolean = false;
   reklama1: any;
   reklama2: any;
-  malumot: any;
   txt: string = "";
   load?: Boolean;
   aboutstatus?: Boolean;
@@ -33,23 +32,17 @@ export class AboutMessageComponent implements OnInit {
     public appModule: AppModule,
     private location: Location) { }
   ngAfterViewInit(): void {
-    window.scroll(0, 0);
-    this.scrool();
   }
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(data => {
       this.appModule.home=false;
       this.aboutstatus=false;
       this.load = true;
-      this.malumot = "";
       this.hashtags = null;
       this.id = data.get("id");
       this.message = [];
       this.homePageService.getById(this.id).subscribe(data => {
         let message = data;
-        this.txt = "";
-        this.txt = message?.fullText?.fullText?.replaceAll('<img', '<img height="100%" width="100%"');
-        this.malumot = this.txt;
         let baza: any[] = [];
         for (let j = 0; j < message.hashtags.length; j++) {
           let hashtags!: JSON;
@@ -84,22 +77,5 @@ export class AboutMessageComponent implements OnInit {
   }
   rekOpen(url: any) {
     location.href = url;
-  }
-  scrool() {
-    this.location.subscribe((ev: any) => {
-      this.lastPoppedUrl = ev.url;
-    });
-    this.router.events.subscribe((ev: any) => {
-      if (ev instanceof NavigationStart) {
-        if (ev.url != this.lastPoppedUrl)
-          this.yScrollStack.push(window.scrollY);
-      } else if (ev instanceof NavigationEnd) {
-        if (ev.url == this.lastPoppedUrl) {
-          this.lastPoppedUrl = undefined;
-          window.scrollTo(0, this.yScrollStack.pop());
-        } else
-          window.scrollTo(0, 0);
-      }
-    });
   }
 }

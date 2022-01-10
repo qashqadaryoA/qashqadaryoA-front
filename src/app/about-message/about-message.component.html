@@ -1,4 +1,3 @@
-<!-- <app-loading *ngIf="load"></app-loading> -->
 <div #div1>
   <div class="container1">
     <div class="reklama" (click)="rekOpen(reklama1?.address)" *ngIf="reklama1!=null">
@@ -38,9 +37,9 @@
           </div>
           <div *ngIf="appModule?.lotin" class="long-text">{{message?.shortText?.shortText | translate}}
           </div>
-          <div class="long-text" *ngIf="!appModule?.lotin" [innerHtml]="malumot | urlFilter">
+          <div class="long-text" *ngIf="!appModule?.lotin" [innerHtml]="message?.fullText?.fullText | urlFilter">
           </div>
-          <div class="long-text" *ngIf="appModule?.lotin" [innerHtml]="malumot | urlFilterLotin">
+          <div class="long-text" *ngIf="appModule?.lotin" [innerHtml]="message?.fullText?.fullText | urlFilterLotin">
           </div>
         </div>
         <div class="hashtag" *ngIf="!appModule.lotin && aboutstatus">

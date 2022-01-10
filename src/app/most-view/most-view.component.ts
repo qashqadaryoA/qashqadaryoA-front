@@ -22,7 +22,7 @@ export class MostViewComponent implements OnInit,AfterViewInit {
   ngOnInit(): void {
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["post",id,caption]);
-    window.scroll(0,0);
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
 }

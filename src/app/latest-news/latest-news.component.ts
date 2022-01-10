@@ -24,6 +24,7 @@ export class LatestNewsComponent implements OnInit,AfterViewInit {
     });
   }
   openMessage(id:any,caption:any){
-    this.router.navigate(["post",id,caption]);
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
 }
