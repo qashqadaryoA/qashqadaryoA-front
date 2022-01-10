@@ -18,7 +18,7 @@
         </div>
         <div fxLayout="row wrap">
           <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%"
-            fxLayoutGap="10px" (click)="openMessage(message?.id,message?.caption)">
+            fxLayoutGap="10px" (click)="openMessage(message?.id)">
             <div fxLayout="row" class="margin-t" *ngIf="message!=null">
               <div fxFlex="2 1 0" class="card-img">
                 <img class="img2" *ngIf="message?.image == null" src="assets/moon.jpg">
@@ -48,8 +48,6 @@
             <div class="button-card">
                  <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
                 <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button> 
-
-                Kuproq o'qish
             </div>
           </a>
         </div>

@@ -29,9 +29,8 @@ export class AboutMessageTypeComponent implements OnInit,AfterViewInit {
       this.koproq();
     });  
   }
-  openMessage(id:any,caption:any){
-    this.router.navigate([this.app.post, id, caption]);
-    this.app.postChange(); 
+  openMessage(id:any){
+    this.router.navigate([this.app.post, id]);
   }
   koproq() {
     if(this.hashtags!=null){

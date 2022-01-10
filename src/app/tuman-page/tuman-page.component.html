@@ -19,7 +19,7 @@
         <!-- Qushimcha xabarlar yozilgan qator -->
         <div fxLayout="row wrap">
           <div fxFlex="33.3%" *ngFor="let message of tumanMessages" fxFlex.sm="33.3%" fxFlex.xs="50%"
-            (click)="openMessage(message?.id,message?.caption)">
+            (click)="openMessage(message?.id)">
             <a>
               <div class="card">
                 <img class="images" *ngIf="message?.image == null" src="assets/moon.jpg">

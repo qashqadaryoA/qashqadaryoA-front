@@ -69,7 +69,7 @@ import { Router } from '@angular/router';
 export class AppModule { 
   public lotin=false;
   public home=true;  
-  public post="post"
+  public post=""
   public sidenav1Status?:Boolean=false;
   public sidenav2Status?:Boolean=false;
   storeKirill(): any {
@@ -81,11 +81,11 @@ export class AppModule {
     this.getUrl();
   }
   postChange(){
-    if(this.post=="post"){
-      this.post="newpost";
+    if(this.post==""){
+      this.post="post";
     }
     else{
-      this.post="post";
+      this.post="";
     }
   }
   getUrl(): string | null {

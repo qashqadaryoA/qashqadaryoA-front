@@ -12,7 +12,7 @@
          </div>
     </div>
     <div fxLayout="row wrap" class="messages">
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id,message?.caption)" (click)="app.sidenav2Status=false" (click)="sideNavOpen3.emit(false)" *ngFor="let message of searchMessages">
+        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id)" (click)="app.sidenav2Status=false" (click)="sideNavOpen3.emit(false)" *ngFor="let message of searchMessages">
             <div class="card">
                 <img class="img" *ngIf="message?.image == null" src="assets/moon.jpg">
                 <div style="display: inline-block;" class="images" *ngIf="message?.image != null">

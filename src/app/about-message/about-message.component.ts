@@ -35,6 +35,7 @@ export class AboutMessageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(data => {
+      this.appModule.postChange();
       this.appModule.home=false;
       this.aboutstatus=false;
       this.load = true;

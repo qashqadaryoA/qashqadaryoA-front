@@ -3,7 +3,7 @@
     <h2 class="title" *ngIf="app.lotin">So'ngi yangiliklar</h2>
     <div class="container">
         <div fxLayout="row wrap">
-                <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of latestNewsMessages" fxFlex.xs="100%" fxLayoutGap="10px" (click)="openMessage(message?.id,message?.caption)">
+                <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of latestNewsMessages" fxFlex.xs="100%" fxLayoutGap="10px" (click)="openMessage(message?.id)">
                     <a>
                         <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="column">
                             <div class="card-img" fxFlex="5 1 0">

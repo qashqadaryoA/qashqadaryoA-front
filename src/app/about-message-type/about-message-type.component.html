@@ -7,7 +7,7 @@
   </div>
   <div fxLayout="row wrap">
     <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" *ngFor="let message of hashtagMessages"
-      (click)="openMessage(message?.id,message?.caption)">
+      (click)="openMessage(message?.id)">
       <div class="card">
         <img class="img" src="assets/moon.jpg">
         <div style="display: inline-block;" *ngIf="message?.image != null" class="img">

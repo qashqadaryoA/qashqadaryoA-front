@@ -104,8 +104,7 @@ export class SearchComponent implements OnInit {
       this.pageNumber =  this.pageNumber + 1;
     });
   }
-  openMessage(id:any,caption:any){
-    this.router.navigate([this.app.post, id, caption]);
-    this.app.postChange(); 
+  openMessage(id:any){
+    this.router.navigate([this.app.post, id]);
   }
 }
