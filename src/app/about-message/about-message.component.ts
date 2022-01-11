@@ -36,6 +36,7 @@ export class AboutMessageComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(data => {
       this.appModule.home=false;
+      this.appModule.postChange();
       this.aboutstatus=false;
       this.load = true;
       this.hashtags = null;
@@ -77,5 +78,8 @@ export class AboutMessageComponent implements OnInit {
   }
   rekOpen(url: any) {
     location.href = url;
+  }
+  openHashtag(hashtag: any) {
+    this.router.navigate(["find",hashtag]);
   }
 }

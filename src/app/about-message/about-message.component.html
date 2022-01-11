@@ -43,10 +43,10 @@
           </div>
         </div>
         <div class="hashtag" *ngIf="!appModule.lotin && aboutstatus">
-          <span *ngFor="let element of hashtags" class="span-padding">#{{element.hashtag}}</span>
+          <span *ngFor="let element of hashtags" class="span-padding" (click)="openHashtag(element.hashtag)">#{{element.hashtag}}</span>
         </div>
         <div class="hashtag" *ngIf="appModule.lotin && aboutstatus">
-          <span *ngFor="let element of hashtags" class="span-padding">#{{element.hashtag | translate}}</span>
+          <span *ngFor="let element of hashtags" class="span-padding" (click)="openHashtag(element.hashtag)">#{{element.hashtag | translate}}</span>
         </div>
       </div>
       <div fxFlex="28%" *ngIf="aboutstatus" fxFlex.sm="100%" fxFlex.xs="100%" fxFlexOrder.xs='2' fxFlexOrder.sm="2">

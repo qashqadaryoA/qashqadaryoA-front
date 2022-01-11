@@ -29,6 +29,9 @@ import { TranslatePipe } from './translate.pipe';
 import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
 import { LoadingComponent } from './loading/loading.component';
 import { Router } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { SearchFindComponent } from './search-find/search-find.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,8 @@ import { Router } from '@angular/router';
     UrlFilterPipe,
     TranslatePipe,
     UrlFilterLotinPipe,
-    LoadingComponent
+    LoadingComponent,
+    SearchFindComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,13 @@ import { Router } from '@angular/router';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -69,7 +79,7 @@ import { Router } from '@angular/router';
 export class AppModule { 
   public lotin=false;
   public home=true;  
-  public post="post"
+  public post="";
   public sidenav1Status?:Boolean=false;
   public sidenav2Status?:Boolean=false;
   storeKirill(): any {
@@ -81,15 +91,15 @@ export class AppModule {
     this.getUrl();
   }
   postChange(){
-    if(this.post=="post"){
-      this.post="newpost";
+    if(this.post==""){
+      this.post="post";
     }
     else{
-      this.post="post";
+      this.post="";
     }
   }
   getUrl(): string | null {
-    if(sessionStorage.getItem("language")==null){
+    if(!sessionStorage.getItem("language")){
       return this.storeKirill();
     }
     else{

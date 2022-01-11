@@ -1,37 +1,45 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppModule } from '../app.module';
 import { HomePageService } from '../home/home.service';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
+  selector: 'app-search-find',
+  templateUrl: './search-find.component.html',
+  styleUrls: ['./search-find.component.scss']
 })
-export class SearchComponent implements OnInit {
-  @Output() sideNavOpen3: EventEmitter<boolean> = new EventEmitter(true);
+export class SearchFindComponent implements OnInit {
   pageNumber:number=0;
-  searchText1!:string;
+  searchText1!:any;
   searchText2!:string;
   searchMessages?:any=[];
   h1:Boolean=false;
   h1Text:String="Қидиришингиз мумкин";
+  @ViewChild('input') input!: ElementRef;
   constructor(private homePageService:HomePageService,
     private router:Router,
-    public app:AppModule) { }
-
+    public app:AppModule,
+    public activeRoute:ActivatedRoute) { }
   ngOnInit(): void {
     window.scroll({
       top : 0
     });
     this.h1=true;
+    
+    this.activeRoute.paramMap.subscribe(data => {
+      if(data.get("nom")){
+        this.searchText1=data.get("nom");
+        this.search();
+      }
+    });
   }
   search(){
-    this.h1Text="Қидириляпти кутинг";
+    this.h1Text="Қидириляпти кутинг"
     this.pageNumber=0;
     this.searchMessages=[];
-    this.searchText1 = (<HTMLInputElement>document.getElementById("input")).value;
-    console.log(this.searchText1);
+    if(!this.searchText1){
+      this.searchText1 = this.input.nativeElement.value;
+    }
     let word=this.searchText1;
     let answer: any = ""
       , a: any = {};
@@ -105,6 +113,5 @@ export class SearchComponent implements OnInit {
   openMessage(id:any){
     this.router.navigate([this.app.post, id]);
   }
+
 }
-
-

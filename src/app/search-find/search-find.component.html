@@ -3,8 +3,8 @@
         <div class="title">
             <div class="wrap">
                 <div class="search">
-                    <input type="text" *ngIf="!app.lotin" id="input"class="searchTerm" placeholder="Қидириш">
-                    <input type="text" *ngIf="app.lotin" id="input" class="searchTerm" placeholder="Qidirish">
+                    <input type="text" *ngIf="!app.lotin" id="input" #input [(ngModel)]="searchText1" class="searchTerm" placeholder="Қидириш">
+                    <input type="text" *ngIf="app.lotin" id="input" #input [(ngModel)]="searchText1" class="searchTerm" placeholder="Qidirish">
                     <button type="submit" class="searchButton" (click)="search()">
                     <i class="fa fa-search"></i>
                 </button>
@@ -12,7 +12,7 @@
          </div>
     </div>
     <div fxLayout="row wrap" class="messages">
-        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id)" (click)="app.sidenav2Status=false" (click)="sideNavOpen3.emit(false)" *ngFor="let message of searchMessages">
+        <div fxFlex="25%" fxFlex.xs="50%" fxFlex.sm="33%" (click)="openMessage(message?.id)" *ngFor="let message of searchMessages">
             <div class="card">
                 <img class="img" *ngIf="message?.image == null" src="assets/moon.jpg">
                 <div style="display: inline-block;" class="images" *ngIf="message?.image != null">
