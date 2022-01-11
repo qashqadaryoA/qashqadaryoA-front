@@ -3,7 +3,7 @@
     <h2 class="title" *ngIf="app.lotin"  [innerText]="'Mavzuga oid'"></h2>
     <div class="container">
         <div fxLayout="row wrap">
-            <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of titleMessages" (click)="openMessage(message?.id)">
+            <div fxFlex="100%" fxFlex.sm="50%" *ngFor="let message of titleMessages" (click)="openMessage(message?.id,message?.caption)">
                 <a>
                     <div class="card" fxLayout.xs="row" fxLayout.sm="row" fxLayout="row">
                         <div class="card-img" fxFlex="4 1 0">

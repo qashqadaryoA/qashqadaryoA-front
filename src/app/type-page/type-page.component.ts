@@ -74,8 +74,9 @@ export class TypePageComponent implements OnInit {
       this.typeMessages = this.typeMessages.concat(data.content);
     });
   }
-  openMessage(id:any){
-    this.router.navigate([this.app.post, id]);
+  openMessage(id:any,caption:any){
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
   
   rekOpen(url:any){

@@ -46,7 +46,8 @@ export class AboutMessageRelatedToTheSubjectComponent implements OnInit, AfterVi
   }
   ngOnInit(): void {
   }
-  openMessage(id: any) {
-    this.router.navigate([this.app.post, id]);
+  openMessage(id: any, caption: any) {
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
 }

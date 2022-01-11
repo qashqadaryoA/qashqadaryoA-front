@@ -26,7 +26,8 @@ export class HomePageThreeComponent implements OnInit ,AfterViewInit{
       this.homePageMessageLevel8 = this.homePageMessageLevel8.concat(data.content);
     });    
   }
-  openMessage(id:any){
-    this.router.navigate([this.app.post, id]);
+  openMessage(id:any,caption:any){
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
 }

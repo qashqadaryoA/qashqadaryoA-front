@@ -71,8 +71,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }, 2000);
     });
   }
-  openMessage(id:any){
-    this.router.navigate([this.app.post, id]);
+  openMessage(id:any,caption:any){
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
   ngAfterViewInit(): void {       
   }  

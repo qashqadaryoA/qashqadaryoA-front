@@ -17,9 +17,9 @@ const routes: Routes = [
     path: 'tuman/:id/:nom',
     component: TumanPageComponent
   },
-  { path: ':id', 
+  { path: 'post/:id/:nom', 
   component: AboutMessageComponent},
-  { path: 'post/:id', 
+  { path: 'newpost/:id/:nom', 
   component: AboutMessageComponent},
   { path: '**', component: HomeComponent}
 ];

@@ -77,8 +77,9 @@ export class TumanPageComponent implements OnInit {
       this.tumanMessages = this.tumanMessages.concat(data.content);
     });
   }
-  openMessage(id:any){
-    this.router.navigate([this.app.post, id]);
+  openMessage(id:any,caption:any){
+    this.router.navigate([this.app.post, id, caption]);
+    this.app.postChange(); 
   }
   rekOpen(url:any){
     location.href=url;
