@@ -12,7 +12,11 @@
     width: 98%;
     margin: auto;
 }
-
+.title{
+    color: #000B49;
+    border-bottom: 1px solid #000B49;
+    text-align: left;
+}
 .fa-newspaper{
     font-size: 20px;
 }
@@ -88,6 +92,11 @@
 
 @media screen and (max-width: 599px) {
 
+    .title{
+        color: #000B49;
+        border-bottom: 1px solid #000B49;
+        text-align: left;
+    }
     .card-img{
         display: block;
         display: flex;

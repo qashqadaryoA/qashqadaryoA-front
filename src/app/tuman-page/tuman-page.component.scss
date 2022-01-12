@@ -122,10 +122,14 @@
     margin-top: 20px;
 }
 .button{
-    width: 100%;
-    margin-top: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
 }
-
+.icons{
+    position: relative;
+    top: 5px;
+}
 
 
 // Qushimcha yangiliklar yozilgan style
@@ -164,6 +168,17 @@
     line-height: 20px;
 }
 @media screen and (max-width: 959px) {
+
+    .button{
+        text-align: center;
+        font-size: large;
+        font-weight: 700;
+    }
+    .icons{
+        position: relative;
+        top: 5px;
+    }
+
     .reklama{
         width:85% !important;
         height: 90px !important;
@@ -343,6 +358,16 @@
     margin: auto;
     background-color: black;
     margin-top: 20px;
+}
+
+.button{
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+}
+.icons{
+    position: relative;
+    top: 5px;
 }
 }
 .searchH1{

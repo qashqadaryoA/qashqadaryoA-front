@@ -75,7 +75,7 @@
 
 .navbar{
     width: 100%;
-    height: auto;
+    height: 45px;
     background-color: #000B49;
     border-bottom: solid 1px #707070;
     padding-top: 8px;
@@ -90,8 +90,8 @@ li{
 }
 
 .navbar .navbar-brand img{
-    width: 120px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 
 .nav-links ul li{
@@ -125,7 +125,7 @@ li{
 .nav-links{
     display: block;
     width: auto;
-    margin-top: -75px;
+    margin-top: -40px;
     text-align: center;
 }
 .float-right{
@@ -133,11 +133,15 @@ li{
     margin-top: -25px;
 }
 .float-right .nav-search {
-    border-radius: 50%;
+    border-radius: 10px;
     background-color: #ffffff;
-    padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 5px;
+    padding: 7px 15px;
+    position: relative;
+    bottom: 3px;
+    margin-right: 20px;
+}
+.float-right .nav-search .fa-search{
+    color: black;
 }
 .menu-icon{
     display: none;
@@ -146,29 +150,33 @@ li{
     display: none;
 }
 
+.language{
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
 .brand-logo{
     display: none;
 }
-.tuman{
- margin-top: 20px; 
-}
+
 .list{
-    background: #000B49;
-    padding: 5px;
     text-align: center;
-    width: 80%;
-    margin: auto;
-    box-shadow: 1px 1px 10px #000000;
+    // width: 80%;
+    // margin: auto;
 }
 
 .list li{
     display: inline-block !important;
     margin-left: 20px;
     font-weight: 400;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 .tuman-a{
-    color: rgb(255, 250, 250);
+    color: rgb(0, 0, 0);
+    border-left: 1px solid black;
+    padding-left: 10px;
+
+
 }
 
 @media screen and (max-width: 599px) {
@@ -198,13 +206,29 @@ li{
 
     .search-icon{
         display: inline-block;
-        font-size: 30px;
-        height: 30px;
-        width: 30px;
+       
         list-style: none;
         color: #fff !important;
     }
 
+    .search-icon .fa-search{
+         font-size:18px;
+        height: 18px;
+        width: 18px;
+        margin-top: 15px;
+    }
+    .search-icon .fa-home{
+        font-size:18px;
+       height: 18px;
+       width: 18px;
+       margin-top: 17px;
+   }
+    .menu-icon .fa-bars{
+        font-size:18px;
+        height: 18px;
+        width: 18px;
+        margin-top: 13px;
+    }
     .language select{
         display: none;
     }

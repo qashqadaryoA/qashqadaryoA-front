@@ -6,6 +6,7 @@
 }
 .body{
     background: #ffffff;
+    margin-bottom: 30px;
 }
 .container1{
     margin: auto;
@@ -86,9 +87,12 @@
     bottom: 5px;
 }
 .title{
-    text-align: center;
-    font-size: x-large;
-    font-weight: 500;
+    color: #000B49;
+    padding: 6px;
+    font-size: xx-large;
+    border-bottom: 1px solid #000B49;
+    text-align: left;
+    font-weight: 600;
 }
 
 .margin-t{
@@ -122,8 +126,13 @@
     margin-bottom: 20px;
 }
 .button{
-    width: 100%;
-    margin-top: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+}
+.icons{
+    position: relative;
+    top: 5px;
 }
 
 
@@ -186,6 +195,22 @@
     .container2{
         margin-top: 0%;
     }
+    .button{
+        text-align: center;
+        font-size: large;
+        font-weight: 700;
+    }
+    .icons{
+        position: relative;
+        top: 5px;
+    }
+    .title{
+        color: #000B49;
+        padding: 6px;
+        font-size: 20px;
+        border-bottom: 1px solid #000B49;
+        text-align: left;
+    }
 
 }
 
@@ -234,8 +259,29 @@
 .margin-t{
     border-bottom: 1px dashed black;
     margin-top: 7px;
+    padding-bottom: 7px;
 }
 .container2{
     margin-top: 0%;
+}
+.title{
+    color: #000B49;
+    padding: 6px;
+    font-size: 20px;
+    border-bottom: 1px solid #000B49;
+    text-align: left;
+}
+.margin-top{
+    margin-top: 10px;
+}
+.button{
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    cursor: pointer;
+}
+.icons{
+    position: relative;
+    top: 5px;
 }
 }

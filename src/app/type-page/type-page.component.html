@@ -45,9 +45,9 @@
         <div fxLayoutGap="10px">
           <a>
             <div class="button-card">
-              <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
-              <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button>
-            </div>
+              <div class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary"> <mat-icon class="icons">rotate_right</mat-icon>  Кўпроқ ўқиш</div>
+             <div class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary"> <mat-icon class="icons">rotate_right</mat-icon>  Ko'proq o'qish</div> 
+         </div>
           </a>
         </div>
       </div>

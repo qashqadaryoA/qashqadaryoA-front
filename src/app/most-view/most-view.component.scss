@@ -6,7 +6,9 @@
 }
 
 .title{
-    text-align: center;
+    color: #000B49;
+    border-bottom: 1px solid #000B49;
+    text-align: left;
 }
 .container{
     width: 98%;
@@ -79,10 +81,21 @@
         display: block;
         margin-top: 10px;
     }
+    .title{
+        color: #000B49;
+        border-bottom: 1px solid #000B49;
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 599px) {
 
+    .title{
+        color: #000B49;
+        font-size: 20px;
+        border-bottom: 1px solid #000B49;
+        text-align: left;
+    }
     .card-img{
         display: block;
         display: flex;

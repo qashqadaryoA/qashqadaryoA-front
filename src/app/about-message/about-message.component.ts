@@ -34,6 +34,7 @@ export class AboutMessageComponent implements OnInit {
   ngAfterViewInit(): void {
   }
   ngOnInit(): void {
+    this.appModule.postChange();
     this.activeRoute.paramMap.subscribe(data => {
       this.appModule.home=false;
       this.appModule.postChange();

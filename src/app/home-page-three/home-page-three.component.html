@@ -1,22 +1,15 @@
 <section class="body">
 
   <div class="container1">
-    <!-- <div class="reklama">
-            <h1>Reklama</h1>
-        </div> -->
     <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
-
- 
       <div fxFlex="5.5 1 0">
-
-        <!-- Qushimcha xabarlar yozilgan qator -->
         <div class="title" *ngIf="!app.lotin">
           Қўшимча янгиликлар
         </div>
         <div class="title" *ngIf="app.lotin">
           Qo'shimcha yangiliklar
         </div>
-        <div fxLayout="row wrap">
+        <div fxLayout="row wrap" class="margin-top">
           <div fxFlex="50%" fxFlex.sm="50%" *ngFor="let message of homePageMessageLevel8" fxFlex.xs="100%"
             fxLayoutGap="10px" (click)="openMessage(message?.id)">
             <div fxLayout="row" class="margin-t" *ngIf="message!=null">
@@ -46,10 +39,8 @@
         <div fxLayoutGap="10px">
           <a>
             <div class="button-card">
-                 <button class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary">Кўпроқ ўқиш</button>
-                <button class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary">Ko'proq o'qish</button> 
-
-                Kuproq o'qish
+                 <div class="button" *ngIf="!app.lotin" (click)="koproq()" mat-flat-button color="primary"> <mat-icon class="icons">rotate_right</mat-icon>  Кўпроқ ўқиш</div>
+                <div class="button" *ngIf="app.lotin" (click)="koproq()" mat-flat-button color="primary"> <mat-icon class="icons">rotate_right</mat-icon>  Ko'proq o'qish</div> 
             </div>
           </a>
         </div>

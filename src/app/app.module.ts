@@ -16,7 +16,6 @@ import { HomePageThreeComponent } from './home-page-three/home-page-three.compon
 import { MostViewComponent } from './most-view/most-view.component';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { TypePageComponent } from './type-page/type-page.component';
-import { SocialMediaComponent } from './social-media/social-media.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ImageDownloadComponent } from './image-download/image-download.component';
 import { AboutMessageComponent } from './about-message/about-message.component';
@@ -27,7 +26,6 @@ import { YoutubePipe } from './youtube.pipe';
 import { UrlFilterPipe } from './url-filter.pipe';
 import { TranslatePipe } from './translate.pipe';
 import { UrlFilterLotinPipe } from './url-filter-lotin.pipe';
-import { LoadingComponent } from './loading/loading.component';
 import { Router } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -46,7 +44,6 @@ import { SearchFindComponent } from './search-find/search-find.component';
     MostViewComponent,
     LatestNewsComponent,
     TypePageComponent,
-    SocialMediaComponent,
     ImageDownloadComponent,
     AboutMessageComponent,
     AboutMessageRelatedToTheSubjectComponent,
@@ -56,7 +53,6 @@ import { SearchFindComponent } from './search-find/search-find.component';
     UrlFilterPipe,
     TranslatePipe,
     UrlFilterLotinPipe,
-    LoadingComponent,
     SearchFindComponent
   ],
   imports: [
