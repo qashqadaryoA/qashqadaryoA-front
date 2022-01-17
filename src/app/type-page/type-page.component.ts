@@ -34,6 +34,7 @@ export class TypePageComponent implements OnInit {
       top : 0
     });
     this.activeRoute.paramMap.subscribe(data => {
+      this.app.load=true;
       this.typeMessages=[];
       this.app.home=false;
       this.dataStatus=false;
@@ -65,6 +66,9 @@ export class TypePageComponent implements OnInit {
             }
           });  
         },2000);
+        setTimeout(() => {
+          this.app.load=false;
+        }, 300);
       });
     });
   }

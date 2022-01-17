@@ -36,6 +36,7 @@ export class TumanPageComponent implements OnInit {
     });
     this.activeRoute.paramMap.subscribe(data =>{
       this.app.home=false;
+      this.app.load=true;
       this.tumanMessages=[];
       this.dataStatus=false;
       this.h1=true;
@@ -67,6 +68,9 @@ export class TumanPageComponent implements OnInit {
             }
           });  
         }, 2000);
+        setTimeout(() => {
+          this.app.load=false;
+        }, 300);
         this.load=false;
       });
     });

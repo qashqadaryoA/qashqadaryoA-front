@@ -30,6 +30,7 @@ import { Router } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SearchFindComponent } from './search-find/search-find.component';
+import { TemplateComponent } from './template/template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { SearchFindComponent } from './search-find/search-find.component';
     UrlFilterPipe,
     TranslatePipe,
     UrlFilterLotinPipe,
-    SearchFindComponent
+    SearchFindComponent,
+    TemplateComponent
   ],
   imports: [
     BrowserModule,
@@ -76,6 +78,7 @@ export class AppModule {
   public lotin=false;
   public home=true;  
   public post="";
+  public load?:Boolean=true;
   public sidenav1Status?:Boolean=false;
   public sidenav2Status?:Boolean=false;
   storeKirill(): any {

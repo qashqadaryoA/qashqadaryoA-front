@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.app.load=true;
     this.h1=true;
     this.app.home=true;
     window.scroll({
@@ -69,6 +70,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
           }
         });  
       }, 2000);
+      setTimeout(() => {
+        this.app.load=false;
+      }, 300);
     });
   }
   openMessage(id:any){

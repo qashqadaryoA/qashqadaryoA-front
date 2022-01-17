@@ -35,6 +35,11 @@
     width: 100%;
     height: auto;
 }
+
+.searchH1{
+    text-align: center !important;
+}
+
 .img{
     width: 95%;
     margin: auto;
@@ -87,9 +92,12 @@
     bottom: 5px;
 }
 .title{
-    text-align: center;
+    text-align: left !important;
     font-size: x-large;
     font-weight: 600;
+    color: #000B49;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #000B49;
 }
 
 .margin-t{
@@ -369,23 +377,16 @@
     position: relative;
     top: 5px;
 }
-}
 .searchH1{
-    text-align: center;
+    text-align: center !important;
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
     color: black;
 }
 .title{
-    text-align: center;
-    font-size: x-large;
-    font-weight: 600;
+    text-align: left;
+    font-size: large;
+    font-weight: 550;
+    padding-bottom: 6px;
 }
-@media screen and (max-width: 599px) {
-
-    .title{
-        text-align: center;
-        font-size: large;
-        font-weight: 550;
-    }
 }
