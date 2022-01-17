@@ -29,12 +29,10 @@ export class AboutMessageComponent implements OnInit {
     private activeRoute: ActivatedRoute,
     private router: Router,
     private navbarService: NavbarService,
-    public appModule: AppModule,
-    private location: Location) { }
+    public appModule: AppModule) { }
   ngAfterViewInit(): void {
   }
   ngOnInit(): void {
-    this.appModule.postChange();
     this.activeRoute.paramMap.subscribe(data => {
       this.appModule.home=false;
       this.appModule.postChange();

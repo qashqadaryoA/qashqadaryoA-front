@@ -32,25 +32,25 @@
         <div fxFlex="2 1 0" *ngIf="!app.lotin">
             <h2 class="title">Турлар</h2>
             <ul class="list">
-                <li *ngFor="let type of types"><a (click)="sidenavchange()" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
+                <li  *ngFor="let type of types"><a class="bottom" (click)="sidenavchange()" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="app.lotin">
             <h2 class="title">Turlar</h2>
             <ul class="list">
-                <li *ngFor="let type of types"><a (click)="sidenavchange()" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
+                <li   *ngFor="let type of types"><a class="bottom" (click)="sidenavchange()" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="!app.lotin">
             <h2 class="title">Туманлар</h2>
             <ul class="list">
-                <li *ngFor="let tuman of tumans"><a (click)="sidenavchange()" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li>
+                <li *ngFor="let tuman of tumans"><a class="bottom" (click)="sidenavchange()" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li>
             </ul>
         </div>
         <div fxFlex="2 1 0" *ngIf="app.lotin">
             <h2 class="title">Tumanlar</h2>
             <ul class="list">
-                <li *ngFor="let tuman of tumans"><a (click)="sidenavchange()" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name | translate}}</a></li>
+                <li *ngFor="let tuman of tumans"><a class="bottom" (click)="sidenavchange()" [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name | translate}}</a></li>
             </ul>
         </div>
     </div>

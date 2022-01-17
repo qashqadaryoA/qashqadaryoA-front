@@ -7,10 +7,10 @@
     <div class="flex-container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="10px">
       <div fxFlex="5.5 1 0">
         <div class="title" *ngIf="!app.lotin">
-          {{nom}} туманга оид сўнги янгиликлар
+          {{nom}} янгиликлари
         </div>
         <div class="title" *ngIf="app.lotin">
-          {{nom | translate}} tumanga oid so'ngi yangiliklar
+          {{nom | translate}} yangiliklari
         </div>
         <h1 class="searchH1" *ngIf="h1 && !app.lotin" >{{h1Text}}</h1>
         <h1 class="searchH1" *ngIf="h1 && app.lotin" >{{h1Text | translate}}</h1>

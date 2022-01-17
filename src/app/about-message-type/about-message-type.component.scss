@@ -11,10 +11,14 @@
     margin: auto;
 }
 .title{
-    text-align: center;
+    text-align: left;
     font-size: x-large;
     font-weight: 450;
     margin-top: 20px;
+    color: #000B49;
+    border-bottom: 1px solid #000B49;
+    padding-bottom: 6px;
+
 }
 .card{
     width: 90%;
@@ -64,8 +68,13 @@
     margin-bottom: 20px;
 }
 .button{
-    width: 100%;
-    margin-top: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+}
+.icons{
+    position: relative;
+    top: 5px;
 }
 @media screen and (max-width: 959px) {
 
