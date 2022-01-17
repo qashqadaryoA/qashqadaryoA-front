@@ -110,6 +110,44 @@ li{
     
     transition: 0.2s all;
 }
+//hover
+
+.dropdown{
+    padding: 10px;
+}
+.tuman-content {
+    display: none !important;
+    position: absolute;
+    background-color: #f9f9f9 !important;
+    min-width: 160px !important;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2) !important;
+    z-index: 1000 !important;
+    left: 56.7%;
+  }
+
+  .tuman-content a {
+    float: none !important;
+    color: black !important;
+    padding: 5px 5px !important;
+    text-decoration: none !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
+  .tuman-content a:hover {
+    background-color: #ddd !important;
+  }
+  
+  .dropdown:hover .tuman-content {
+    display: block !important;
+  }
+  .dropdown:active .tuman-content {
+    display: block !important;
+  }
+  
+  
+
+
 .nav-links ul{
     display: inline;
     background-color: #000B49;
