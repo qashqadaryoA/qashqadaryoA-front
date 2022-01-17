@@ -109,9 +109,15 @@
     margin-bottom: 20px;
 }
 .button{
-    width: 100%;
-    margin-top: 8px;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
 }
+.icons{
+    position: relative;
+    top: 5px;
+}
+
 
 
 @media screen and (max-width: 599px) {

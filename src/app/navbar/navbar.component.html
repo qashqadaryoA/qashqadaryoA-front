@@ -8,10 +8,11 @@
           </div>
           <div class="nav-links">
             <ul *ngIf="!app.lotin">
-                <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
+              <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
             </ul>
             <ul *ngIf="app.lotin">
                 <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
+               
             </ul>
           </div>
           <div class="float-right">

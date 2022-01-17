@@ -10,16 +10,10 @@ import { AppModule } from './app.module';
 export class AppComponent {
   
   @Output() sideNavOpen: EventEmitter<boolean> = new EventEmitter(true);
-  title = 'Qashqadaryo-Ahli';
+  title = 'Qashqadaryo Ahli';
   @ViewChild("topScrollAnchor") topScroll?:ElementRef;
   constructor(private appModule:AppModule, private router: Router,public activeRoute:ActivatedRoute){
   }
   onNavigate(event:any){
   }
-  @HostListener('window:popstate', ['$event'])
-  onPopState(event: any) {
-    this.sideNavOpen.emit(false);
-    console.log("dfgdfgd");
-  }
-  
 }
