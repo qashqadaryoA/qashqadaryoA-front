@@ -36,11 +36,6 @@
     width: 100%;
     height: auto;
 }
-
-.searchH1{
-    text-align: center !important;
-}
-
 .img{
     width: 95%;
     margin: auto;
@@ -93,19 +88,16 @@
     bottom: 5px;
 }
 .title{
-    text-align: left;
+    text-align: center;
     font-size: x-large;
     font-weight: 600;
-    color: #000B49;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #000B49;
 }
 
 .margin-t{
     margin-top: 30px;
 }
 .reklama{
-    width:100% !important;
+    width:75%;
     height: 140px;
     margin: auto;
     margin-top: 20px;
@@ -290,10 +282,9 @@
 @media screen and (max-width: 599px) {
 
     .title{
-        text-align: left;
+        text-align: center;
         font-size: large;
         font-weight: 550;
-        padding-bottom: 6px;
     }
     .text{
     width: 90%;
@@ -321,8 +312,8 @@
 }
 
 .reklama{
-    width:100%;
-    height: 70px;
+    width:90%;
+    height: 60px;
     margin: auto;
     background-color: black;
     margin-top: 20px;
@@ -386,7 +377,7 @@
 }
 }
 .searchH1{
-    text-align: center !important;
+    text-align: center;
     font-size: x-large;
     font-family: 'Times New Roman', Times, serif;
     color: black;
