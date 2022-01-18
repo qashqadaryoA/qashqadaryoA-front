@@ -1,6 +1,6 @@
 
-<app-template *ngIf="appModule.load"></app-template>
-<div #div1 *ngIf="!appModule.load">
+<!-- <app-template *ngIf="appModule.load"></app-template> -->
+<div #div1>
   <div class="container1">
     <div class="reklama" (click)="rekOpen(reklama1?.address)" *ngIf="reklama1!=null">
       <app-image-download [fayl]="reklama1?.filename"></app-image-download>

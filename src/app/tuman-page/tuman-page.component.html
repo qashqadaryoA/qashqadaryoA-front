@@ -1,5 +1,5 @@
-<app-template *ngIf="app.load"></app-template>
-<section class="body" *ngIf="!app.load">
+<!-- <app-template *ngIf="app.load"></app-template> -->
+<section class="body">
   <div class="container1">
     <div class="reklama" *ngIf="reklama1!=null" (click)="rekOpen(reklama1?.address)">
       <app-image-download [fayl]="reklama1?.filename"></app-image-download>

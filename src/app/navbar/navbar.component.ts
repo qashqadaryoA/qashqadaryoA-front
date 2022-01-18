@@ -48,6 +48,9 @@ export class NavbarComponent implements OnInit {
       this.app.storeKirill();
     }
   }
+  back(){
+    console.log("keldi");
+  }
   sidenav1(){
     if(this.app.sidenav1Status==true){
       this.app.sidenav1Status=false;

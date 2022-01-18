@@ -9,12 +9,11 @@
           <div class="nav-links">
             <ul *ngIf="!app.lotin">
                 <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name}}</a></li>
-
                 <li class="dropdown">
-                  <a href="#" class="navbar-color">Туман
+                  <a class="navbar-color">Туман
                   <i class="fas fa-caret-down"></i>
                   </a>
-                  <ul class="tuman-content">
+                  <ul class="tuman-content" id="back">
                     <li *ngFor="let tuman of tumans"><a [routerLink]='["tuman",tuman?.id,tuman?.name]'>{{tuman?.name}}</a></li> 
                   </ul>
                </li>
@@ -23,9 +22,8 @@
             <!-- lotin -->
             <ul *ngIf="app.lotin">
                 <li *ngFor="let type of types"><a  class="navbar-color" [routerLink]='["type",type?.id,type?.name]'>{{type?.name | translate}}</a></li>
-
                 <li class="dropdown">
-                  <a href="#" class="navbar-color">Tuman
+                  <a class="navbar-color">Tuman
                   <i class="fas fa-caret-down"></i>
                   </a>
                   <ul class="tuman-content">
@@ -33,7 +31,6 @@
                   </ul>
                </li>
             </ul>
-
           </div>
           <div class="float-right">
             <div class="language" style="display: inline;">
@@ -45,7 +42,6 @@
               <a class="nav-search" routerLink="find"><i class="fas fa-search icons"></i></a>
               <span (click)="sideNavOpen.emit(true)" (click)="sidenav1()" class="menu-icon"><i class="fas fa-bars icons"></i></span>
           </div>
-    
   </div>
 </div>
 </nav>
